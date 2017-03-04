@@ -1,0 +1,21 @@
+<section class="wow fadeInUp " data-wow-delay="1.0s"> 
+    {loop plugins::categoryinfo($_catid) $c}  
+    <div class="title">
+        <div class="container">
+            <h3 style="margin-right: 40px;"><a style="color:{$arc[color]};" href="{$c[url]}">{$c[catname]}</a></h3>
+            <a class="pull-right" href="{$c[url]}" style="font-size: 0.9em;color: #999;">更多 ></a>
+        </div>
+    </div>
+    <div class="container">
+        <div style="border: 1px #efefef solid;padding: 10px 5px;">
+            <ul>
+                {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+                <li class="col-lg-4 col-sm-6 col-xs-12" style="font-size: 0.9em;color: #999;"><span>[{=sdate($archive[adddate],'Y-m')}]</span><a href="{$archive[url]}">{$archive[title]}...</a></li>
+                {/loop}
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    {/loop}
+</section>

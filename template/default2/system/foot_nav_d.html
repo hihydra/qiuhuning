@@ -1,0 +1,24 @@
+<style>
+    #top_menu{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background: #ff5d5b;
+        text-align: center;
+        padding: 5px 0;
+        z-index: 99;
+    }
+    #top_menu a{
+        font-size: 0.8em;
+        color: #fff;
+        line-height: 15px;
+    }
+</style>
+
+<div id="top_menu" class="row">
+    
+    <a class="col-xs-3" href="tel:{get(tel)}"><img src="{$skin_path}/images/wap/plugmenu1.png" style="height: 20px;"><br/>电话咨询</a>
+    <a class="col-xs-3" href="mqqwpa://im/chat?chat_type=wpa&uin={get('qq1')}&version=1&src_type=web&web_src=oicqzone.com"><img src="{$skin_path}/images/wap/ico_l.png" style="height: 20px;"><br/>QQ咨询</a>
+    <a class="col-xs-3" href="tel:{get(tel)}"><img src="{$skin_path}/images/wap/ico_p.png" style="height: 20px;"><br/>值班热线</a>
+    <a class="col-xs-3" href="mqqwpa://im/chat?chat_type=wpa&uin={get('qq2')}&version=1&src_type=web&web_src=oicqzone.com"><img src="{$skin_path}/images/wap/ico_g.png" style="height: 20px;"><br/>在线咨询</a>
+</div>

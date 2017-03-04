@@ -1,0 +1,78 @@
+{template 'header.html'}
+<!-- 面包屑导航开始 -->
+{template 'position.html'}
+<!-- 面包屑导航结束 -->
+
+<div class="blank10"></div>
+<div class="container" style="font-size: 0.9em;">
+    <span style="color: #FF5D5B">您当前的位置：</span>
+    <span>风格</span>>
+    <span>{$tag}</span>
+</div>
+<!-- 页面标题开始 -->
+<div class="title">
+    <div class="container">
+        <p style="border: 1px #efefef solid;font-size: 0.9em;padding:10px;white-space: inherit;line-height: 200%;"> 
+            <span class="tags">
+                <span style="margin: 0 10px;color: #999;">场景：</span>{gethottags(20)}
+            </span>
+        </p>
+        <div class="blank30"></div>
+        <h3>{$tag}</h3>
+    </div>
+</div>
+<!-- 页面标题结束 -->
+
+<div class="blank10"></div>
+
+
+<!-- 中部开始 -->
+<div class="container">
+
+
+    <ul class="list_page_1">
+
+
+        <ul class="list_page_1">
+            <!-- 内容列表开始 -->
+            {loop $archives $i $archive}
+            <li>
+                <div class="list_page_date">
+                    <span>{=sdate($archive[adddate],'d')}</span>
+                    <p>{=sdate($archive[adddate],'Y-m')}</p>
+                </div>
+                <div class="li_text">
+                    <p class="col-xs-2 hidden-sm hidden-xs"><img style="width: 100%;padding-right: 20px;" class="img-responsive" alt="{$archive['stitle']}" src="{$archive['thumb']}" onerror='this.src="{config::get('onerror_pic')}"' /></p>
+                    <p><a title="{$archive[stitle]}" href="{$archive[url]}" target="_blank" class="list_page_t">{$archive[title]}</a></p>
+                    <p>{cut(strip_tags($archive['introduce']),140)}… <a href="{$archive[url]}" target="_blank">[{lang(more)}]</a></p>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </li>
+            {/loop}
+            <!-- 内容列表结束 -->
+        </ul>
+
+
+        <div class="blank30"></div>
+
+        <!-- 列表分页开始 -->
+        {if isset($pages)}<div class="blank30"></div>
+        {tag::pagination($tag)}
+        <div class="blank30"></div>{/if}
+        <!-- 列表分页结束 -->
+
+</div>
+
+</div>
+
+<div class="blank30"></div>
+<!-- 页底推荐图文产品开始 -->
+{tag_内容页底图文产品三条}
+<!-- 页底推荐图文产品结束 -->
+
+
+
+
+
+{template 'footer.html'}

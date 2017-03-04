@@ -1,0 +1,16 @@
+{loop plugins::categoryinfo($_catid) $c}
+
+
+
+<div class="col-sm-4">
+	<div>
+		<a href="{$c[url]}" title="{$c[catname]}"><img src="{$c[image]}" width="232" height="161" alt="{$c[catname]}" /></a>
+		<h3><a href="{$c[url]}" title="{$c[catname]}">{$c[catname]}</a></h3>
+		<p>{cut(strip_tags($c['categorycontent']),100)}</p>
+	</div>
+</div>
+
+
+
+{/loop}
+

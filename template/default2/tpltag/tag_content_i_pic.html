@@ -1,0 +1,9 @@
+<div class="row">
+    {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+        <a href="{$archive[url]}" class="text_img">
+            <img alt="{$archive['stitle']}" src="{$archive['thumb']}" style="width: 100%;" onerror='this.src="{config::get('onerror_pic')}"'/>
+        </a>
+    </div>
+    {/loop}
+</div>

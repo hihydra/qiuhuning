@@ -1,0 +1,190 @@
+<!-- 页底 -->
+
+<div class="foot">
+    <div class="container hidden-xs" style="padding-top: 20px;">
+        <div class="row">	 
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 150px;">
+                <dl>
+                    <dd><h1>求婚总动员客服热线</h1></dd>
+                    <dd style="padding-top: 10px;">{get('worktime')}</dd>
+                    <dd style="font-size: 2em;color: #ff5d5b;">{get('tel')}</dd>
+                </dl>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 150px;">
+                <dl>
+                    <dd><h1>关注我们</h1></dd>
+                    
+                    <dd style="position: relative;"><img src="{$skin_path}/images/weixin.png" alt="" style="height: 15px;margin-right: 10px;position: relative;top:3px;"/><a href="" onclick="return false;" id='wxewmhover'>微信公众号</a>
+                        <img id='wxewm' style="display: none;position: absolute;left:100px;top:-10px;width: 100px;height: 100px;" src="/111.jpg"/>
+                    </dd>
+                    <dd><a href="http://weibo.com/5976881999/" target="_blank"><img src="{$skin_path}/images/weibo.png" alt="" style="height: 15px;margin-right: 10px;position: relative;top:3px;"/>新浪微博</a></dd>
+                    <dd><a rel="nofollow" target="_blank" href="tencent://Message/?Uin={get('qq5')}&websiteName={get('site_url')}=&Menu=yes" style="margin-right: 20px;"><img src="{$skin_path}/images/qq.png" alt="" style="height: 15px;margin-right: 10px;position: relative;top:3px;"/>企业QQ</a></dd>
+                </dl>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 150px;">
+                <dl>
+                    <dd><h1>关于我们</h1></dd>
+                    <dd><a href="/index.php?case=archive&act=list&catid=25">关于求婚总动员</a></dd>
+                    <dd><a href="/index.php?case=archive&act=list&catid=25">加入我们</a></dd>
+                    <dd><a href="http://www.qiuhuning.com/list_34.htm">合作伙伴</a></dd>
+                </dl>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 150px;">
+                <dl>
+                    <dd><h1>联系我们</h1></dd>
+                    <dd>联系地址：{get(address)}</dd>
+                    <dd>{lang(postcode)}：{get('postcode')}</dd>
+                    <dd>{lang(guestemail)}：{get(email)}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-12">
+                <p>热门城市：</p>
+                <div style="overflow: hidden;height: 30px;line-height: 30px;">
+                   
+                    <span style="margin-right: 10px;">{$province}</span>
+                   北京&nbsp 上海&nbsp 广州&nbsp 深圳&nbsp 成都&nbsp 重庆&nbsp 杭州&nbsp 天津&nbsp 南京&nbsp 武汉&nbsp 西安&nbsp 青岛&nbsp 厦门&nbsp 长沙&nbsp 大连&nbsp 苏州&nbsp 沈阳&nbsp 宁波&nbsp 无锡&nbsp 福州&nbsp 郑州&nbsp 合肥&nbsp 佛山&nbsp 济南&nbsp 哈尔滨&nbsp 昆明&nbsp 东莞&nbsp 太原&nbsp 南昌&nbsp 温州&nbsp 长春&nbsp 南宁&nbsp 泉州
+                </div>
+          
+            </div>
+        </div>
+        <div class="blank20"></div>
+        <!--        <div class="row">
+                    <div class="col-md-5">
+                        {if config::get('hotsearch')=='1'}{lang(hotkeys)}： {gethotsearch(10)}{/if}
+                    </div>
+                </div>-->
+    </div>
+    <div style="background: #333;color: #fff;text-align: center;">
+        {get(site_right)} <a title="{get('sitename')}" href="{$base_url}/" style="color: #fff;">{get('sitename')}
+            <!--Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>-->
+            <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank" style="color: #fff;">{get('site_icp')}</a>
+            <div style="height: 55px;" class="visible-xs"></div>
+    </div>
+</div>
+<script>
+    $("#wxewmhover").hover(function(){
+        $("#wxewm").fadeIn(200);
+    },function(){
+        $("#wxewm").fadeOut(200);
+    });
+</script>
+<!--/footer-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- search -->
+<div class="container-fluid">
+
+    <div class="modal fade bs-example-modal-lg-search" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="row">
+                    <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <input type="text" name="keyword" class="form-control" placeholder="{lang(pleaceinputtext)}">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" name='submit' type="submit">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- search end -->
+
+
+
+
+
+
+
+
+
+
+    <div class="servers">
+        <!--[if (gte IE 7)|!(IE)]><!-->
+        <!-- 在线客服 -->
+        {template 'system/servers_metro_color.html'}
+        <![endif]-->
+        <!-- 短信 -->
+        {template 'system/sms.html'}
+    </div>
+
+    <div class="servers-wap">
+        {template 'system/foot_nav_d.html'}
+    </div>
+
+
+    <script type="text/javascript" src="{$base_url}/js/common.js"></script>
+
+
+
+
+
+    {if get('share')=='1'}
+    <!--<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>-->
+    {/if}
+
+
+    {if config::get('site_push')=='1'}
+    <script>
+                        (function () {
+                            var bp = document.createElement('script');
+                            bp.src = '//push.zhanzhang.baidu.com/push.js';
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+    </script>
+    {/if}
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="{$skin_path}/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{$skin_path}/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{$skin_path}/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{$skin_path}/js/bootstrap-submenu.js"></script>
+    <script src="{$skin_path}/js/docs.js"></script>
+    
+    <!--百度自动提交-->
+    <script>
+
+	(function(){
+
+   	 var bp = document.createElement('script');
+
+   	 bp.src = '//push.zhanzhang.baidu.com/push.js';
+
+   	 var s = document.getElementsByTagName("script")[0];
+
+   	 s.parentNode.insertBefore(bp, s);
+
+		})();
+
+	</script>
+
+
+
+</body>
+</html>

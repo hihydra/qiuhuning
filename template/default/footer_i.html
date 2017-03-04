@@ -1,0 +1,156 @@
+<!-- 页底 -->
+
+<div class="foot">
+    <div class="container">
+        <div class="row">	 
+            {if config::get('qrcodes')=='1'}
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 180px;">
+                <dl class="foot_qr_codes">
+                    <dd><h1>{lang(scanning)}{lang(access)}{lang(sitewap)}</h1></dd>
+                    <dd><img width="120" src="{url('tool/qrcode')}" /></dd>
+                </dl>
+            </div>
+            {/if}
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 180px;">
+                <dl>
+                    <dd><h1>婚礼记客服热线</h1></dd>
+                    <dd>工作时间：9：00-23：00</dd>
+                    <dd style="font-size: 1.5em;color: #ff5d5b">{get('tel')}</dd>
+                    {if config::get('qq1')}<a rel="nofollow" target="_blank" href="tencent://Message/?Uin={get('qq1')}&websiteName={get('site_url')}=&Menu=yes" style="margin-right: 20px;">{get(qq1name)}</a>{/if}
+                    {if config::get('qq2')}<a rel="nofollow" target="_blank" href="tencent://Message/?Uin={get('qq2')}&websiteName={get('site_url')}=&Menu=yes" style="margin-right: 20px;">{get(qq2name)}</a>{/if}
+                    {if config::get('qq3')}<a rel="nofollow" target="_blank" href="tencent://Message/?Uin={get('qq3')}&websiteName={get('site_url')}=&Menu=yes" style="margin-right: 20px;">{get(qq3name)}</a>{/if}
+                    {if config::get('qq4')}<a rel="nofollow" target="_blank" href="tencent://Message/?Uin={get('qq4')}&websiteName={get('site_url')}=&Menu=yes" style="margin-right: 20px;">{get(qq4name)}</a>{/if}
+                    {if config::get('qq5')}<a rel="nofollow" target="_blank" href="tencent://Message/?Uin={get('qq5')}&websiteName={get('site_url')}=&Menu=yes" style="margin-right: 20px;">{get(qq5name)}</a>{/if}
+                </dl>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 180px;">
+                <dl>
+                    <dd><h1>关于我们</h1></dd>
+                    <dd>没有内容</dd>
+                </dl>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 180px;">
+                <dl class="copyrights">
+                    <dd><h1>版权</h1></dd>
+                    <dd>{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a></dd>
+                    <!--<dd style="display: none;">Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a></dd>-->
+                    <dd><a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{get('site_icp')}</a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                {if config::get('hotsearch')=='1'}{lang(hotkeys)}： {gethotsearch(10)}{/if}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/footer-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- search -->
+<div class="container-fluid">
+
+    <div class="modal fade bs-example-modal-lg-search" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="row">
+                    <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <input type="text" name="keyword" class="form-control" placeholder="{lang(pleaceinputtext)}">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" name='submit' type="submit">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- search end -->
+
+
+
+
+
+
+
+
+
+
+    <div class="servers">
+        <!--[if (gte IE 7)|!(IE)]><!-->
+        <!-- 在线客服 -->
+        {template 'system/servers.html'}
+        <![endif]-->
+        <!-- 短信 -->
+        {template 'system/sms.html'}
+    </div>
+
+    <div class="servers-wap">
+
+        {if config::get('wap_foot_nav')=='1'}
+        {template 'system/foot_nav_b.html'}
+        {elseif config::get('wap_foot_nav')=='2'}
+        {template 'system/foot_nav_c.html'}
+        {else}
+        {template 'system/foot_nav_a.html'}
+        {/if} 
+    </div>
+
+
+    <script type="text/javascript" src="{$base_url}/js/common.js"></script>
+
+
+
+
+
+    {if get('share')=='1'}
+    <!--<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>-->
+    {/if}
+
+
+    {if config::get('site_push')=='1'}
+    <script>
+                        (function () {
+                            var bp = document.createElement('script');
+                            bp.src = '//push.zhanzhang.baidu.com/push.js';
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+    </script>
+    {/if}
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="{$skin_path}/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{$skin_path}/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{$skin_path}/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{$skin_path}/js/bootstrap-submenu.js"></script>
+    <script src="{$skin_path}/js/docs.js"></script>
+
+</body>
+</html>
