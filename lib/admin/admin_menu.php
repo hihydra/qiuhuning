@@ -72,7 +72,7 @@ class admin_menu {
                 $menu=self::fetch('论坛专题,帖子管理');
                 break;
             case 'propose':
-                $menu = self::fetch('流程管理,主题管理,场景管理');
+                $menu = self::fetch('求婚订单,流程管理,主题管理,场景管理');
                 break;
             default:
                 $menu=self::fetch('常用操作');
@@ -376,13 +376,16 @@ class admin_menu {
                         '后门查杀'=>url::create('safe/webshell'),
                         '黑客攻击防护'=>url::create('safe/protect'),
                 ),
+                '求婚订单' => array(
+                    '订单管理' => url::create('table/list/table/propose'),
+                ),
                 '流程管理' => array(
                     '流程管理' => url::create('table/list/table/process'),
                     '添加流程' => url::create('table/add/table/process'),
                 ),
                 '场景管理' => array(
-                    '场景管理' => url::create('table/list/table/procedure'),
-                    '添加场景' => url::create('table/add/table/procedure'),
+                    '场景管理' => url::create('table/list/table/scene'),
+                    '添加场景' => url::create('table/add/table/scene'),
                 ),
                 '主题管理' => array(
                     '主题管理' => url::create('table/list/table/topic'),

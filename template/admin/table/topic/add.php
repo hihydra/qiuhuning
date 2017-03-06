@@ -14,6 +14,11 @@
 <td width="1%">&nbsp;</td>
 <td width="70%">{form::getform('name',$form,$field,$data)} </td>
 </tr>
+<tr>
+<td width="19%" align="right">场景</td>
+<td width="1%">&nbsp;</td>
+<td id="content-recommend">{form::getform('scene',$form,$field,$data)}</td>
+</tr>
 </tbody>
 </table>
 </div>

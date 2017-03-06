@@ -328,7 +328,7 @@
 //后台登录IP验证开关[<span class="hotspot" onmouseover="tooltip.show('打开或者关闭IP验证功能');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/关/1/开
 
 
-'verifycode'=>'2',
+'verifycode'=>'0',
 
 //验证码开关[<span class="hotspot" onmouseover="tooltip.show('设置网站是否启用验证码！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/关/1/字符/2/拼图
 
@@ -358,7 +358,7 @@
 
 //邀请注册[<span class="hotspot" onmouseover="tooltip.show('设置是否必须邀请注册用户才能注册！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/关/1/开
 
-'isdebug'=>'0',
+'isdebug'=>'1',
 
 //调试开关[<span class="hotspot" onmouseover="tooltip.show('设置网站是否显示PHP运行错误代码！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/关/1/开
 

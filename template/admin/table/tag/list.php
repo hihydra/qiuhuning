@@ -34,7 +34,7 @@
     </tr>
     {/loop}
     </tbody>
-    
+
   </table>
 
 
@@ -47,7 +47,7 @@
   </div>
   <div class="blank20"></div>
   <input type="hidden" name="batch" value="" />
-  
+
   <input class="btn_a" type="button" value=" 删除 " name="delete" onclick="if(getSelect(this.form) && confirm('确实要删除ID为('+getSelect(this.form)+')的记录吗?')){this.form.action='<?php echo modify('act/batch',true);?>'; this.form.batch.value='delete'; this.form.submit();}"/>
     <div class="blank20"></div>
 </form>

@@ -1,7 +1,7 @@
 
 
 <div class="blank10"></div>
-<div id="procedurecontent" class="right_box">
+<div id="scenecontent" class="right_box">
 <form name="listform" id="listform"  action="<?php echo uri();?>" method="post">
 <table border="0" cellspacing="0" cellpadding="0" name="table1" id="table1" width="100%">
         <thead>
@@ -27,7 +27,7 @@
 	  <span class="hotspot" onmouseover="tooltip.show('编辑场景！');" onmouseout="tooltip.hide();">
 	  <a href="<?php echo modify("act/edit/table/$table/id/$d[$primary_key]");?>" class="a_edit"></a></span>
 	  <span class="hotspot" onmouseover="tooltip.show('删除场景！');" onmouseout="tooltip.hide();">
-	  <a onclick="javascript: return confirm('确实要删除吗?');" href="<?php echo modify("/act/delete/table/$table/id/$d[$primary_key]");?>" class="a_del"></a></span>
+	  <a onclick="javascript: return confirm('确实要删除吗?');" href="<?php echo modify("/act/delete/table/$table/id/$d[$primary_key]/token/$token");?>" class="a_del"></a></span>
 	  </td>
     </tr>
     {/loop}

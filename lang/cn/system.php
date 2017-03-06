@@ -6,7 +6,7 @@
 return
 
 array(
-       
+
 'favorite'=>'收藏',
 'feedback'=>'留言',
 'login'=>'登录',
@@ -595,7 +595,10 @@ array(
 'small'=>'小',
 'previous_step'=>'上一步',
 
-
+'propose'=>'求婚订单',
+'process'=>'流程',
+'scene'=>'场景',
+'topic'=>'主题',
 
 
 );
