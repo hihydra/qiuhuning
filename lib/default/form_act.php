@@ -15,7 +15,7 @@ class form_act extends act {
         $this->view->primary_key=$this->_table->primary_key;
         $fieldlimit=$this->_table->getcols(front::$act=='list'?'user_manage':'user_modify');
         $field=$this->_table->getFields();
-        
+
         helper::filterField($field,$fieldlimit);
         $this->view->field=$field;
         //var_dump($field);
