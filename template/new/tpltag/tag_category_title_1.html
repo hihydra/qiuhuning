@@ -1,0 +1,16 @@
+{loop plugins::categoryinfo($_catid) $cat}
+
+
+<div class="title">
+    <div class="container">
+        <h3 style="margin-right: 40px;"><a href="{$cat['url']}" title="{$cat['catname']}">{$cat['catname']}</a></h3>
+        <a style="margin:0 10px;font-size: 0.9em">韩式</a>|
+        <a style="margin:0 10px;font-size: 0.9em">复古</a>|
+        <a style="margin:0 10px;font-size: 0.9em">中式</a>|
+        <a style="margin:0 10px;font-size: 0.9em">森系</a>|
+        <a style="margin:0 10px;font-size: 0.9em">小清新</a>
+    </div>
+</div>
+
+
+{/loop}

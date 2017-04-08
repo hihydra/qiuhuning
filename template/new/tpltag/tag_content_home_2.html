@@ -1,0 +1,35 @@
+<div class="part-case">
+    <h2 class="index_h2"><img src="{$skin_path}/images/h2_al.png"/></h2>
+    <div class="case-box">
+        <div class="l">
+            <ul class="case-tag-box">
+            {loop plugins::categoryinfo($_catid) $c}
+                <li><a href="{$c[url]}">{$c[catname]}</a> </li>
+            {/loop}
+            </ul>
+            <div class="case-big">
+                <a href="video_detail.html">
+                    <img jh-img="an" src="images/case1.png"/>
+                    <div class="case-bg"></div>
+                    <div class="case-text">
+                        <p>大世界多哈世界大会</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <ul class="r case-list">
+        {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+            <li>
+                <a href="article_detail.html">
+                    <img jh-img="an" src="{$archive[thumb]}"/>
+                    <div class="case-bg"></div>
+                    <div class="case-text">
+                        <p>{$archive['title']}</p>
+                    </div>
+                </a>
+            </li>
+        {/loop}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+{template 'header.html'}
+<link rel="stylesheet" href="{$skin_path}/styles/video.css">
+<div class="wrap">
+    <div class="crumbs">
+        <a class="crumbs-lk" href="/"><i class="icon-home crumbs-icon"></i>求婚总动员</a>>
+            <?php  $t1=$category[$catid];?>
+            {if $t1[parentid]!=0}
+            <?php $t2=$category[$t1[parentid]];?>
+            {if $t2[parentid]!=0}
+            <?php $t3=$category[$t2[parentid]];?>
+            <a class="crumbs-lk" href="?case=archive&act=list&catid={$t3[catid]}">{$t3[catname]}</a>>
+            {/if}
+            <a class="crumbs-lk" href="?case=archive&act=list&catid={$t2[catid]}">{$t2[catname]}</a>>
+            {/if}
+            <span>{$t1[catname]}</span>
+    </div>
+    <div class="" style=" float: left;width: 960px;">
+    <ul class="video-list">
+    {loop $archives $i $archive}
+        <li>
+            <div class="video-box">
+                <img class="video-thumbnail" src="{$archive[thumb]}"/>
+                <a class="play-mask" href="{$archive['url']}"><img src="{$skin_path}/images/play_mask.png"></a>
+            </div>
+
+            <p class="video-name">{$archive[title]}</p>
+        </li>
+    {/loop}
+    </ul>
+        <!-- 内容列表分页开始 -->
+    {if isset($pages)}
+    {category_pagination($catid)}
+    {/if}
+    <!-- 内容列表分页结束 -->
+    </div>
+    <aside class="aside">
+        <a class="propose-apply-btn" href="discount.html">我要求婚</a>
+        <dl class="aside-item">
+            <dt class="aside-tit">{tag_内页右侧栏目名称}</dt>
+            {tag_内页右侧内容列表}
+        </dl>
+        <dl class="aside-item">
+            <dt class="aside-tit">{tag_内页右侧栏目名称2}</dt>
+             {tag_内页右侧内容列表2}
+        </dl>
+    </aside>
+
+</div>
+{template 'footer.html'}

@@ -1,0 +1,89 @@
+{template 'header.html'}
+<!-- 面包屑导航开始 -->
+<!-- 面包屑导航结束 -->
+<div class="blank10"></div>
+<div class="container" style="font-size: 0.9em;">
+    <span style="color: #FF5D5B">您当前的位置：</span>
+    <?php  $t1=$category[$catid];?>
+    {if $t1[parentid]!=0}
+    <?php $t2=$category[$t1[parentid]];?>
+    {if $t2[parentid]!=0}
+    <?php $t3=$category[$t2[parentid]];?>
+    <a href="?case=archive&act=list&catid={$t3[catid]}">{$t3[catname]}</a>>
+    {/if}
+    <a href="?case=archive&act=list&catid={$t2[catid]}">{$t2[catname]}</a>>
+    {/if}
+    <span>{$t1[catname]}</span>
+</div>
+<!-- 页面标题开始 -->
+<div class="title">
+    <div class="container">
+        <div style="background: #efefef">
+            {loop categories($catid) $t1}
+            <a title="{$t1[catname]}" href="{$t1[url]}" class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="border:1px #efefef solid;margin-bottom: -1px;padding: 10px 0;text-align: center;display: inline-block;background: #fff;">{$t1[catname]}</a>
+            {/loop}
+            <div class="clear"></div>
+        </div>
+         <p style="border: 1px #efefef solid;font-size: 0.9em;padding:10px;white-space: inherit;line-height: 200%;"> 
+            <span class="tags">
+                <span style="margin: 0 10px;color: #999;">场景：</span>{gethottags(20)}
+            </span>
+        </p>
+        <div class="blank30"></div>
+        <h3>{$category[$catid][catname]}</h3>
+        <!--<p>{$category[$catid][htmldir]}</p>-->
+    </div>
+</div>
+<div class="clear"></div>
+
+<!-- 页面标题结束 -->
+
+<!-- 中部开始 -->
+<div class="container">
+    <div class="col-md-9">
+        <!-- 内容缩略图列表 -->
+        <div class="blank30"></div>
+        <div class="row">
+            {loop $archives $i $archive}
+            <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 10px;">
+                <a href="{$archive['url']}" style="border: 1px #efefef solid;display: block;" title="{$archive['stitle']}">
+                    <span style="display: block;background-image: url({$archive['thumb']});background-size: cover;background-position: center;height: 120px;width: 100%;"></span>
+                    <p style="font-size: 0.9em;margin: 0px 10px;">{$archive['title']}</p>
+                </a>
+            </div>
+            {/loop}
+        </div>
+        <!-- 内容列表分页开始 -->
+        {if isset($pages)}<div class="blank60"></div>
+        {category_pagination($catid)}
+        {/if}
+        <!-- 内容列表分页结束 -->
+    </div>
+    <!-- 内容缩略图列表结束 -->
+    <div class="col-md-3">
+
+        <h3 class="t_3" style="border-left: 4px solid #FF5D5B;padding-left: 10px;">{tag_内页右侧栏目名称}</h3>
+        <ul class="list_2">
+            {tag_内页右侧内容列表}
+        </ul>
+        <div class="blank30"></div>
+        <h3 class="t_3" style="border-left: 4px solid #FF5D5B;padding-left: 10px;">{tag_内页右侧栏目名称2}</h3>
+        <ul class="list_2">
+            {tag_内页右侧内容列表2}
+        </ul>
+        <div class="blank30"></div>
+        <div style="text-align: center;">
+            <b>访问手机版</b><br/>
+            <img style="width: 70%;" src="{url('tool/qrcode')}" />
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{$skin_path}/js/min/main.js"></script>
+<script src="{$skin_path}/js/min/plugins.js"></script>
+
+<!-- 中部结束 -->
+{template 'footer.html'}

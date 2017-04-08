@@ -1,0 +1,93 @@
+{template 'header.html'}
+<style>
+    .about-sidenav{
+        float: left;
+        width: 280px;
+        border: 1px solid #ddd;
+        text-align: center;
+        border-bottom: none;
+    }
+    .about-sidenav>li>a{
+        line-height: 50px;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        display: block;
+    }
+    .about-sidenav>li>a:before{
+        content: '';
+        width: 8px;
+        left: 85px;
+        top: 21px;
+        height: 8px;
+        background: #ff6280;
+        display: block;
+        position: absolute;
+    }
+    .content{
+        float: right;
+        width: 940px;
+        padding: 0 20px 20px;
+        border: 1px solid #ddd;
+        min-height: 300px;
+    }
+    .about-tit{
+        line-height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    .about-article p{
+        color: #888;
+        line-height: 30px;
+    }
+    .sidenav-on{
+        color: #ff6280;
+    }
+</style>
+<div class="wrap">
+    <div class="crumbs">
+        <a class="crumbs-lk" href="/"><i class="icon-home crumbs-icon"></i>首页</a>><a class="crumbs-lk" href="">{$category[$catid][catname]}</a>
+    </div>
+    <ul class="about-sidenav">
+        <li style="background: #eee; font-size: 16px; line-height: 55px; font-weight: bold">求婚总动员 </li>
+        {loop categories(25) $i $t}
+        <li><a href="{$t[url]}" {if $catid==$t[catid]}class="sidenav-on"{/if}>{$t[catname]}</a> </li>
+        {/loop}
+    </ul>
+    <div class="content">
+        <h2 class="about-tit">{$category[$catid][catname]}</h2>
+        <article class="about-article">
+                    <!-- 内容 -->
+                    <?php
+                    $page = intval(front::$get['page']);
+                    if($page==0)$page=1;
+                    $content = $category[$catid][categorycontent];
+                    $contents = preg_split('%<div style="page-break-after(.*?)</div>%si', $content);
+                    if ($contents) {
+                    $pages = count($contents);
+                    front::$record_count = $pages * config::get('list_pagesize');
+                    $category[$catid][categorycontent] = $contents[$page - 1];
+                    }
+                    ?>
+                    {$category[$catid][categorycontent]}
+
+                    <div class="blank30"></div>
+                    {if $pages>1}
+                    <!-- 内页分页 -->
+                    <div class="blank10"></div>
+                    <div class="pages">
+                        {category_pagination($catid)}
+                    </div>
+                    <div class="blank30"></div>
+                    {/if}
+                <!-- 内容结束 -->
+        </article>
+    </div>
+</div>
+
+<!-- 限定图片宽度 -->
+{template 'width_max.html'}
+<!-- 限定图片宽度 -->
+{template 'footer.html'}

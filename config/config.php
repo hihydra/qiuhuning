@@ -524,7 +524,7 @@
 //}
 
 //template-模板设置{
-'template_dir'=>'default',
+'template_dir'=>'new',
 
 //前台模板[默认default]
 

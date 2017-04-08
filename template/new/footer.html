@@ -1,0 +1,33 @@
+<div class="wrap">
+    <dl class="hot-tag">
+        <dt>热门标签: </dt>
+        {gethottags(5)}
+    </dl>
+    <dl class="friendly-links">
+        <dt class="">友情链接: </dt>
+        {loop friendlink('text',0,24) $flink}
+        <a href="{$flink[url]}">{$flink[name]}</a>
+        {/loop}
+    </dl>
+</div>
+<footer class="footer">
+    <p class="copyright">{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/" style="color: #fff;">{get('sitename')}</a> <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank" style="color: #fff;">{get('site_icp')}</a></p>
+</footer>
+<script src="{$skin_path}/scripts/lib/jquery-1.8.3.min.js"></script>
+<script src="{$skin_path}/scripts/public.js"></script>
+<script>
+    $('#weixin_btn').hover(function () {
+        $('.weixin-top').stop().fadeIn();
+    },function () {
+        $('.weixin-top').stop().fadeOut();
+    });
+
+    $('.video-list li').hover(function () {
+        $(this).find('a.play-mask').stop().fadeIn();
+    },function () {
+        $(this).find('a.play-mask').css('display','none');
+    })
+</script>
+</body>
+
+</html>

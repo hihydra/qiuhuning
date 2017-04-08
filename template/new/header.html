@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{getTitle($archive,$category,$catid,$type)}</title>
+    <meta name="keywords" content="{getKeywords($archive,$category,$catid,$type)}" />
+    <meta name="description" content="{getDescription($archive,$category,$catid,$type)}" />
+    <link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{$skin_path}/styles/pubilc.css">
+    <link rel="stylesheet" href="{$skin_path}/styles/lib/font-awesome.css">
+</head>
+<!--[if lt IE 9]>
+<script src="scripts/lib/html5shiv.min.js"></script>
+<![endif]-->
+<body>
+<header class="header">
+    <div class="wrap">
+        <div class="l">
+            <span>你好，欢迎来访求婚总动员官方网站！</span>
+            <a style="margin-left: 25px" href="login.html">登录</a> | <a href="regist.html">注册</a>
+        </div>
+        <div class="r relative">
+            <a href="case.html">求婚视频</a>
+            <a href="case.html">求婚创意</a>
+            <a href="case.html">求婚策划</a>
+            <a href="case.html">求婚方式</a>
+            <a href="case.html" style="margin-right: 50px">求婚资讯</a>
+
+            <a id="weixin_btn" href="">微信公众号</a> |
+            <a href="person_info.html">个人中心</a>
+            <img class="weixin-top" src="{$skin_path}/images/weixin.jpg"/>
+        </div>
+    </div>
+</header>
+<div class="wrap">
+    <h1 class="logo"><a class="logo-text" href="">求婚总动员</a> </h1>
+    <a class="switch-btn l" href="city.html">[切换城市]</a>
+    <div class="search">
+        <input class="search-text" type="text"/>
+        <a class="search-btn" href="">搜索</a>
+    </div>
+    <div class="contact-top r">
+        <p style="font-size: 15px; margin-bottom: 5px">求婚总动员客服热线</p>
+        <p style="font-size: 25px">{get('tel')}</p>
+    </div>
+</div>
+<nav class="nav">
+    <div class="wrap">
+        <a href="{$base_url}/" class="nav-lk{if $topid==0} nav-on{/if}">{lang(homepage)}</a>
+        {loop categories_nav() $t}
+            <a href="{$t[url]}" class="nav-lk{if $catid==$t[catid]} nav-on{/if}">{$t[catname]}</a>
+        {/loop}
+    </div>
+</nav>

@@ -1,0 +1,27 @@
+<div class="wrap">
+    <dl class="hot-tag">
+        <dt>热门标签: </dt>
+        <?php echo gethottags(5);?>
+    </dl>
+    <dl class="friendly-links">
+        <dt class="">友情链接: </dt>
+        <?php foreach(friendlink('text',0,24) as $flink) { ?>
+        <a href="<?php echo $flink['url'];?>"><?php echo $flink['name'];?></a>
+        <?php } ?>
+    </dl>
+</div>
+<footer class="footer">
+    <p class="copyright"><?php echo get(site_right);?> <a title="<?php echo get('sitename');?>" href="<?php echo $base_url;?>/" style="color: #fff;"><?php echo get('sitename');?></a> <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank" style="color: #fff;"><?php echo get('site_icp');?></a></p>
+</footer>
+<script src="<?php echo $skin_path;?>/scripts/lib/jquery-1.8.3.min.js"></script>
+<script src="<?php echo $skin_path;?>/scripts/public.js"></script>
+<script>
+$('#weixin_btn').hover(function() {
+    $('.weixin-top').stop().fadeIn();
+}, function() {
+    $('.weixin-top').stop().fadeOut();
+})
+</script>
+</body>
+
+</html>

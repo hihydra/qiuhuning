@@ -1,0 +1,9 @@
+{loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+<dd class="aside-list">
+    <img class="item-pic" src="{$archive['thumb']}" onerror='this.src="{config::get('onerror_pic')}"'/>
+    <div class="item-text">
+        <h3><a href="discount_detail.html">{$archive[title]}...</a></h3>
+        <p class="price">￥{$archive['attr2']}</p>
+    </div>
+</dd>
+{/loop}

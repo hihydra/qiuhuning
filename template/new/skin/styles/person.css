@@ -1,0 +1,121 @@
+.person-wrap:after,.order-goods:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+input[type=button]::-moz-focus-inner{outline:0;}
+/*body{*/
+    /*background: #f1f1f1;*/
+/*}*/
+.person-wrap{
+    width: 1060px;
+    margin: auto;
+}
+.logo-person{
+    background: url("../images/logo_person.png");
+    width: 150px;
+    height: 58px;
+    margin: 10px 40px 10px 0;
+    display: inline-block;
+    float: left;
+}
+.logo-person{
+    display: inline-block;
+    width: 150px;
+    height: 58px;
+    text-indent: -9999px;
+}
+.person-nav{
+    float: left;
+    width: 240px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.person-main{
+    width: 780px;
+    background: #fff;
+    min-height: 650px;
+    float: right;
+    border-top: 3px solid #ff6280;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ff6280;
+    padding-bottom: 60px;
+}
+.person-main .tit{
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+    margin: 0 20px;
+    padding-left: 8px;
+}
+.person-nav-ul{
+    padding: 0 15px 10px;
+}
+.person-nav-ul>li{
+    line-height: 50px;
+    border-top: 1px dashed #ddd;
+    text-align: center;
+}
+.person-nav-tit{
+    text-align: center;
+    line-height: 60px;
+    background: #ff6280;
+    color: #fff;
+}
+.order-goods{
+    width: 720px;
+    padding: 20px 10px 20px;
+    border-bottom: 1px solid #eee;
+    margin: auto;
+}
+.order-goods img{
+    width: 140px;
+    height: 95px;
+    float: left;
+}
+.order-goods-info{
+    width: 305px;
+    float: left;
+    margin-left: 20px;
+}
+.order-goods-info h4{
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.order-goods-info time{
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #888;
+}
+.order-goods-info p{
+    font-size: 14px;
+    margin-top: 10px;
+    color: #888;
+}
+.order-pay{
+    position: relative;
+    width: 720px;
+    margin: auto;
+    padding-top: 20px;
+}
+.order-pay h3{
+    padding: 0 10px;
+    font-size: 15px;
+}
+.order-goods-buy{
+    float: right;
+    border-left: 1px solid #eee;
+    padding-left: 20px;
+    height: 90px;
+}
+.order-goods-buy a{
+    background: #ff6280;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-top: 25px;
+    color: #fff;
+    border:none;
+    display: block;
+}
