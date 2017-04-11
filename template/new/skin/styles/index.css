@@ -185,6 +185,7 @@
 .wiki-list>li{
     float: left;
     width: 302px;
+    height: 342px;
     margin: 15px 8px;
     border: 1px solid #ddd;
     padding-bottom: 15px;
@@ -199,7 +200,6 @@
     padding: 0 18px;
     line-height: 25px;
     display: block;
-    height: 70px;
 }
 .img-box{
     width: 302px;

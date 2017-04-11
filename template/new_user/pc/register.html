@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{lang(registered_users)}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{$skin_path}/styles/pubilc.css">
+    <link rel="stylesheet" href="{$skin_path}/styles/lib/font-awesome.css">
+</head>
+<!--[if lt IE 9]>
+<script src="scripts/lib/html5shiv.min.js"></script>
+<![endif]-->
+<body>
+<div class="" style="border-bottom: 1px solid #eee; box-shadow: 1px 2px 3px #ddd; margin-bottom: 50px" >
+    <div class="login-wrap" >
+        <h1 class="logo"><a class="logo-text" href="">求婚总动员</a> </h1>
+        <p class="login-tit">{lang(registered_users)}</p>
+        <div class="contact-top r">
+            <p style="font-size: 15px; margin-bottom: 5px">求婚总动员客服热线</p>
+            <p style="font-size: 25px">{get('tel')}</p>
+        </div>
+    </div>
+</div>
+<style>
+  .login-wrap:after,.regist-wrap:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .login-wrap{
+    width: 890px;
+    margin: auto;
+  }
+  .login-tit{
+    float: left;
+    font: bold 25px/50px "Microsoft YaHei";
+    color: #999;
+    border-left: 1px solid #ddd;
+    margin-top: 42px;
+    padding-left: 30px;
+  }
+  .regist-main{
+    width: 450px;
+    margin: auto;
+  }
+  .regist-wrap{
+    width: 730px;
+    margin: auto;
+  }
+  .tit{
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+  .tit .lk{
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .login-box{
+    padding: 20px 0 0;
+  }
+  .login-box li{
+    border: 1px solid #ddd;
+    background: #fff;
+    margin-bottom: 25px;
+  }
+  .login-main .lk{
+    color: #999;
+  }
+  .icon{
+    padding: 0 20px;
+    line-height: 30px;
+  }
+  .input{
+    height: 45px;
+    line-height: 45px;
+    border: none;
+  }
+  .login-btn{
+    background: #ff6280;
+    display: inline-block;
+    line-height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-top: 35px;
+  }
+  .input{
+    line-height: 45px;
+    width: 380px;
+  }
+  .login-btn:hover{
+    color: #fff;
+    background: #e23957;
+  }
+  .code-input{
+    width: 120px;
+    line-height: 40px;
+    margin-right: 20px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+  }
+  .get-code{
+   border: 1px solid #ff6280;
+   color: #ff6280;
+   line-height: 38px;
+   padding: 0 20px;
+   background: #fff;
+   cursor: pointer;
+ }
+</style>
+<div class="regist-wrap" style="border: 1px solid #ddd; padding: 35px 30px 60px">
+  <h3 class="tit">用户注册<a class="r lk" href="<?php echo url('user/login');?>">已有帐号，立即登录</a></h3>
+  <div class="regist-main">
+    <form id="login_form"   name="login_form" method="post"  action="<?php echo url('user/register') ?>"  onsubmit="return check()">
+      <ul class="login-box">
+        <li><i class="icon-user icon"></i><input class="input" name="username" type="text" placeholder="{lang(username)}"/></li>
+        <li><i class="icon-key icon"></i><input class="input" name="password" type="password" placeholder="{lang(password)}"/></li>
+        <li><i class="icon-key icon"></i><input class="input" name="password2" type="password" placeholder="{lang(againpassword)}"/></li>
+        <li><i class="icon-envelope icon"></i><input class="input" name="e_mail" type="text" placeholder="{lang(e_mail)}"/></li>
+        <li><i class="icon-mobile-phone icon"></i><input class="input"  name="tel" type="text" placeholder="{lang(tel)}"/></li>
+      </ul>
+      <input class="code-input" type="text" placeholder="输入验证码"><button class="get-code">获取验证码</button>
+      <strong style="font-size:14px;color:red;">{message()}</strong>
+      <input  type="submit" name="submit" value=" {lang(register)} " class="login-btn"/>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript" LANGUAGE="javascript">
+  function checkEmail(){
+    var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    if(!myreg.test(document.login_form.e_mail.value))
+    {
+      return false;
+    }else{
+      return true;
+    }
+  }
+
+  function isMobile(){
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    if(!myreg.test(document.login_form.tel.value))
+    {
+      return false;
+    }else{
+      return true;
+    }
+  }
+
+  function check()
+  {
+   if(document.login_form.username.value.length<2){
+    alert("{lang(user_name_is_too_short)}");
+    document.login_form.username.focus();
+    return false;
+  }
+
+  if(document.login_form.password.value.length<6){
+    alert("{lang(password_is_too_short)}");
+    document.login_form.password.focus();
+    return false;
+  }
+
+  if(document.login_form.password.value !=document.login_form.password2.value){
+    alert("{lang(twicepassnosame)}");
+    document.login_form.password2.focus();
+    return false;
+  }
+
+  if(!checkEmail()){
+    alert("{lang(mailbox_format_is_not)}");
+    document.login_form.tel.focus();
+    return false;
+  }
+
+  if(!isMobile()){
+    alert("{lang(p_m_content)}");
+    document.login_form.tel.focus();
+    return false;
+  }
+
+  {if config::get('mobilechk_enable') && config::get('mobilechk_reg')}
+  if(document.login_form.mobilenum.value.length==0){
+    alert("{lang('cell_phone_parity_error')}");
+    document.login_form.mobilenum.focus();
+    return false;
+  }
+  {/if}
+  return true;
+}
+</script>
+</body>
+</html>

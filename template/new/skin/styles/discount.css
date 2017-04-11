@@ -1,4 +1,4 @@
-.service-flow:after,.order-item:after,.order-table:after,.order-box:after,.city-select-wrap:after,.city-select-content:after,.clearfix:after{
+﻿.service-flow:after,.order-item:after,.order-table:after,.order-box:after,.city-select-wrap:after,.city-select-content:after,.clearfix:after{
     content: '';
     display: block;
     clear: both;
@@ -174,10 +174,10 @@
 .discount-text p{
     line-height: 25px;
     color: #888;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
 }
 .discount-text img{
-    margin: auto;
+    /*margin: auto;*/
 }
 
 .discount-faq{
@@ -679,4 +679,9 @@
     background-color: #46A4FF;
     color: #fff;
     border-radius: 2px;
+}
+.service-step p {
+    width: 69px;
+    text-align: center !important;
+    margin:0 auto;
 }

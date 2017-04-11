@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{lang(logined_users)}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{$skin_path}/styles/pubilc.css">
+    <link rel="stylesheet" href="{$skin_path}/styles/lib/font-awesome.css">
+</head>
+<!--[if lt IE 9]>
+<script src="scripts/lib/html5shiv.min.js"></script>
+<![endif]-->
+<body>
+    <div class="" style="border-bottom: 1px solid #eee; box-shadow: 1px 2px 3px #ddd; margin-bottom: 50px" >
+        <div class="login-wrap" >
+            <h1 class="logo"><a class="logo-text" href="">求婚总动员</a> </h1>
+            <p class="login-tit">{lang(logined_users)}</p>
+            <div class="contact-top r">
+                <p style="font-size: 15px; margin-bottom: 5px">求婚总动员客服热线</p>
+                <p style="font-size: 25px">{get('tel')}</p>
+            </div>
+        </div>
+    </div>
+    <style>
+        .login-wrap:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .login-wrap{
+            width: 990px;
+            margin: auto;
+        }
+        .login-tit{
+            float: left;
+            font: bold 25px/50px "Microsoft YaHei";
+            color: #999;
+            border-left: 1px solid #ddd;
+            margin-top: 42px;
+            padding-left: 30px;
+        }
+        .login-main{
+            width: 295px;
+            float: right;
+            height: 321px;
+            padding: 30px;
+            background: #f1f1f1;
+            border-top: 3px solid #ff6280;
+        }
+        .login-main .tit{
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .login-box{
+            padding: 20px 0 0;
+        }
+        .login-box li{
+            border: 1px solid #ddd;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+        .icon{
+            padding: 0 10px;
+            line-height: 30px;
+        }
+        .input{
+            height: 45px;
+            line-height: 45px;
+            border: none;
+        }
+        .login-main .lk{
+            color: #999;
+        }
+        .login-btn{
+            background: #ff6280;
+            display: inline-block;
+            line-height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 15px;
+            color: #fff;
+            text-align: center;
+        }
+        .login-btn:hover{
+            color: #fff;
+            background: #e23957;
+        }
+        input[type='text']{
+            padding-left: 5px;
+        }
+        .verify{
+            float: right;
+            width:70px;
+            height:30px;
+            padding-top: 7px;
+        }
+    </style>
+    <div class="login-wrap">
+        <img class="l" style="margin-right: 10px" src="{$skin_path}/images/login_banner.jpg"/>
+        <div class="login-main">
+            <form id="login_form"   name="login_form" method="post"  action="<?php echo url('user/login') ?>" onsubmit="return check()">
+                <input type='hidden' id="from"  name="from" value="<?php echo get('from')? get('from'):front::$from;?>"/>
+                <h3 class="tit">用户登录</h3>
+                <ul class="login-box">
+                    <li><i class="icon-user icon"></i><input name="username" placeholder="{lang('username')}" type="text"    class="input" /></li>
+                    <li><i class="icon-key icon"></i><input name="password" placeholder="{lang(password)}" type="password"  class="input" /></li>
+                    <a class="r lk" href="{url('user/register')}">立即免费注册</a>
+                </ul>
+                <strong style="font-size:14px;color:red;">{message()}</strong>
+                <input type="submit" name="submit" value=" {lang(login)} " class="login-btn" />
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" LANGUAGE="javascript">
+        function check()
+        {
+           if(document.login_form.username.value.length<2){
+            alert("{lang(user_name_is_too_short)}");
+            document.login_form.username.focus();
+            return false;
+          }
+
+          if(document.login_form.password.value.length<6){
+            alert("{lang(password_is_too_short)}");
+            document.login_form.password.focus();
+            return false;
+          }
+        }
+    </script>
+</body>
+</html>

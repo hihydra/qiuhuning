@@ -39,8 +39,8 @@ class manage_act extends act {
             && $this->table <> 'invite'
             && $this->table <> 'zanlog')
         {
-            exit('PAGE NOT FOUND!');       
-	     }        
+            exit('PAGE NOT FOUND!');
+	     }
 	     $this->_table = new $this->table;
         $this->_table->getFields();
         $this->view->form = $this->_table->get_form();
@@ -156,8 +156,8 @@ class manage_act extends act {
                     $data[$key]=$value;
 
             }
-	
-        
+
+
 
             $data=array_merge($data,front::$post);
             unset($data['template']);

@@ -231,18 +231,21 @@ class user_act extends act
                     $user = new user();
                     $user = $user->getrow(array('username' => $data['username'], 'password' => $data['password']));
                     if (!is_array($user)) {
-                        $this->login_false();
+                        //$this->login_false();
+                        front::flash(lang('login_error'));
                         return;
                     }
                     $user = $data;
                     cookie::set('login_username', $user['username']);
                     cookie::set('login_password', front::cookie_encode($user['password']));
                     session::set('username', $user['username']);
-                    $this->view->from = front::post('from') ? front::post('from') : front::$from;
-                    front::flash($this->fetch('login_success.html'));
+                    //$this->view->from = front::post('from') ? front::post('from') : front::$from;
+                    //front::flash($this->fetch('login_success.html'));
+                    front::redirect('/');
                     return;
                 } else {
-                    $this->login_false();
+                    //$this->login_false();
+                    front::flash(lang('login_error'));
                     return;
                 }
             }

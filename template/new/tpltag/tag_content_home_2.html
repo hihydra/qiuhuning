@@ -3,25 +3,29 @@
     <div class="case-box">
         <div class="l">
             <ul class="case-tag-box">
-            {loop plugins::categoryinfo($_catid) $c}
-                <li><a href="{$c[url]}">{$c[catname]}</a> </li>
+            {loop $tags $tag}
+               <li><a href="">{$tag[tagname]}</a></li>
             {/loop}
             </ul>
             <div class="case-big">
-                <a href="video_detail.html">
-                    <img jh-img="an" src="images/case1.png"/>
+            {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+                <a href="{$archive['url']}">
+                    <img jh-img="an" src="{$archive[thumb]}"/>
                     <div class="case-bg"></div>
                     <div class="case-text">
-                        <p>大世界多哈世界大会</p>
+                        <p>{$archive['title']}</p>
                     </div>
                 </a>
+            {/loop}
             </div>
 
         </div>
         <ul class="r case-list">
-        {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+        {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $key $archive}
+        {if $key==0}
+        {else}
             <li>
-                <a href="article_detail.html">
+                <a href="{$archive['url']}">
                     <img jh-img="an" src="{$archive[thumb]}"/>
                     <div class="case-bg"></div>
                     <div class="case-text">
@@ -29,6 +33,7 @@
                     </div>
                 </a>
             </li>
+        {/if}
         {/loop}
         </ul>
     </div>

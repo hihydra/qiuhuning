@@ -532,7 +532,7 @@
 
 //手机模板[默认mobile]
 
-'user_template_dir'=>'user',
+'user_template_dir'=>'new_user',
 
 //会员模板[<span class="hotspot" onmouseover="tooltip.show('默认user！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 

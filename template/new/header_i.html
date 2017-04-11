@@ -19,7 +19,7 @@
     <div class="wrap">
         <div class="l">
             <span>你好，欢迎来访求婚总动员官方网站！</span>
-            <a style="margin-left: 25px" href="login.html">登录</a> | <a href="regist.html">注册</a>
+            <span style="margin-left: 25px">{if config::get('site_login')=='1'}{login_js()}{/if}</span>
         </div>
         <div class="r relative">
             <a href="case.html">求婚视频</a>

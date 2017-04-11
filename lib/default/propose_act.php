@@ -13,15 +13,11 @@ class propose_act extends act
         $this->_topic=new topic;
         $topic=$this->_topic->getrows('','','listorder asc');
 
-        $scene=scene::getScene();
-        foreach ($topic as $key => &$value) {
-           $scene_array = explode(',',$value['scene']);
-           foreach ($scene_array as $k => $val) {
-              $value['scenes'][] = $scene[$val];
-           }
-
-        }
-        return compact('process','topic');
+        $this->_scene=new scene;
+        $scene=$this->_scene->getrows('','','listorder asc');
+        //var_dump(compact('process','topic','scene'));die;
+        $this->view->propose = compact('process','topic','scene');
+        return;
     }
 
     function jsScene_action()

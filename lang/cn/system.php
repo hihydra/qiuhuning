@@ -599,6 +599,9 @@ array(
 'process'=>'流程',
 'scene'=>'场景',
 'topic'=>'主题',
+'password_is_too_short'=>'密码长度必须大于等于6位数',
+'logined_users'=>'用户登陆',
+'login_error'=>'用户名或密码错误'
 
 
 );

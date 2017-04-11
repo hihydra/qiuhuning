@@ -41,17 +41,17 @@ class area_act extends act {
         $this->view->record_count=$archive->rec_count($where);
         front::$record_count=$this->view->record_count;
 
-        
+
         $this->render();
     }
-    
+
     function out($tpl) {
     	if (front::$debug) return;
     	$this->render($tpl);
     	$this->out=true;
     	exit;
     }
-    
+
     function city_option_search_action() {
         $select=form::select('search_city_id',0,area::city_option());
         echo preg_replace('%(^<select.+?\>)|(<\/select>$)%','',trim($select));

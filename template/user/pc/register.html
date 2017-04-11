@@ -32,7 +32,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 caption, tbody, tfoot,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -107,7 +107,7 @@ width:100%;
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -136,7 +136,7 @@ color:#000;
 
 a:link { text-decoration: none;color:#000;}
 　　 a:active { text-decoration:blink;}
-　　 a:hover { text-decoration:underline;} 
+　　 a:hover { text-decoration:underline;}
 　　 a:visited { text-decoration: none;}
 
 /* change colours to suit your needs */
@@ -149,7 +149,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -172,7 +172,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0; 
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -185,7 +185,7 @@ input, select {
 
 
 .box {width:420px;margin:0px auto;
-  
+
   background:#eee;
 -moz-box-shadow:0px 0px 15px #333;
 -webkit-box-shadow:0px 0px 15px #333;
@@ -229,7 +229,7 @@ border: 8px solid rgba(3,41,125,0.4);
 .register_btn:hover {background:red;color:white;}
 
 .btn {
-float:left; 
+float:left;
 width:90px;
 height:38px;
 line-height:38px;
@@ -335,7 +335,7 @@ function isMobile(tel){
            return false;
        }
        {/if}
-				
+
 
        if(document.login_form.aquestion.value.length==0){
   alert("{lang(set_security)}");
@@ -354,13 +354,13 @@ function isMobile(tel){
   document.login_form.answer.focus();
   return false;
        }
-				
+
 				if(document.login_form.tel.value.length==0){
   alert("{lang(p_m_content)}");
   document.login_form.tel.focus();
   return false;
        }
-				
+
 				{if config::get('mobilechk_enable') && config::get('mobilechk_reg')}
 				if(document.login_form.mobilenum.value.length==0){
   alert("{lang('cell_phone_parity_error')}");
@@ -368,14 +368,14 @@ function isMobile(tel){
   return false;
        }
 				{/if}
-				
+
        if(document.login_form.verify.value.length==0){
   alert("{lang(enter)}{lang(verifycode)}!");
   document.login_form.verify.focus();
   return false;
        }
-			return true; 
-} 
+			return true;
+}
 function set_question(value)
    {
        document.getElementById("question").value=value;
@@ -424,22 +424,22 @@ var JPlaceHolder = {
 };
 //执行
 jQuery(function(){
-    JPlaceHolder.init();    
+    JPlaceHolder.init();
 });
 //-->
 </script>
 
 
-    
+
 <form id="login_form"   name="login_form" method="post"  action="<?php echo url('user/register') ?>" onsubmit="return check()">
-     
+
 <strong style="font-size:14px;color:red;">{message()}</strong>
-     
+
 {if config::get(reg_on)}
   {lang(username)}：
   <div class="blank10"></div>
 <input name="username" type="text" id="username" placeholder="{lang(username)}" tabindex="1"  class="input" />
-							
+
 <div class="blank20"></div>
  {lang(password)}：
   <div class="blank10"></div>
@@ -475,8 +475,8 @@ jQuery(function(){
 <div style="display:none;">
 <input placeholder="" type='text' id="question"  name="question" value="" tabindex="5" class="input" />
 </div>
- 
-      
+
+
     <div class="blank10"></div>
 <input value="" placeholder="{lang(answer)}" type='text' id="answer"  name="answer" tabindex="6" class="input" />
  <div class="blank20"></div>
@@ -484,7 +484,7 @@ jQuery(function(){
 
 							<div class="blank10"></div>
 <input value=""  placeholder="{lang(e_mail)}" type='text' id="e_mail"  name="e_mail" tabindex="7"  class="input" />
- 
+
 <div class="blank20"></div>
 {lang(tel)}：
 <div class="blank10"></div>
@@ -525,8 +525,8 @@ if(!setting::$var['user'][$name]['showinreg']) {
 <input type='text' id="verify"  tabindex="3"  name="verify" />{verify()}
 <div class="blank10"></div>
 {/if}
-{if config::get('verifycode')=='2'} 
-<div class="blank20"></div>   
+{if config::get('verifycode')=='2'}
+<div class="blank20"></div>
 <div id="verifycode_embed"></div>
 <script src="http://api.geetest.com/get.php"></script>
 <script>
@@ -552,11 +552,11 @@ $.ajax({
 </script>
 {/if}
 
-   
+
 {else}
 <div class="blank20"></div>
 {lang(tips)}：{lang(sitecloseregister)}
-       
+
 {/if}
 
 
@@ -573,7 +573,7 @@ $.ajax({
 <div class="blank30"></div>
 
 <div class="copy">
-{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>. 
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>.
 <div class="clear"></div>
 Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
 </div>
@@ -791,7 +791,7 @@ $(function () {
   C();
        })
     } else {
-        
+
     }
 });
 </script>

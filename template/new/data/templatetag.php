@@ -290,7 +290,7 @@
   ),
   26 => 
   array (
-    'id' => 26,
+    'id' => '26',
     'name' => '首页精彩案例',
     'tagfrom' => 'content',
     'tagcontent' => 'null',
@@ -308,13 +308,10 @@
       'introduce_length' => '20',
       'ordertype' => 'adddate-desc',
       'istop' => '0',
-      'limit' => '4',
+      'limit' => '10',
       'attr1' => '0',
       'tagtemplate' => 'tag_content_home_2.html',
       'submit' => '提交',
-      'catname' => '',
-      'htmldir' => '',
-      'introduce' => '',
     ),
   ),
   27 => 

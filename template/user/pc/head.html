@@ -56,8 +56,8 @@
             <li><a href="http://www.cmseasy.org" target="_blank" title="问题交流"><i>问题交流</i><span class="glyphicon glyphicon-user"></span></a></li>
             <li><a href="http://www.cmseasy.cn/chm/" target="_blank" title="在线教程？"><i>在线教程？</i><span class="glyphicon glyphicon-question-sign"></span></a></li>
           </ul>
-             
-		  
+
+
          </div>
 
       </div>
@@ -71,24 +71,24 @@
 		   {if chkfpw('add_archive',$user['groupid'])}<li><a href="{url('manage/add/manage/archive')}">{lang(addcontent)}</a></li>{/if}
               <li><a href="{url('/manage/list/manage/archive/needcheck/1')}">{lang(waitcheckedcontent)}</a></li>
               <li><a href="{url('/manage/list/manage/archive')}">{lang(alreadycheckedcontent)}</a></li>
-	
+
 			  <li><a href="{url('/manage/invitelist/manage/invite')}">{lang('invitation-code')}</a></li>
               <li><a href="{url('/manage/commentlist/manage/comment')}">{lang(comment)}</a></li>
               <li><a href="{url('/manage/zanlist/manage/zanlog')}">{lang(praise)}</a></li>
-			
+
               <li><a href="{url('union/stats/manage/union')}">{lang(stats)}</a></li>
               <li><a href="{url('union/getcode/manage/union')}">{lang(access_code)}</a></li>
               <li><a href="{url('union/visit/manage/union')}">{lang(access_statistics)}</a></li>
               <li><a href="{url('union/reguser/manage/union')}">{lang(registered_users)}</a></li>
               <li><a href="{url('union/pay/manage/union')}">{lang(promotion_of_settlement)}</a></li>
-			 
+
               <li><a href="{url('union/edit/manage/union')}">{lang(modify)}</a></li>
 
-           
+
           </ul>
         </div>
         <div class="col-sm-10 col-sm-offset-1 col-md-11 col-md-offset-1 main">
-       
+
           <div class="row placeholders">
 
 		  <div class="user_welcome">
@@ -131,7 +131,7 @@
 		  <?php
 if(hasflash()){
 	$showmessage = showflash();
-	if(strlen($showmessage)>200){ 
+	if(strlen($showmessage)>200){
 ?>
 <div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span>
 <span style="color:blue;float:right"><a href="#" onClick="javascript:turnoff('#message');">(×)</a></span></div><div class="blank20"></div>
@@ -152,7 +152,6 @@ art.dialog({
 }
 ?>
 
-         
-        
 
-    
+
+

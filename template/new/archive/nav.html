@@ -1,0 +1,16 @@
+    <div class="crumbs">
+        <a class="crumbs-lk" href="/"><i class="icon-home crumbs-icon"></i>求婚总动员</a>>
+        <?php  $t1=$category[$catid];?>
+        {if $t1[parentid]!=0}
+        <?php $t2=$category[$t1[parentid]];?>
+        {if $t2[parentid]!=0}
+        <?php $t3=$category[$t2[parentid]];?>
+        <a class="crumbs-lk" href="?case=archive&act=list&catid={$t3[catid]}">{$t3[catname]}</a>>
+        {/if}
+        <a class="crumbs-lk" href="?case=archive&act=list&catid={$t2[catid]}">{$t2[catname]}</a>>
+        {/if}
+        <span>{$t1[catname]}</span>
+        {if $archive[title]}
+        ><a class="crumbs-lk" href="">{cut($archive[title],20)}</a>
+        {/if}
+    </div>

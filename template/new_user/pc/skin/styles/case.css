@@ -1,0 +1,44 @@
+
+
+#content{
+    width: 935px;
+    float: left;
+    border-top: 1px solid #ddd;
+}
+.article{
+    border-bottom: 1px solid #ddd;
+    padding: 30px 0;
+    padding-right: 1px;
+    border-right: 1px solid #ddd;
+}
+.article-pic-box{
+    width:220px;
+    height: 150px;
+    overflow: hidden;float: left;
+}
+.article-pic{
+    width:220px;
+    height: 150px;
+
+}
+.article-text{
+    margin-left: 235px;
+}
+.article-text .tit{
+    font-size: 18px;
+    font-weight: bold;
+}
+.article-text .time{
+    line-height: 40px;
+    color: #999;
+    font-size: 13px;
+}
+.article-text .text{
+    color: #888;
+    line-height: 25px;
+}
+.article-text .icon{
+    font-size: 16px;
+    margin-right: 10px;
+}
+

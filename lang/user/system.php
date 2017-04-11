@@ -6,7 +6,7 @@
 return
 
 array(
-       
+
 'favorite'=>'收藏',
 'feedback'=>'留言',
 'login'=>'登录',
