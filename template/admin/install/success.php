@@ -58,7 +58,7 @@
 
 <div class="blank30"></div>
 <div class="copy">
-    Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+
 </div>
 <div class="blank30"></div>
 

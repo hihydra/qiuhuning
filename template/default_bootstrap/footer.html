@@ -45,7 +45,7 @@
 {get(site_right)}<a href="{get(site_url)}" target="_blank">{get(sitename)}</a>,Inc.All rights reserved.&nbsp;&nbsp;<a href="{$base_url}/sitemap.html" target="_blank">{lang(sitemap)}</a>&nbsp;&nbsp;<a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{get('site_icp')}</a>
 </p>
 <p>
-{getcnzzcount()}&nbsp;&nbsp;Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>{if get('guestbook_enable')}&nbsp;&nbsp;<a rel="nofollow" title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang('feedback')}</a>{/if}{if config::get('opguestadd')=='1'}&nbsp;&nbsp;<a rel="nofollow" href="{$base_url}/?g=1">{lang(opguestadd)}</a>{/if}</a>
+{getcnzzcount()}&nbsp;&nbsp;{if get('guestbook_enable')}&nbsp;&nbsp;<a rel="nofollow" title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang('feedback')}</a>{/if}{if config::get('opguestadd')=='1'}&nbsp;&nbsp;<a rel="nofollow" href="{$base_url}/?g=1">{lang(opguestadd)}</a>{/if}</a>
 </p>
 {if config::get('hotsearch')=='1'}<p>{lang(hotkeys)}： {gethotsearch(10)}</p>{/if}
 </div>
@@ -132,7 +132,7 @@
 {template 'system/foot_nav_c.html'}
 {else}
 {template 'system/foot_nav_a.html'}
-{/if} 
+{/if}
 </div>
 
 {if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/common.js"></script>{/if}

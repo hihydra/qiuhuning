@@ -23,7 +23,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 caption, tbody, tfoot,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -74,7 +74,7 @@ width:100%;
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -103,7 +103,7 @@ color:#000;
 
 a:link { text-decoration: none;color:#000;}
 　　 a:active { text-decoration:blink;}
-　　 a:hover { text-decoration:underline;} 
+　　 a:hover { text-decoration:underline;}
 　　 a:visited { text-decoration: none;}
 
 /* change colours to suit your needs */
@@ -116,7 +116,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -139,7 +139,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0; 
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -152,7 +152,7 @@ input, select {
 
 
 .box {width:420px;margin:0px auto;
-  
+
   background:#eee;
 -moz-box-shadow:0px 0px 15px #333;
 -webkit-box-shadow:0px 0px 15px #333;
@@ -196,7 +196,7 @@ border: 8px solid rgba(3,41,125,0.4);
 .register_btn:hover {background:red;color:white;}
 
 .btn {
-float:left; 
+float:left;
 width:90px;
 height:38px;
 line-height:38px;
@@ -320,8 +320,8 @@ function set_question(value)
 	document.getElementById("question").focus();
 }
 </script>
-                            
-                                
+
+
 
 <form id="login_form"   name="loginform" method="post"  action="<?php echo url('user/getpass') ?>">
 <input name="step" type="hidden" value="1">
@@ -335,7 +335,7 @@ function set_question(value)
 <input type='text' id="verify"  tabindex="3"  name="verify" />{verify()}
 <div class="blank10"></div>
 {/if}
-{if config::get('verifycode')=='2'} 
+{if config::get('verifycode')=='2'}
 <div id="verifycode_embed"></div>
 <script src="http://api.geetest.com/get.php"></script>
 <script>
@@ -373,9 +373,9 @@ $.ajax({
 <div class="blank30"></div>
 
 <div class="copy">
-{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>. 
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>.
 <div class="clear"></div>
-Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+
 </div>
 <div class="blank30"></div>
 </div>

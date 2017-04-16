@@ -1,13 +1,52 @@
 {template 'head_i.html'}
+<script LANGUAGE="javascript">
+    <!--
+    function CheckForm()
+    {
+        var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        if(!myreg.test(document.form1.tel.value))
+        {
+            alert('请输入有效的手机号码！');
+            document.form1.tel.focus()
+            return false;
+        }
+    }
+    //-->
+</script>
+<?php
+if(hasflash()){
+    $showmessage = showflash();
+    if(strlen($showmessage)>200){
+?>
+<div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span>
+<span style="color:blue;float:right"><a href="#" onClick="javascript:turnoff('#message');">(×)</a></span></div><div class="blank20"></div>
+<?php
+    }else{
+?>
+<script type="text/javascript">
+art.dialog({
+        id:'messagebox',
+        content:'<?php echo $showmessage; ?>',
+        title:'{lang(prompted)}',
+        time: 2,
+        lock:true
+    });
+</script>
+<?php
+    }
+}
+?>
+
     <div class="person-main">
-    <form method="post" name="form1" action="<?php echo modify("/act/phone/userid/".$data['userid']);?>">
+    <form method="post" name="form1" action="<?php echo modify("/act/phone/userid/".$data['userid']);?>" onsubmit="return CheckForm();">
         <h3 class="tit">手机修改</h3>
         <ul class="person-box">
             <li><label>原手机：</label>{$data['tel']}</li>
-            <li><label>新手机：</label><input type="text" placeholder="请输入手机号" class="input"></li>
-            <li><label>验证码：</label><input type="text" placeholder="请输入验证码" style="width: 120px" class="input"><button class="person-code-btn">发送验证码</button></li>
+            <li><label>新手机：</label><input type="text" placeholder="请输入手机号" name="tel" class="input"></li>
+            <li><label>验证码：</label><input type="text" placeholder="请输入验证码" style="width: 120px"  class="input"><button class="person-code-btn">发送验证码</button></li>
+            <li><div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span><br></li>
         </ul>
-        <button class="person-btn">提交修改</button>
+        <input type="submit" name="submit" value="{lang(submit_on)}" class="person-btn" />
     </form>
     </div>
 {template 'footer_i.html'}

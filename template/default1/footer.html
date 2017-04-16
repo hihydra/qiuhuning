@@ -68,7 +68,7 @@
 
 <div class="foot">
 	<div class="container">
-		<div class="row">	 
+		<div class="row">
 			<div class="col-sm-5">
 				<dl class="foot_left">
 				<dd>
@@ -98,7 +98,7 @@
 				<dd class="blank20"></dd>
 				<form name="listform" id="listform"  action="<?php echo url('archive/email');?>" method="post">
 				<dd>
-				<input type="text" name="email" id="email" value=" {lang(mailsubscription)} "  onfocus="if(this.value==' {lang(mailsubscription)} ') {this.value=''}" onblur="checkEmail(this)" class="s_text" /> 
+				<input type="text" name="email" id="email" value=" {lang(mailsubscription)} "  onfocus="if(this.value==' {lang(mailsubscription)} ') {this.value=''}" onblur="checkEmail(this)" class="s_text" />
 				<input type="submit" align="absmiple" name='submit' value=" " class="s_btn" />
 				</dd>
 
@@ -116,7 +116,7 @@
 			<div class="col-sm-5">
 				<dl class="copyrights">
 				<dd>{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a></dd>
-				<dd>{getcnzzcount()}&nbsp;&nbsp;Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a></dd>
+				<dd>{getcnzzcount()}&nbsp;&nbsp;</dd>
 				<dd><a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{get('site_icp')}</a></dd>
 				<dd>{if config::get('site_login')=='1'}{login_js()}&nbsp;&nbsp;{/if}{if config::get('opguestadd')=='1'}<a rel="nofollow" href="{$base_url}/?g=1">{lang(opguestadd)}</a>{/if}</dd>
 				</dl>
@@ -195,7 +195,7 @@
 {template 'system/foot_nav_c.html'}
 {else}
 {template 'system/foot_nav_a.html'}
-{/if} 
+{/if}
 </div>
 
 

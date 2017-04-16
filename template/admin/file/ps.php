@@ -160,7 +160,7 @@
 					<table border="0" style="margin: 0 auto;">
 						<tr >
 							<td><input type="submit" name="Submit" id="submitbotton" onclick="javascript:refile();" value="确认添加" class="buttonface" title="确认添加"/></td>
-							
+
 							<td class="padding-left5"><input type="reset" name="reset" onClick="javascript:parent.resetwindow();" id="release" value="返回编辑窗口" class="buttonface"  title="返回编辑窗口" /></td>
 						</tr>
 					</table>
@@ -169,6 +169,6 @@
 		</table>
 	</div>
 </div>
-<!-- Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a> -->
+<!--  -->
 </body>
 </html>

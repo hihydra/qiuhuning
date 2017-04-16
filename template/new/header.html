@@ -19,7 +19,7 @@
     <div class="wrap">
         <div class="l">
             <span>你好，欢迎来访求婚总动员官方网站！</span>
-            <a style="margin-left: 25px" href="login.html">登录</a> | <a href="regist.html">注册</a>
+            <span style="margin-left: 25px">{if config::get('site_login')=='1'}{login_js()}{/if}</span>
         </div>
         <div class="r relative">
             {loop categories(43) $key $t1}
@@ -27,8 +27,7 @@
             <a href="{$t1[url]}">{$t1[catname]}</a>
             {/loop}
 
-            <a id="weixin_btn" href="">微信公众号</a> |
-            <a href="person_info.html">个人中心</a>
+            <a id="weixin_btn" href="">微信公众号</a>
             <img class="weixin-top" src="{$skin_path}/images/weixin.jpg"/>
         </div>
     </div>

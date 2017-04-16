@@ -19,7 +19,7 @@
 <a onclick="setActiveStyleSheet('skin2'); return false;" href="#"><img src="{$skin_path}/images/bg_2.gif" /></a>
 <a onclick="setActiveStyleSheet('skin3'); return false;" href="#"><img src="{$skin_path}/images/bg_3.gif" /></a>
 
-</div> 
+</div>
 
 <div class="box">
 <div class="logo">
@@ -118,7 +118,7 @@ $.ajax({
 	  } else { ?>
             <div style="margin:50px 0px;padding-top:5px; text-align:center;font-size:16px;font-weight:bold;">
             登陆成功！
-			
+
             <meta http-equiv="refresh" content="2;url={$admin_url}&site=<?php echo front::get('site')?>">
 <?php
       }
@@ -147,7 +147,7 @@ document.loginform.username.focus();
 <div class="box">
 <p>{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.</p>
 <p>
-Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+
 </p>
 </div>
 </div>

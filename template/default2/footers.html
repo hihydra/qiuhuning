@@ -2,7 +2,7 @@
 
 <div class="foot">
     <div class="container hidden-xs" style="padding-top: 20px;">
-        <div class="row">	 
+        <div class="row">
             <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 150px;">
                 <dl>
                     <dd><h1>求婚总动员客服热线</h1></dd>
@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 150px;">
                 <dl>
                     <dd><h1>关注我们</h1></dd>
-                    
+
                     <dd style="position: relative;"><img src="{$skin_path}/images/weixin.png" alt="" style="height: 15px;margin-right: 10px;position: relative;top:3px;"/><a href="" onclick="return false;" id='wxewmhover'>微信公众号</a>
                         <img id='wxewm' style="display: none;position: absolute;left:100px;top:-10px;width: 100px;height: 100px;" src="/111.jpg"/>
                     </dd>
@@ -40,13 +40,13 @@
             <div class="col-xs-12">
                 <p>友情链接：</p>
                 <div style="overflow: hidden;height: 30px;line-height: 30px;">
-                   
+
                     <span style="margin-right: 10px;">{$province}</span>
                         {loop friendlink('text',0,24) $flink}
                         <a href="{$flink[url]}" target="_blank">{$flink[name]}</a>
                         {/loop}
                 </div>
-          
+
             </div>
         </div>
         <div class="blank20"></div>
@@ -58,7 +58,7 @@
     </div>
     <div style="background: #333;color: #fff;text-align: center;">
         {get(site_right)} <a title="{get('sitename')}" href="{$base_url}/" style="color: #fff;">{get('sitename')}
-            <!--Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>-->
+            <!---->
             <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank" style="color: #fff;">{get('site_icp')}</a>
             <div style="height: 55px;" class="visible-xs"></div>
     </div>
@@ -168,7 +168,7 @@
     <script src="{$skin_path}/js/ie10-viewport-bug-workaround.js"></script>
     <script src="{$skin_path}/js/bootstrap-submenu.js"></script>
     <script src="{$skin_path}/js/docs.js"></script>
-    
+
     <!--百度自动提交-->
     <script>
 

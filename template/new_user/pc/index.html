@@ -27,7 +27,7 @@ art.dialog({
     <div class="person-main">
         <h3 class="tit">{lang(edituserinfo)}</h3>
         <ul class="person-box">
-        <form method="post" name="form1" action="<?php echo modify("/act/edit/userid/".$data['userid']);?>"  onsubmit="return checkform();">
+        <form method="post" name="form1" action="<?php echo modify("/act/edit/userid/".$data['userid']);?>">
             <li class="clear"><label>{lang(nickname)}：</label><input type="text" placeholder="请输入{lang(nickname)}" name="nickname" class="input" value="{$data['nickname']}"></li>
             <li class="clear"><label>{lang(e_mail)}：</label><input type="text" placeholder="请输入{lang(e_mail)}" name="e_mail" class="input" value="{$data['e_mail']}"></li>
             <li><label>性别：</label><select class="select" style="width: 80px"><option>男</option><option>女</option></select></li>
@@ -44,9 +44,9 @@ art.dialog({
             </div>
             </li>
             <li style="height: 90px"><label class="l">个人说明：</label><textarea class="l textarea" name="intro" value="{$data['intro']}"></textarea></li>
-
+            <div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span></div>
         </ul>
-        <div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span></div>
+
         <button class="person-btn">提交修改</button>
     </div>
 

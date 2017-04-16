@@ -61,9 +61,9 @@
 			$("#resulttable").removeClass('displaynone');
 			if (strarray[1]=='img'){
 				if (strarray[2]=='1'){
-					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" width="100"></a></td>';	
+					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" width="100"></a></td>';
 				}else{
-					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" height="100"></a></td>';		
+					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" height="100"></a></td>';
 				}
 				$("#upresult").replaceWith(upresult);
 			}else{
@@ -92,7 +92,7 @@
 	function getUploadAddress(){
 		return "<?php echo 'http://'.$_SERVER['HTTP_HOST'].url('file/swfsave/'.session_name().'/'.session_id()); ?>";
 	}
-	
+
 	function insertPics(){
 		swfobject.getObjectById("mpupload").insertPic();
 	}
@@ -105,13 +105,13 @@
 </div>
 <div id="muti" style="display:none;">
 <div id="flashContent">
-  <p> To view this page ensure that Adobe Flash Player version 
+  <p> To view this page ensure that Adobe Flash Player version
     10.0.0 or greater is installed. </p>
-  <script type="text/javascript"> 
-				var pageHost = ((document.location.protocol == "https:") ? "https://" :	"http://"); 
-				document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
-								+ pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
-			</script> 
+  <script type="text/javascript">
+				var pageHost = ((document.location.protocol == "https:") ? "https://" :	"http://");
+				document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='"
+								+ pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
+			</script>
 </div>
 <div id="downbotton" style="clear:both;">
   <div id="subbotton">
@@ -175,7 +175,7 @@
 					<table border="0" style="margin: 10px auto;">
 						<tr >
 							<td><input type="submit" name="Submit" id="submitbotton" value="确认文件上传" class="buttonface" title="确认文件上传"/></td>
-							
+
 							<td class="padding-left5"><input type="reset" name="reset" onClick="javascript:parent.resetwindow();" id="release" value="返回编辑窗口" class="buttonface2"  title="返回编辑窗口" /></td>
 						</tr>
 					</table>
@@ -186,6 +186,6 @@
 </div>
 </form>
 </div>
-<!-- Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a> -->
+<!--  -->
 </body>
 </html>

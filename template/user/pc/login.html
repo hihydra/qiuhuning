@@ -23,7 +23,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 caption, tbody, tfoot,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -95,7 +95,7 @@ width:100%;
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -124,7 +124,7 @@ color:#000;
 
 a:link { text-decoration: none;color:#000;}
 　　 a:active { text-decoration:blink;}
-　　 a:hover { text-decoration:underline;} 
+　　 a:hover { text-decoration:underline;}
 　　 a:visited { text-decoration: none;}
 
 /* change colours to suit your needs */
@@ -137,7 +137,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -160,7 +160,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0; 
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -173,7 +173,7 @@ input, select {
 
 
 .box {width:420px;margin:0px auto;
-  
+
   background:#eee;
 -moz-box-shadow:0px 0px 15px #333;
 -webkit-box-shadow:0px 0px 15px #333;
@@ -217,7 +217,7 @@ border: 8px solid rgba(3,41,125,0.4);
 .register_btn:hover {background:red;color:white;}
 
 .btn {
-float:left; 
+float:left;
 width:90px;
 height:38px;
 line-height:38px;
@@ -293,7 +293,7 @@ var JPlaceHolder = {
 };
 //执行
 jQuery(function(){
-    JPlaceHolder.init();    
+    JPlaceHolder.init();
 });
 //-->
 </script>
@@ -351,7 +351,7 @@ alert("{lang(please_set_a_password)}");
 document.loginform.password.focus();
 return false;
 }
-	
+
 	{if config::get('mobilechk_enable') && config::get('mobilechk_login')}
 	if(document.loginform.mobilenum.value.length==0){
 alert("{lang('cell_phone_parity_error')}");
@@ -359,7 +359,7 @@ document.loginform.mobilenum.focus();
 return false;
 }
 	{/if}
-	
+
 if(document.loginform.verify.value.length==0){
 alert("{lang(enter)}{lang(verifycode)}!");
 document.loginform.verify.focus();
@@ -382,14 +382,14 @@ document.getElementById("question").focus();
 
 
 
-<?php if(hasflash()) { ?> 
+<?php if(hasflash()) { ?>
   <?php echo showflash(); ?>
 {else}
 
 <input name="username" placeholder="{lang('username')}" type="text" id="username" value="" tabindex="1" class="input" />
 <div class="blank20"></div>
 
- 
+
 <input name="password" placeholder="{lang(password)}" type="password" id="password" value="" class="input" tabindex="2" />
 <div class="blank20"></div>
 {if config::get('mobilechk_enable') && config::get('mobilechk_login')}
@@ -439,16 +439,16 @@ loadGeetest(result)
 
 {if $ologinlist}
 {loop $ologinlist $ologin}
-{if $ologin[enabled]==1} 
+{if $ologin[enabled]==1}
 <div class="blank30"></div>
 <a target="_blank" href="<?php echo url('user/ologin/logtype/'.$ologin[ologin_code]);?>"><img src="{$base_url}/images/{$ologin[ologin_code]}.png" border="0" class="fl" /></a>&nbsp;&nbsp;
 {/if}
 {/loop}
-{/if} 
+{/if}
 {/if}
 
 
-   
+
 </form>
 
 </div>
@@ -458,9 +458,9 @@ loadGeetest(result)
 <div class="blank30"></div>
 
 <div class="copy">
-{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>. 
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>.
 <div class="clear"></div>
-Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+
 </div>
 <div class="blank30"></div>
 </div>

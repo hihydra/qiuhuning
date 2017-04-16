@@ -31,7 +31,7 @@ window.onerror = killerrors;
 <a onclick="setActiveStyleSheet('skin2'); return false;" href="#"><img src="{$skin_path}/images/bg_2.gif" /></a>
 <a onclick="setActiveStyleSheet('skin3'); return false;" href="#"><img src="{$skin_path}/images/bg_3.gif" /></a>
 
-</div> 
+</div>
 
 <div class="box">
 <div id="header">
@@ -212,7 +212,7 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == '增加站点' && !chkpower('website_add')){
 		continue;
 	}
-	
+
 	if($n == '栏目管理' && !chkpower('category_list')){
 		continue;
 	}
@@ -222,7 +222,7 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == '栏目URL规则' && !chkpower('category_htmlrule')){
 		continue;
 	}
-	
+
 	if($n == '图片管理' && !chkpower('archive_image')){
 		continue;
 	}
@@ -241,14 +241,14 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == '内容列表' && !chkpower('archive_list')){
 		continue;
 	}
-	
+
 	if($n == '添加分类' && !chkpower('type_add')){
 		continue;
 	}
 	if($n == '分类管理' && !chkpower('type_list')){
 		continue;
 	}
-	
+
 	if($n == '添加专题' && !chkpower('special_add')){
 		continue;
 	}
@@ -264,14 +264,14 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == '登录配置' && !chkpower('user_ologin')){
 		continue;
 	}
-	
+
 	if($n == '用户组管理' && !chkpower('usergroup_list')){
 		continue;
 	}
 	if($n == '添加用户组' && !chkpower('usergroup_add')){
 		continue;
 	}
-	
+
 	if($n == '联盟用户' && !chkpower('union_list')){
 		continue;
 	}
@@ -287,7 +287,7 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == '联盟配置' && !chkpower('union_config')){
 		continue;
 	}
-	
+
 	if($n == '内容Html生成' && !chkpower('cache_content')){
 		continue;
 	}
@@ -315,7 +315,7 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == 'Google地图生成' && !chkpower('cache_google')){
 		continue;
 	}
-	
+
 	if($n == '订单列表' && !chkpower('order_list')){
 		continue;
 	}
@@ -327,42 +327,42 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	}
 
 	if($n == '备份数据库' && !chkpower('func_data_baker')){
-		continue;	
+		continue;
 	}
 	if($n == '还原数据库' && !chkpower('func_data_restore')){
-		continue;	
+		continue;
 	}
 	if($n == '导入PHPweb数据' && !chkpower('func_data_phpweb')){
-		continue;	
+		continue;
 	}
 	if($n == '替换字符串' && !chkpower('func_data_replace')){
-		continue;	
+		continue;
 	}
 	if($n == '日志管理' && !chkpower('func_data_adminlogs')){
-		continue;	
+		continue;
 	}
 	if($n == '网站安全' && !chkpower('func_data_safe')){
-		continue;	
+		continue;
 	}
 	if($n == '添加投票' && !chkpower('func_ballot_add')){
-		continue;	
+		continue;
 	}
 	if($n == '投票管理' && !chkpower('func_ballot_list')){
-		continue;	
+		continue;
 	}
 	if($n == '留言管理' && !chkpower('func_book_list')){
-		continue;	
+		continue;
 	}
 	if($n == '评论管理' && !chkpower('func_book_pllist')){
-		continue;	
+		continue;
 	}
 	if($n == '公告管理' && !chkpower('func_announc_list')){
-		continue;	
+		continue;
 	}
 	if($n == '添加公告' && !chkpower('func_announc_add')){
-		continue;	
+		continue;
 	}
-	
+
 	if($n == '函数标签' && !chkpower('templatetag_list_function')){
 		continue;
 	}
@@ -426,7 +426,7 @@ if($ns == '帖子管理' && !chkpower('bbs_archive')){
 	if($n == '订阅邮件群发' && !chkpower('seo_mail_subscription')){
 		continue;
 	}
-	
+
 	if($n == '添加表单' && !chkpower('defined_form_add')){
 		continue;
 	}
@@ -507,11 +507,11 @@ if(front::get('case')=='config' && front::get('act')=='system' &&  $m4[1] == ses
 }*/
 
 if($m3[1] == 'templatetag' && !($m2[1] == front::get('act') && $m5[1] == front::get('tagfrom'))){
-	$class1 = '';	
+	$class1 = '';
 }
 
 if($m3[1] == 'templatetagwap' && !($m2[1] == front::get('act') && $m5[1] == front::get('tagfrom'))){
-	$class1 = '';	
+	$class1 = '';
 }
 
 if(front::get('type')=='subscription' || session::get('act')=='send' ){
@@ -631,12 +631,12 @@ table("table9","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
 
 <div class="blank30"></div>
 <div class="copy">
-Copyright ©  <?php echo date('Y'),'  ',get('sitename');?><div class="copyright">Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a></div>
+Copyright ©  <?php echo date('Y'),'  ',get('sitename');?><div class="copyright"></div>
 </div>
 <div class="blank30"></div>
 <?php if(hasflash()) { ?>
 <div id='message'><div id='message_bg'><img src="{$skin_path}/images/ico_11.gif" />&nbsp;<?php echo showflash(); ?>
-<a href="#" onclick="javascript:turnoff('message')">&nbsp;<span style='color:red;'>(×)</span></a> 
+<a href="#" onclick="javascript:turnoff('message')">&nbsp;<span style='color:red;'>(×)</span></a>
 </div><div id='message_bt'></div>
 </div><?php } ?>
 

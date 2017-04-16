@@ -22,7 +22,7 @@
 <a onclick="setActiveStyleSheet('skin2'); return false;" href="#"><img src="{$skin_path}/images/bg_2.gif" /></a>
 <a onclick="setActiveStyleSheet('skin3'); return false;" href="#"><img src="{$skin_path}/images/bg_3.gif" /></a>
 
-</div> 
+</div>
 
 <div class="box">
 <div id="header">
@@ -69,7 +69,7 @@
 <?php  if(!get('step')) $this->render('install/license.php'); else { ?>
 <input type="hidden" value="1" id="license_pass" name="license_pass"/>
 
-  
+
 <?php
   $pass=true;
   if(PHP_VERSION<5)    $pass=false;
@@ -171,7 +171,7 @@
 
 
 
- 
+
  {else}
  <style type="text/css">
 #menu dd.d3 a {
@@ -184,14 +184,14 @@
 
  <tr>
  <th colspan="5">
- 
-  
+
+
 <strong>MySQL设置  {if $mysql_pass}<span style="color:#FFFFFF;">( <?php echo helper::yes(1); ?> <font color="white">连接成功!</font> )</span>{else}{if get('submit')}<span style="color:red;">( <?php echo helper::yes(0); ?> 连接失败！){else}( 未测试连接！ ){/if}{/if}</span></strong>
 <?php $input_disable=$pass?'':''; ?>
 
  </th>
  </tr>
- 
+
  <tr>
  <td class="left">服务器</td><td colspan="4"><?php echo form::input('hostname',/*get('hostname') ? get('hostname'): */config::get('database','hostname'),$input_disable);?></td>
  </tr>
@@ -219,7 +219,7 @@
  $_PHP_SELF = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : (isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : $_SERVER['ORIG_PATH_INFO']);
  $_ROOTPATH = str_replace("\\","/",dirname($_PHP_SELF));
  $_ROOTPATH = strlen($_ROOTPATH)>1 ? $_ROOTPATH."/" : "/";
- $_site_url = 'http://'.$_SERVER['HTTP_HOST'].$_ROOTPATH; 
+ $_site_url = 'http://'.$_SERVER['HTTP_HOST'].$_ROOTPATH;
  ?>
  <input type="hidden" value="<?php echo $_site_url?>" name="site_url" />
  </tr>
@@ -227,12 +227,12 @@
 
  <tr>
  <th colspan="5">
- 
+
   管理帐号设置
 
  </th>
  </tr>
- 
+
  <tr>
  <td class="left">管理员</td><td colspan="4"><?php echo form::input('admin_username',get('admin_username') ? get('admin_username'):'');?></td>
  </tr>
@@ -243,25 +243,25 @@
  <td class="left">重复密码</td><td colspan="4"><?php echo form::password('admin_password2',get('admin_password2') ? get('admin_password2') :'');?></td>
  </tr>
   </tbody>
-  
+
     <tbody>
  <tr style="display:none;">
  <th colspan="5">
- 
+
   选择模块
 
  </th>
  </tr>
- 
+
  <tr style="display:none;">
  <td colspan="5" align="center">
    <label>
      <input type="checkbox" name="smod[]" value="celive" id="smod_0" checked />
      CElive在线客服</label>&nbsp;&nbsp;
  </td>
-</tr> 
+</tr>
 </tbody>
-  
+
  </td>
  </tr>
  <tr>
@@ -273,7 +273,7 @@
  {if isset($dberror)}
  <script>alert('指定数据库不存在！如果确定使用指定数据库，请勾选 “新建数据库”! ');</script>
  {/if}
- 
+
   {if isset($adminerror)}
  <script>alert('请设置好管理帐号! ');</script>
  {/if}
@@ -323,7 +323,7 @@
 
 <div class="blank30"></div>
 <div class="copy">
-Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a></div>
+</div>
 </div>
 
 

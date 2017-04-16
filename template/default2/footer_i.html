@@ -2,7 +2,7 @@
 
 <div class="foot">
     <div class="container">
-        <div class="row">	 
+        <div class="row">
             {if config::get('qrcodes')=='1'}
             <div class="col-lg-3 col-sm-6 col-xs-12" style="height: 180px;">
                 <dl class="foot_qr_codes">
@@ -33,7 +33,7 @@
                 <dl class="copyrights">
                     <dd><h1>版权</h1></dd>
                     <dd>{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a></dd>
-                    <!--<dd style="display: none;">Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a></dd>-->
+                    <!--<dd style="display: none;"></dd>-->
                     <dd><a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{get('site_icp')}</a></dd>
                 </dl>
             </div>
@@ -113,7 +113,7 @@
         {template 'system/foot_nav_c.html'}
         {else}
         {template 'system/foot_nav_a.html'}
-        {/if} 
+        {/if}
     </div>
 
 

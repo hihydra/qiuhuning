@@ -50,7 +50,7 @@
 		}
 		parent.closeifram();
 	}
-	
+
 	function refileswf(filename,iswidth,alt,width,height){
 		if (checkfrom=='edit'){
 			checkimageinput(filename,fileinputid,alt,width,height);
@@ -110,7 +110,7 @@
 		parent.addpicshow(filename,getbyid,iswidth,width,height);
 		//parent.closeifram();
 	}
-	
+
 	function piclistshow(filename,inputnameID,getbyid,iswidth,alt){
 		var filenames = filename.split('|');
 		var src_tex='';
@@ -122,7 +122,7 @@
 			parent.document.getElementById(getbyid).innerHTML = parent.document.getElementById(getbyid).innerHTML+'<div id="pics'+j+'_up" style="clear:both;"><span id="'+inputnameID+j+'_preview"><img width="150" style="width:150px;" src="'+filenames[i]+'" border="0" /></span><div class="blank10"></div><input id="'+inputnameID+j+'" value="'+filenames[i]+'" class="input" name="'+inputnameID+'['+j+'][url]" style="float:left;" /><div class="blank10"></div>alt: <input id="'+inputnameID+'alt'+j+'" value="'+alt+'" class="input" name="'+inputnameID+'['+j+'][alt]" style="float:left;" /> <input style="float:left;" id="'+inputnameID+j+'_del" onclick="pics_delete(\''+j+'\',\''+inputnameID+'\');" value="" type="button" name="delbutton" class="a_del" /></div>';
 			parent.document.getElementById("ic").value = j;
 			j = j + 1;
-		}	   
+		}
 		//parent.closeifram();
 	}
 
@@ -164,6 +164,6 @@
 		<div id="tabcontentdiv3" class="displaynone"><iframe name="piclist" id="piclist" class="upfilewindow" src="#" width="100%" height="485" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
 	</div>
 </div>
-<!-- Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a> -->
+<!--  -->
 </body>
 </html>

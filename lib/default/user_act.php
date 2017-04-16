@@ -61,36 +61,33 @@ class user_act extends act
     function edit_action()
     {
         if (front::post('submit')) {
-            unset(front::$post['username']);
-            unset(front::$post['groupid']);
-            unset(front::$post['powerlist']);
-            unset(front::$post['password']);
+            //unset(front::$post['username']);
+            //unset(front::$post['groupid']);
+            //unset(front::$post['powerlist']);
+            //unset(front::$post['password']);
             if (!is_email(front::$post['e_mail'])) {
                 alerterror(lang('mailbox_format_is_not'));
             }
+            /*
             foreach (front::$post as $k => $v) {
                 if (is_array($v) && !empty($v)) {
                     front::$post[$k] = implode(',', $v);
                 }
                 front::check_type(front::post($k), 'safe');
             }
+            */
             $this->_user->rec_update(front::$post, "username='".session::get('username')."'");
             front::flash(lang('modify_data_successfully'));
-            front::redirect(url::create('user/index'));
+            front::redirect(url::create('user/edit'));
         }
         $this->view->data = $this->view->user;
         //var_dump($this->view->data);
+
     }
 
     function phone_action()
     {
         if (front::post('submit')) {
-            foreach (front::$post as $k => $v) {
-                if (is_array($v) && !empty($v)) {
-                    front::$post[$k] = implode(',', $v);
-                }
-                front::check_type(front::post($k), 'safe');
-            }
             $this->_user->rec_update(front::$post, "username='".session::get('username')."'");
             front::flash(lang('modify_data_successfully'));
             front::redirect(url::create('user/phone'));

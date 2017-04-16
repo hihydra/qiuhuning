@@ -23,9 +23,9 @@
 <p>5、获得商业授权之后，依据所购买的授权类型中确定的技术支持内容，单独购买技术支持服务后，自购买时刻起，在技术支持期限内拥有通过指定的方式获得指定范围内的技术支持服务。
 </p>
 <strong>二、协议规定的约束和限制 </strong>
-<p>1、未获商业授权之前，不得删除网站底部及相应的官方版权信息和链接（Powered by CmsEasy 与  Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>）。CmsEasy著作权已在中华人民共和国国家版权局注册(中国国家版权局著作权登记号 2009SR031147)，著作权受到法律和国际公约保护。</p>
+<p>1、未获商业授权之前，不得删除网站底部及相应的官方版权信息和链接（Powered by CmsEasy 与  ）。CmsEasy著作权已在中华人民共和国国家版权局注册(中国国家版权局著作权登记号 2009SR031147)，著作权受到法律和国际公约保护。</p>
 <p>2、未经官方许可，不得对本软件或与之关联的商业授权进行出租、出售、抵押或发放子许可证。</p>
-<p>3、不管你的网站是否整体使用 CmsEasy ，还是部份栏目使用 CmsEasy，在你使用了 CmsEasy 的网站主页上必须加上 CmsEasy   官方网址(Powered by CmsEasy 与  Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>)。</p>
+<p>3、不管你的网站是否整体使用 CmsEasy ，还是部份栏目使用 CmsEasy，在你使用了 CmsEasy 的网站主页上必须加上 CmsEasy   官方网址(Powered by CmsEasy 与  )。</p>
 <p>4、如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。 </p>
 <strong>三、有限担保和免责声明 </strong>
 <p>1、本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。 </p>

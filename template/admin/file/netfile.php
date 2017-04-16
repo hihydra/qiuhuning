@@ -44,9 +44,9 @@
 			$("#resulttable").removeClass('displaynone');
 			if (strarray[1]=='img'){
 				if (strarray[2]=='1'){
-					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" width="100"></a></td>';	
+					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" width="100"></a></td>';
 				}else{
-					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" height="100"></a></td>';		
+					var upresult='<td class="trtitle02" id="upresult"><a onclick="javascript:refile(\''+strarray[0]+'\',\''+strarray[2]+'\',\''+strarray[3]+'\',\''+strarray[4]+'\',\''+strarray[5]+'\');" href="#body" hidefocus="true"><img src="'+ strarray[0] + '" height="100"></a></td>';
 				}
 				$("#upresult").replaceWith(upresult);
 			}else{
@@ -113,7 +113,7 @@
 					<table border="0" style="margin: 0 auto;">
 						<tr >
 							<td><input type="submit" name="Submit" id="submitbotton" value="确认添加文件" class="buttonface" title="确认添加文件"/></td>
-							
+
 							<td class="padding-left5"><input type="reset" name="reset" onClick="javascript:parent.resetwindow();" id="release" value="返回编辑窗口" class="buttonface"  title="返回编辑窗口" /></td>
 						</tr>
 					</table>
@@ -123,6 +123,6 @@
 	</div>
 </div>
 </form>
-<!-- Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a> -->
+<!--  -->
 </body>
 </html>

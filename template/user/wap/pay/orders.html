@@ -66,7 +66,7 @@ if(document.orders.telphone.value.length==0){
 }
 {if config::get('mobilechk_enable') && config::get('mobilechk_buy')}
 if($('#mobilenum').val() == ''){
-	alert('{lang(please_enter_the_phone_verification_code)}');	
+	alert('{lang(please_enter_the_phone_verification_code)}');
 	$('#mobilenum').focus();
 	return false;
 }
@@ -91,45 +91,45 @@ if(document.orders.pnums.value.length==0){
    return false;
 }
 $('#step2').hide();$('#step3').show();
-return true; 
-} 
+return true;
+}
 
 
-function setTotal(){ 
-var s=0; 
+function setTotal(){
+var s=0;
 
 
-$(".orders-list").each(function(){ 
-s+=parseInt($(this).find('input[class*=thisnum]').val())*parseFloat($(this).find('span[class*=price]').text()); 
-}); 
+$(".orders-list").each(function(){
+s+=parseInt($(this).find('input[class*=thisnum]').val())*parseFloat($(this).find('span[class*=price]').text());
+});
 
-$("#tab").each(function(){ 
-s+=parseInt($(this).find('input[class*=thisnum]').val())*parseFloat($(this).find('span[class*=price]').text()); 
-}); 
+$("#tab").each(function(){
+s+=parseInt($(this).find('input[class*=thisnum]').val())*parseFloat($(this).find('span[class*=price]').text());
+});
 
-$("#total").html(s.toFixed(2)); 
-} 
+$("#total").html(s.toFixed(2));
+}
 
 //加减
 
-$(function(){ 
-$(".add").click(function(){ 
-var t=$(this).parent().find('input[class*=thisnum]'); 
-t.val(parseInt(t.val())+1) 
-setTotal(); 
-}) 
-$(".min").click(function(){ 
-var t=$(this).parent().find('input[class*=thisnum]'); 
-t.val(parseInt(t.val())-1) 
-if(parseInt(t.val())<0){ 
-t.val(0); 
-} 
-setTotal(); 
-}) 
+$(function(){
+$(".add").click(function(){
+var t=$(this).parent().find('input[class*=thisnum]');
+t.val(parseInt(t.val())+1)
+setTotal();
+})
+$(".min").click(function(){
+var t=$(this).parent().find('input[class*=thisnum]');
+t.val(parseInt(t.val())-1)
+if(parseInt(t.val())<0){
+t.val(0);
+}
+setTotal();
+})
 
-setTotal(); 
+setTotal();
 
-}) 
+})
 
 </script>
 
@@ -159,7 +159,7 @@ setTotal();
 </div>
 
 <div class="pull-left col-xs-11 col-sm-11 col-md-11 col-lg-11 orders-padding-x">
-  
+
    <div class="col-xs-11 col-sm-5 col-md-5 col-lg-5">
   <a target="_blank" href="{$base_url}/index.php?case=archive&act=show&aid={$val[aid]}" class="o_title">{$val[title]}</a>
 </div>
@@ -172,9 +172,9 @@ setTotal();
    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 
 
-<input class="min" name="" type="button" value="-" /> 
+<input class="min" name="" type="button" value="-" />
 <input class="thisnum" type="text" id="thisnum{$val[aid]}" name="thisnum[{$val[aid]}]" value="{$val[amount]}" size="5"  onchange="changetotalprdersprice1('thistotal{$val[aid]}','thisprice{$val[aid]}','thisnum{$val[aid]}')"  />
-<input class="add" name="" type="button" value="+" /> 
+<input class="add" name="" type="button" value="+" />
 </div>
 </div>
 </div>
@@ -206,9 +206,9 @@ setTotal();
  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 {lang(pordernums)}：
 <div class="clearfix"></div>
-<input class="min clsearfix" name="" type="button" value="-" /> 
+<input class="min clsearfix" name="" type="button" value="-" />
 <input class="thisnum" type="text" size="5" maxlength="10" name="pnums" id="pnums" value="1" onchange="changetotalprdersprice()" />
-<input class="add" name="" type="button" value="+" /> 
+<input class="add" name="" type="button" value="+" />
 </div>
 
 
@@ -216,14 +216,14 @@ setTotal();
 </div>
 <div class="blank10"></div>
      {/if}
-     
+
 <div class="blank30"></div>
 
 <div class="thistotal  pull-right">
 
 {lang(ordertotal)}：<span>{lang(the_symbol_of_money)}<label id="total"></label></span>
 
-</div> 
+</div>
 
 
 <div class="blank30"></div>
@@ -289,10 +289,10 @@ setTotal();
 <div class="blank10"></div>
 {/loop}
 <div class="blank10"></div>
-{/if} 
+{/if}
 
 <div class="blank10"></div>
-<textarea placeholder="{lang(ordercontent)}" name="content" class="form-control" rows="3"></textarea> 
+<textarea placeholder="{lang(ordercontent)}" name="content" class="form-control" rows="3"></textarea>
 
 <div class="blank30"></div>
 <ul class="nav nav-pills" role="tablist">
@@ -303,13 +303,13 @@ setTotal();
 </div>
 </div>
 
- 
+
 <div id="step3" style="display:none">
 <div class="container">
 <div class="row">
 {if $paylist}
 {loop $paylist $i $pay}
-{if $pay[enabled]==1} 
+{if $pay[enabled]==1}
 <div class="radio">
   <label>
     <input type="radio" name="payname" value="{$pay[pay_code]}" checked>
@@ -340,7 +340,7 @@ setTotal();
 <div class="copy">
 {get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>
 <br />
-Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+
 </div>
 </div>
 {/if}
@@ -364,7 +364,7 @@ Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" tar
 {template 'system/foot_nav_c.html'}
 {else}
 {template 'system/foot_nav_a.html'}
-{/if} 
+{/if}
 </div>
 
 </body>

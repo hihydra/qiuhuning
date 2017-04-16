@@ -22,7 +22,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 caption, tbody, tfoot,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -56,12 +56,12 @@ width:100%;
   left:0;
   height:40%;
   right:0;
-  
+
 
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -90,7 +90,7 @@ color:#000;
 
 a:link { text-decoration: none;color:#000;}
 　　 a:active { text-decoration:blink;}
-　　 a:hover { text-decoration:underline;} 
+　　 a:hover { text-decoration:underline;}
 　　 a:visited { text-decoration: none;}
 
 /* change colours to suit your needs */
@@ -103,7 +103,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -126,7 +126,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0; 
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -156,7 +156,7 @@ border: 8px solid rgba(3,41,125,0.4);
     -moz-background-clip: content;     /* Firefox 3.6 */
     -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
     background-clip: content-box;      /* Firefox 4、Safari 5、Opera 10、IE9 */
-   
+
 }
 
 .bg {padding:30px 50px;}
@@ -201,7 +201,7 @@ border: 8px solid rgba(3,41,125,0.4);
 .register_btn:hover {background:red;color:white;}
 
 .btn {
-float:left; 
+float:left;
 width:90px;
 line-height:28px;
 padding:5px 30px;
@@ -301,7 +301,7 @@ a.btn {color:#FFF;}
 <div class="logo"><a title="{get(sitename)}" href="{$base_url}/"><img src="{get('site_logo')}" alt="{get(sitename)}" width="{get(logo_width)}" /></a></div>
 <div class="blank30"></div>
 <div class="box">
-<div class="bg">      
+<div class="bg">
 
 <form id="login_form"   name="loginform" method="post"  action="<?php echo url('user/getpass') ?>">
 <input name="step" type="hidden" value="3">
@@ -323,7 +323,7 @@ function checkEmail(e_mail)
 }
 
 </script>
-                                       
+
 <input type="submit" name="submit" value=" {lang(nextstep)} " class="register_btn"   />
 
 </form>
@@ -331,9 +331,9 @@ function checkEmail(e_mail)
 </div></div>
 <div class="blank10"></div>
 <div class="copy">
-{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>. 
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>.
 <div class="clear"></div>
-Powered by <a href="http://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+
 </div>
 
 
@@ -544,7 +544,7 @@ $(function () {
                     C();
                 })
     } else {
-        
+
     }
 });
 </script>
