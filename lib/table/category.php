@@ -216,7 +216,7 @@ class category extends table {
         //var_dump(front::$get);
         $category=self::getInstance();
         if (@$category->category[$catid]['linkto']) return $category->category[$catid]['linkto'];
-        
+
         if(front::$ismobile == true){
         	if (config::get('wap_html_prefix')){
         		$wap_html_prefix='/'.trim(config::get('wap_html_prefix'),'/');
@@ -254,7 +254,7 @@ class category extends table {
         		return $path;
         	}
         }
-        
+
         if (config::get('html_prefix')) $html_prefix='/'.trim(config::get('html_prefix'),'/');
         if (!category::getishtml($catid) ||front::$rewrite) {
             if (!$page) return url::create('archive/list/catid/'.$catid);
@@ -473,7 +473,7 @@ class category extends table {
         }
         return $data;
     }
-    
+
     static function check($catid,$tag='isnotlast') {
         return true;
         $_category=self::getInstance();
@@ -492,14 +492,14 @@ class category extends table {
     }
     static function htmlcache($catid) {
     }
-    
+
     public function sitemap($path='./',$filename='sitemap.html'){
     	category::listcategorydata(0,$arr,$level);
     	front::$view->archive = $arr;
     	$html = front::$view->fetch('system/sitemap.html');
     	file_put_contents($path.$filename,$html);
     }
-    
+
     static function listdata($parentid=0,$limit=10,$order='catid asc',$where=null,$includeson=true) {
         $category=new category();
         $where='parentid='.($parentid?$parentid:'0').($where ?' and '.$where : '');

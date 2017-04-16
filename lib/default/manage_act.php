@@ -37,7 +37,8 @@ class manage_act extends act {
             && $this->table <> 'orders'
             && $this->table <> 'comment'
             && $this->table <> 'invite'
-            && $this->table <> 'zanlog')
+            && $this->table <> 'zanlog'
+            && $this->table <> 'propose')
         {
             exit('PAGE NOT FOUND!');
 	     }
@@ -133,6 +134,18 @@ class manage_act extends act {
             $this->render($tpl);
             exit;
         }*/
+    }
+    function proposelist_action() {
+        $limit=((front::get('page')-1)*20).',20';
+        $where="userid={$this->view->user['userid']}";
+        $this->_view_table=$this->_table->getrows($where,$limit,'adddate desc',$this->_table->getcols('manage'));
+        $this->view->record_count=$this->_table->record_count;
+    }
+    function proposeshow_action() {
+
+        $where="id=".front::get('id');
+        $this->_view_table=$this->_table->getrow($where);
+        $this->view->record_count=$this->_table->record_count;
     }
     function add_action() {
         if(front::post('submit') &&$this->manage->vaild()) {

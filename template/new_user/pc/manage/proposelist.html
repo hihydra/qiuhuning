@@ -1,0 +1,20 @@
+{template 'head_i.html'}
+    <div class="person-main">
+        <h3 class="tit">我的订单</h3>
+         {loop $data $d}
+        <div class="order-pay">
+            <h3>订单号：{cut($d['oid'])}</h3>
+            <div class="order-goods">
+                <div class="order-goods-info">
+                    <h4>主题：{ballot(1)}</h4>
+                    <time>时间：{cut(date('Y-m-d H:i:s',$d['adddate']))}</time>
+                    <p>地点：{cut($d['place'])}</p>
+                </div>
+                <div class="order-goods-buy">
+                    <a href="?case=manage&act=proposeshow&manage=propose&id={$d['id']}">查看订单</a>
+                </div>
+            </div>
+        </div>
+        {/loop}
+    </div>
+{template 'footer_i.html'}

@@ -1,0 +1,42 @@
+ {template 'head_i.html'}
+    <style>
+    .order-table{
+        border-collapse: collapse;
+        width: 700px;
+        margin: 50px auto;
+    }
+    .order-table tr td{
+        border: 1px solid #ddd;
+        padding: 20px;
+    }
+    .person-btn{
+        background: #ff6280;
+        border: none;
+        width: 100px;
+        height: 38px;
+        border-radius: 5px;
+        color: #fff;
+        margin: auto;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        line-height: 38px;
+    }
+    .person-btn:hover{
+        background: #e23957;
+        color: #fff;
+    }
+</style>
+    <div class="person-main">
+        <h3 class="tit">订单详情</h3>
+        <table class="order-table">
+            <tr><td style="width: 100px"><b>订单号：</b></td><td colspan="3">{$data['oid']}</td></tr>
+            <tr><td><b>姓名：</b></td><td>{$data['pname']}</td><td><b>进度：</b></td><td>已受理</td></tr>
+            <tr><td><b>联系电话：</b></td><td class="t-tel">{$data['telphone']}</td><td><b>QQ/微信：</b></td><td class="t-tx">{$data['qq']}/{$data['weixin']}</td></tr>
+            <tr><td><b>主题：</b></td><td class="t-thm"></td><td><b>场景：</b></td><td class="t-cdt"></td></tr>
+            <tr><td><b>时间：</b></td><td class="t-time">{cut(date('Y-m-d H:i:s',$data['adddate']))}</td><td><b>地点：</b></td><td class="t-address">{$data['place']}</td></tr>
+            <tr><td><b>具体想法：</b></td><td class="t-idea" colspan="3">{$data['idea']}</td></tr>
+        </table>
+        <a class="person-btn" href="?case=manage&act=proposelist&manage=propose">返回</a>
+    </div>
+{template 'footer_i.html'}

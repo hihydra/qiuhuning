@@ -45,7 +45,7 @@ get('file_info').innerHTML='';
 </div>
 <div id="tagscontent" class="right_box">
 <div id="con_one_1">
-    
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table1">
 <tr>
 <td width="149" align="right">所属栏目</td>
@@ -94,7 +94,7 @@ get('file_info').innerHTML='';
 <tr>
 <td width="149" align="right">网页标题</td>
 <td width="1%">&nbsp;</td>
-<td>	
+<td>
 {form::getform('meta_title',$form,$field,$data,'class="input"')}
 <span class="hotspot" onmouseover="tooltip.show('可填写不同于内容名称的关键词，有利于搜索优化！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;"></span>
 </td>
@@ -134,7 +134,7 @@ get('file_info').innerHTML='';
 		<div class="blank30"></div>
 
 {form::getform('htmlrule',$form,$field,$data,'class="input"')}
-<span class="hotspot" onmouseover="tooltip.show('<strong>默&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;认：</strong>&#123;$caturl&#125;/&#123;$page&#125;.html <br /><strong>短&nbsp;&nbsp;目&nbsp;&nbsp;录：</strong>&#123;$dir&#125/&#123;$page&#125;.html<br /><strong>自&nbsp;&nbsp;定&nbsp;&nbsp;义：</strong>自定义（英文或拼音）/&#123;$page&#125;.html<br /><strong>栏目目录：</strong>&#123;$caturl&#125;<br /><strong>当前目录：</strong>&#123;$dir&#125;<br /><strong>注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意：</strong>&#123;$page&#125;必须存在URL内且为最后！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;"></span>		
+<span class="hotspot" onmouseover="tooltip.show('<strong>默&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;认：</strong>&#123;$caturl&#125;/&#123;$page&#125;.html <br /><strong>短&nbsp;&nbsp;目&nbsp;&nbsp;录：</strong>&#123;$dir&#125/&#123;$page&#125;.html<br /><strong>自&nbsp;&nbsp;定&nbsp;&nbsp;义：</strong>自定义（英文或拼音）/&#123;$page&#125;.html<br /><strong>栏目目录：</strong>&#123;$caturl&#125;<br /><strong>当前目录：</strong>&#123;$dir&#125;<br /><strong>注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意：</strong>&#123;$page&#125;必须存在URL内且为最后！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;"></span>
 </td>
 </tr>
 
@@ -328,7 +328,7 @@ get('file_info').innerHTML='';
 <td width="149" align="right">封面内容</td>
 <td width="1%">&nbsp;</td>
 <td>
-{form::getform('categorycontent',$form,$field,$data)} 
+{form::getform('categorycontent',$form,$field,$data)}
 <span class="hotspot" onmouseover="tooltip.show('如使用设置栏目封面，请在模板处选择本栏目应用list_page.html模板！');" onmouseout="tooltip.hide();">
 <img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;">
 </span>
@@ -355,7 +355,7 @@ get('file_info').innerHTML='';
 </td>
 </tr>
 </table>
-</div>  
+</div>
 
 <div id="con_one_5" style="display:none">
 <table border="0" cellspacing="0" cellpadding="0" id="table5" width="100%">

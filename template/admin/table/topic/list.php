@@ -3,6 +3,9 @@
 <div class="blank10"></div>
 <div id="procedurecontent" class="right_box">
 <form name="listform" id="listform"  action="<?php echo uri();?>" method="post">
+<?php
+$data=topic::gettopicdata();
+?>
 <table border="0" cellspacing="0" cellpadding="0" name="table1" id="table1" width="100%">
         <thead>
             <tr class="th">
@@ -22,7 +25,11 @@
       <td align="center" ><input onclick="c_chang(this)" type="checkbox" value="{$d.$primary_key}" name="select[]" class="checkbox" /></td>
       <td align="center"  class="table_input_c"><span class="hotspot" onmouseover="tooltip.show('填写排序号，<br />数字越小，排序越靠前！');" onmouseout="tooltip.hide();">{form::input("listorder[$d[$primary_key]]",$d['listorder'],'class="input_c"')}</span></td>
       <td align="center">{cut($d['id'])}</td>
-      <td align="center">{cut($d['name'])}</td>
+      <td align="center">{cut($d['name'])}
+      <?php if(topic::hasson($d['id'])) { ?>
+      {if $d['level']==0}<a style="float:right;cursor:pointer" onclick="child(this)" title="点击展开/收起" class="child"></a>{/if}
+      <?php } ?>
+      </td>
       <td align="center" width="105">
 	  <span class="hotspot" onmouseover="tooltip.show('编辑主题！');" onmouseout="tooltip.hide();">
 	  <a href="<?php echo modify("act/edit/table/$table/id/$d[$primary_key]");?>" class="a_edit"></a></span>

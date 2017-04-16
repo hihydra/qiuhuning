@@ -1,15 +1,9 @@
 <div class="banner">
     <div class="wrap relative">
         <ul class="side-nav">
-            <li><a href="case.html">求婚视频</a><i class="icon-angle-right icon"></i></li>
-            <li><a href="case.html">求婚策划</a> <i class="icon-angle-right icon"></i></li>
-            <li><a href="case.html">求婚创意</a> <i class="icon-angle-right icon"></i></li>
-            <li><a href="case.html">求婚方式</a> <i class="icon-angle-right icon"></i></li>
-            <li><a href="case.html">求婚资讯</a><i class="icon-angle-right icon"></i> </li>
-            <li><a href="case.html">求婚词</a><i class="icon-angle-right icon"></i> </li>
-            <li><a href="case.html">求婚歌曲</a><i class="icon-angle-right icon"></i> </li>
-            <li><a href="case.html">求婚词</a><i class="icon-angle-right icon"></i> </li>
-            <li style="border-bottom: none"><a href="case.html">求婚歌曲</a> <i class="icon-angle-right icon"></i></li>
+            {loop categories(43) $t1}
+            <li><a href="{$t1[url]}">{$t1[catname]}</a><i class="icon-angle-right icon"></i></li>
+            {/loop}
         </ul>
     </div>
 </div>

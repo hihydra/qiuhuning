@@ -7,7 +7,8 @@ class propose extends table {
         return array(
         	    'topic'=>array(
                         'selecttype'=>'select',
-                        'select'=>form::arraytoselect(topic::getTopic()),
+                        'select'=>form::arraytoselect(topic::option()),
+                        'default'=>get('topic'),
                 ),
                 'scene'=>array(
                         'selecttype'=>'select',

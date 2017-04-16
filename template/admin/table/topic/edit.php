@@ -15,9 +15,9 @@
 <td width="70%">{form::getform('name',$form,$field,$data)} </td>
 </tr>
 <tr>
-<td width="19%" align="right">场景</td>
+<td width="149" align="right">所属主题</td>
 <td width="1%">&nbsp;</td>
-<td id="content-recommend">{form::getform('scene',$form,$field,$data)}</td>
+<td>{form::getform('parentid',$form,$field,$data)}<span class="hotspot" onmouseover="tooltip.show('如果为一级主题，不需选择！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;"></td>
 </tr>
 </tbody>
 </table>

@@ -1,0 +1,13 @@
+{template 'head_i.html'}
+    <div class="person-main">
+    <form method="post" name="form1" action="<?php echo modify("/act/phone/userid/".$data['userid']);?>">
+        <h3 class="tit">手机修改</h3>
+        <ul class="person-box">
+            <li><label>原手机：</label>{$data['tel']}</li>
+            <li><label>新手机：</label><input type="text" placeholder="请输入手机号" class="input"></li>
+            <li><label>验证码：</label><input type="text" placeholder="请输入验证码" style="width: 120px" class="input"><button class="person-code-btn">发送验证码</button></li>
+        </ul>
+        <button class="person-btn">提交修改</button>
+    </form>
+    </div>
+{template 'footer_i.html'}

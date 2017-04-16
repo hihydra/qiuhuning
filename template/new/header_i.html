@@ -22,11 +22,10 @@
             <span style="margin-left: 25px">{if config::get('site_login')=='1'}{login_js()}{/if}</span>
         </div>
         <div class="r relative">
-            <a href="case.html">求婚视频</a>
-            <a href="case.html">求婚创意</a>
-            <a href="case.html">求婚策划</a>
-            <a href="case.html">求婚方式</a>
-            <a href="case.html" style="margin-right: 50px">求婚资讯</a>
+            {loop categories(43) $key $t1}
+            <?php if($key>4) break; ?>
+            <a href="{$t1[url]}">{$t1[catname]}</a>
+            {/loop}
 
             <a id="weixin_btn" href="">微信公众号</a> |
             <a href="person_info.html">个人中心</a>

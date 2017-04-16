@@ -82,6 +82,23 @@ class user_act extends act
         //var_dump($this->view->data);
     }
 
+    function phone_action()
+    {
+        if (front::post('submit')) {
+            foreach (front::$post as $k => $v) {
+                if (is_array($v) && !empty($v)) {
+                    front::$post[$k] = implode(',', $v);
+                }
+                front::check_type(front::post($k), 'safe');
+            }
+            $this->_user->rec_update(front::$post, "username='".session::get('username')."'");
+            front::flash(lang('modify_data_successfully'));
+            front::redirect(url::create('user/phone'));
+        }
+        $this->view->data = $this->view->user;
+        //var_dump($this->view->data);
+    }
+
     //第三方平台登录
     function ologin_action()
     {

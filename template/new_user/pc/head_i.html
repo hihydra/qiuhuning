@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{lang(membercenter)}</title>
+    <link rel="stylesheet" href="{$skin_path}/styles/pubilc.css">
+    <link rel="stylesheet" href="{$skin_path}/styles/person.css">
+    <link rel="stylesheet" href="{$skin_path}/styles/lib/font-awesome.css">
+
+</head>
+<!--[if lt IE 9]>
+<script src="scripts/lib/html5shiv.min.js"></script>
+<![endif]-->
+<style>
+    .person-box{
+        padding: 30px 30px 10px;
+    }
+    .person-btn,.person-code-btn{
+        background: #ff6280;
+        border: none;
+        padding: 8px 25px;
+        border-radius: 5px;
+        color: #fff;
+        margin: 0 0 0 145px;
+        cursor: pointer;
+    }
+    .person-code-btn{
+        margin: 0 0 0 15px;
+        padding: 7px 10px;
+        background: #fff;
+        border: 1px solid #ff6280;
+        color: #ff6280;
+    }
+    .person-box li{
+        margin: 15px 10px 30px;
+    }
+    .person-box li label{
+        display: inline-block;
+        width: 90px;
+        text-align: right;
+        margin-right: 15px;
+    }
+    .input{
+        padding-left: 10px;
+        height: 37px;
+        width: 320px;
+        border: 1px solid #ccc;
+    }
+    .select{
+        padding-left: 10px;
+        height: 38px;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 38px;
+    }
+    .form-group{
+        float: left;
+        margin-right: 20px;
+    }
+    .textarea{
+        width: 415px;
+        height: 70px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    .edit-img{
+        position: absolute;
+        width: 60px;
+        height: 62px;
+        opacity: 0.6;
+        filter:alpha(opacity=60);
+        text-align: center;
+        line-height: 60px;
+        color: #fff;
+        z-index: 99;
+        background: #000;
+        top: 0;
+        font-size: 12px;
+        cursor: pointer;
+        display: none;
+    }
+    #file{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+        filter:alpha(opacity=0);
+        left: 104px;
+        z-index: 999;
+        cursor: pointer;
+    }
+    #img-box{
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+    }
+    #img-file{
+        width: 60px;
+        height: 60px;
+    }
+    #preview{
+        opacity: 0;
+        width: 60px;
+        height: 60px;
+        filter:alpha(opacity=0);
+    }
+</style>
+<body>
+<div class="header-person">
+    <div class="person-wrap" >
+        <h1 class="logo-person"><a class="logo-text" href="">求婚总动员</a> </h1>
+        <a style="line-height: 70px; color: #fff;font-size: 15px;" class="r" href="/">求婚总动员首页>></a>
+    </div>
+</div>
+<div class="person-wrap" style="margin-top: 50px">
+    <div class="person-nav">
+        <h3 class="person-nav-tit"><i class="icon-user"></i>个人中心</h3>
+        <ul class="person-nav-ul">
+            <li><a href="?case=user">个人信息</a> </li>
+            <li><a href="?case=manage&act=proposelist&manage=propose">我的订单</a> </li>
+            <li><a href="?case=user&act=changepassword">密码修改</a> </li>
+            <li><a href="?case=user&act=phone">手机修改</a> </li>
+        </ul>
+    </div>

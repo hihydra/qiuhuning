@@ -71,7 +71,7 @@ class ballot_act extends act {
         $html .= 'document.write(\'<input type="submit" name="submit" id="button" value=" '.$lang['vote'].'" /></form>\');';
         echo $html;*/
     }
-    
+
     function end() {
     	if(!isset($this->_view_table['data']) &&isset($this->_view_table))
     		$this->_view_table['data']=$this->_view_table;
