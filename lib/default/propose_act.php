@@ -20,10 +20,6 @@ class propose_act extends act
 
     function propose_action()
     {
-         if (front::post('submit')) {
-            $this->out('message/orderssuccess.html');
-         }
-        /*
         if (front::post('submit')) {
             $this->propose = new propose();
             front::$post['userid'] = 1;
@@ -35,7 +31,7 @@ class propose_act extends act
                 front::$post['logisticsid'] = 0;
             }
             $payname = front::$post['payname'] ? front::$post['payname'] : 'none';
-            front::$post['oid'] = date('YmdHis') . '-' . front::$post['logisticsid'] . '-' . front::$post['mid'] . '-' . $payname;
+            front::$post['oid'] = date('YmdHis') . '-' . front::$post['logisticsid'] . '-' . front::$post['userid'] . '-' . $payname;
             front::$post['process_id'] = 1;
             front::$post['status'] = 1;
             $insert = $this->propose->rec_insert(front::$post);
@@ -206,9 +202,9 @@ class propose_act extends act
             }
         }*/
        // $this->render('pay/orders.html');
-         //   return $insert;
-         //   exit;
-        // }
+            return $insert;
+            exit;
+         }
     }
 
     function out($tpl)

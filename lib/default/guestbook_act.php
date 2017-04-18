@@ -114,7 +114,7 @@ class guestbook_act extends act {
     		$smtp->debug = true;
     		$smtp->sendmail($smtpemailto,config::get('smtp_user_add'),$mailsubject,$mailbody,$mailtype);
     }
-    
+
     function list_action() {
         $limit=((front::get('page')-1)*config::get('list_pagesize')).','.config::get('list_pagesize');
         $where=null;

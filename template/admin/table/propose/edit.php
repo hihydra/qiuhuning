@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <td align="right">具体想法：</td>
-        <td>{form::getform('content',$form,$field,$data)}</td>
+        <td>{form::getform('idea',$form,$field,$data)}</td>
       </tr>
       <tr>
         <td align="right">活动日期：</td>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td align="right">活动地点：</td>
-        <td>{form::getform('place',$form,$field,$data)}</td>
+        <td>{form::getform('address',$form,$field,$data)}</td>
       </tr>
       <tr>
         <td align="right">客户姓名：</td>

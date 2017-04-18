@@ -142,7 +142,7 @@ function stepNextThree() {
     $.ajax({
          type: "POST",
          url: "/index.php?case=propose&act=propose",
-         data: {pname:$(".t-name").attr('value'), telphone:$(".t-tel").attr('value'),qq:$(".t-qq").attr('value'),weixin:$(".t-weixin").attr('value'), telphone:$(".t-tel").attr('value'),
+         data: {submit:'on',pname:$(".t-name").attr('value'), telphone:$(".t-tel").attr('value'),qq:$(".t-qq").attr('value'),weixin:$(".t-weixin").attr('value'), telphone:$(".t-tel").attr('value'),
                 topic_id:$(".t-thm").attr('value'), scene_id:$(".t-cdt").attr('value'),address:$(".t-address").attr('value'), idea:$(".t-idea").attr('value')},
          dataType: "text",
          async:'false',
