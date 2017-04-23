@@ -464,57 +464,58 @@
     border-radius: 50%;
     top: -5px;
 }
-.progress-bar .doc1{
+.progress-bar .doc0{
     left: -1px;
 }
-.progress-bar .doc2{
+.progress-bar .doc1{
     left: 14%;
 }
-.progress-bar .doc3{
+.progress-bar .doc2{
     left: 28%;
 }
-.progress-bar .doc4{
+.progress-bar .doc3{
     left: 42%;
 }
-.progress-bar .doc5{
+.progress-bar .doc4{
     left: 56%;
 }
-.progress-bar .doc6{
+.progress-bar .doc5{
     left: 70%;
 }
-.progress-bar .doc7{
+.progress-bar .doc6{
     left: 84%;
 }
-.progress-bar .doc8{
+.progress-bar .doc7{
     left: 98%;
 }
 .progress-bar .text{
     position: absolute;
     text-align: center;
     top: 35px;
+    width: 82px;
 }
-.progress-bar .text1{
+.progress-bar .text0{
     left: -17px;
 }
-.progress-bar .text2{
+.progress-bar .text1{
     left: 12%;
 }
-.progress-bar .text3{
+.progress-bar .text2{
     left: 24%;
 }
+.progress-bar .text3{
+    left: 39%;
+}
 .progress-bar .text4{
-    left: 41%;
+    left: 53%;
 }
 .progress-bar .text5{
-    left: 51%;
+    left: 66.5%;
 }
 .progress-bar .text6{
-    left: 68.5%;
-}
-.progress-bar .text7{
     left: 81.5%;
 }
-.progress-bar .text8{
+.progress-bar .text7{
     left: 94%;
     width: 100px;
 }

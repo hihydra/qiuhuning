@@ -79,6 +79,7 @@ class topic extends table
     static function getTopic(){
     	$topic=self::getInstance();
         $_topics=$topic->getrows(null,1000,'listorder=0,listorder asc');
+        $_topics = $topic->index($_topics,'id');
     	foreach ($_topics as $key => &$_topic) {
             if ($_topic['parentid']) {
                 $_topics[$_topic['parentid']]['next'][] = $_topic;
@@ -86,6 +87,22 @@ class topic extends table
             }
         }
         return $_topics;
+    }
+
+    public function index (array $array, $name)
+    {
+        $indexedArray = array();
+        if (empty($array)) {
+            return $indexedArray;
+        }
+
+        foreach ($array as $item) {
+            if (isset($item[$name])) {
+                $indexedArray[$item[$name]] = $item;
+                continue;
+            }
+        }
+        return $indexedArray;
     }
 
 }

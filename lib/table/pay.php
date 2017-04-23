@@ -51,7 +51,7 @@ class pay extends table {
     public static function url($code) {
         define('SERVER_HTTP',$_SERVER['SERVER_PORT'] == '443'?'https://': 'http://');
         define('SITE_URL',SERVER_HTTP.$_SERVER['HTTP_HOST']);
-        return $link = SITE_URL.config::get('base_url')."/index.php?case=archive&act=respond&code=".$code;
+        return $link = SITE_URL.config::get('base_url')."/index.php?case=propose&act=respond&code=".$code;
     }
     public static function get_payment($code) {
         $where=array();
@@ -68,15 +68,15 @@ class pay extends table {
         return $payment;
     }
     public static function check_money($id,$money) {
-        
+
         $where=array();
         $where['id']=$id;
         $orders=orders::getInstance()->getrow($where);
         $archive=archive::getInstance()->getrow($orders['aid']);
-        
+
         $prices = getPrices($archive['attr2']);
         $archive['attr2'] = $prices['price'];
-        
+
         $where=array();
         $where['pay_code']=$_GET['code'];
         $pay=pay::getInstance()->getrows($where);

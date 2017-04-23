@@ -54,7 +54,7 @@ class admin_menu {
                 $menu=self::fetch('用户管理,用户组管理,推广联盟');
                 break;
             case 'func':
-                $menu=self::fetch('公告管理,留言评论,投票管理,数据管理,文件防护,网站安全');
+                $menu=self::fetch('FAQ管理,留言评论,投票管理,数据管理,文件防护,网站安全');
                 break;
             case 'defined':
                 $menu=self::fetch('自定义字段,自定义表单');
@@ -236,9 +236,9 @@ class admin_menu {
                         '分类管理'=>url::create('table/list/table/type'),
                         '添加分类'=>url::create('table/add/table/type'),
                 ),
-                '公告管理'=>array(
-                        '公告管理'=>url::create('table/list/table/announcement'),
-                        '添加公告'=>url::create('table/add/table/announcement'),
+                'FAQ管理'=>array(
+                        'FAQ管理'=>url::create('table/list/table/announcement'),
+                        '添加FAQ'=>url::create('table/add/table/announcement'),
                 ),
 				'微信公众号'=>array(
 						'公众号管理'=>url::create('weixin/list'),

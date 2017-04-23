@@ -138,13 +138,24 @@ class manage_act extends act {
     function proposelist_action() {
         $limit=((front::get('page')-1)*20).',20';
         $where="userid={$this->view->user['userid']}";
-        $this->_view_table=$this->_table->getrows($where,$limit,'adddate desc',$this->_table->getcols('manage'));
+        $propose=$this->_table->getrows($where,$limit,'adddate desc',$this->_table->getcols('manage'));
+        $this->_topic=new topic;
+        foreach ($propose as $key => &$value) {
+            $value['topic']=$this->_topic->getrow("id=".$value['topic_id']);
+        }
+        $this->_view_table=$propose;
         $this->view->record_count=$this->_table->record_count;
     }
     function proposeshow_action() {
-
         $where="id=".front::get('id');
-        $this->_view_table=$this->_table->getrow($where);
+        $propose=$this->_table->getrow($where);
+        $this->_process=new process;
+        $propose['process']=$this->_process->getrow("id=".$propose['process_id']);
+        $this->_topic=new topic;
+        $propose['topic']=$this->_topic->getrow("id=".$propose['topic_id']);
+        $this->_scene=new scene;
+        $propose['scene']=$this->_scene->getrow("id=".$propose['scene_id']);
+        $this->_view_table=$propose;
         $this->view->record_count=$this->_table->record_count;
     }
     function add_action() {

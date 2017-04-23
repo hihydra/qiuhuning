@@ -1,0 +1,84 @@
+{template 'header.html'}
+<link rel="stylesheet" href="{$skin_path}/styles/discount.css">
+<link rel="stylesheet" href="{$skin_path}/styles/lib/laydate.css">
+<div class="wrap">
+    <div class="crumbs">
+        <a class="crumbs-lk" href="/"><i class="icon-home crumbs-icon"></i>求婚总动员</a>><a class="crumbs-lk" href="?case=propose">我要求婚</a>
+    </div>
+    <div class="order-main">
+        <h3 class="tit">信息确认</h3>
+        <div class="order-box">
+            <div class="l order-nav">
+                <p>基本信息</p>
+                <p {if $propose['status'] == 1}class="order-nav-on"{/if}>支付定金</p>
+                <p {if $propose['status'] == 2}class="order-nav-on"{/if}>活动进程</p>
+            </div>
+            {if $propose['status'] == 1}
+                {if empty($propose['price'])}
+                <div class="order-contact">
+                    <div class="" style="float: right; margin: 130px 10px 0 0">
+                        <h4 class="h4">友情提示 :</h4>
+                        <p class="text">抱歉，未找到您的订单，请先联系客服,<br>客服确认后刷新当前页面</p>
+                        <button class="order-cancel-btn">支付定金</button>
+                        <a class="order-btn" href="tencent://Message/?Uin={get('qq5')}&websiteName=http://www.qiuhuning.com/=&Menu=yes">联系客服</a>
+                    </div>
+                </div>
+                {else}
+                <div class="order-pay">
+                    <h3>订单号：{$propose['oid']}</h3>
+                    <div class="order-goods">
+                    <!--<img src="images/tc4.jpg">-->
+                        <div class="order-goods-info">
+                            <h4>{$propose['topic']['name']}</h4>
+                            <time>时间：{$propose['time']}</time>
+                            <p>地点：{$propose['address']}</p>
+                            <p>场景：{$propose['scene']['name']}</p>
+                            <p>金额：￥{$propose['price']}</p>
+                        </div>
+                        <div class="order-goods-buy">
+                            {$gotopaygateway}
+                        </div>
+                    </div>
+                </div>
+                {/if}
+            {elseif $propose['status'] == 2}
+            <div class="order-status">
+                <div class="" style="width: 1000px;height: 180px; border: 1px solid #ddd;  margin-bottom: 40px">
+                    <h3 class="status-tit">交易状态</h3>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                        {loop $process  $key $p}
+                        <span class="doc doc{$key}" {if ($key+1)<=$propose['proces']['id']}style="background: rgb(255, 98, 128);"{/if}></span>
+                        <p class="text text{$key}">{$p['name']}</p>
+                        {/loop}
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h3 class="status-tit" style="margin-bottom: 0">订单详情</h3>
+                    <table class="order-table">
+                        <tr><td style="width: 100px"><b>订单号：</b></td><td>{$propose[oid]}</td><td style="width: 100px"><b>姓名：</b></td><td class="t-name">{$propose[pname]}</td></tr>
+                        <tr><td><b>联系电话：</b></td><td class="t-tel">{$propose[telphone]}</td><td><b>QQ/微信：</b></td><td class="t-tx">{$propose[qq]}/{$propose[weixin]}</td></tr>
+                        <tr><td><b>主题：</b></td><td class="t-thm">{$propose['topic']['name']}</td><td><b>场景：</b></td><td class="t-cdt">{$propose['scene']['name']}</td></tr>
+                        <tr><td><b>时间：</b></td><td class="t-time">{$propose['time']}</td><td><b>地点：</b></td><td class="t-address">{$propose['address']}</td></tr>
+                        <tr><td><b>下单时间：</b></td><td class="t-adddate">{$propose['adddate']}</td><td><b>金额：</b></td><td class="t-price">￥{$propose['price']}</td></tr>
+                        <tr><td><b>具体想法：</b></td><td class="t-idea" colspan="3">{$propose['idea']}</td></tr>
+                    </table>
+                </div>
+            </div>
+            {else}
+            <div class="order-contact">
+                <div class="" style="float: right; margin: 130px 10px 0 0">
+                    <h4 class="h4">友情提示 :</h4>
+                    <p class="text">抱歉，您的订单已关闭或者不存在，请重新下单</p>
+                </div>
+            </div>
+            {/if}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.order-main').addClass('block').siblings().removeClass('block');
+    $('.order-goods-buy input').addClass('order-btn');
+</script>
+{template 'footer.html'}

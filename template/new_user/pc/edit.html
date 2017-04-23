@@ -30,7 +30,8 @@ art.dialog({
         <form method="post" name="form1" action="<?php echo modify("/act/edit/userid/".$data['userid']);?>">
             <li class="clear"><label>{lang(nickname)}：</label><input type="text" placeholder="请输入{lang(nickname)}" name="nickname" class="input" value="{$data['nickname']}"></li>
             <li class="clear"><label>{lang(e_mail)}：</label><input type="text" placeholder="请输入{lang(e_mail)}" name="e_mail" class="input" value="{$data['e_mail']}"></li>
-            <li><label>性别：</label><select class="select" style="width: 80px"><option>男</option><option>女</option></select></li>
+            <li><label>性别：</label><select class="select" name='sex' id='sex' style="width: 80px"><option value="0">未知</option><option value="1">男</option><option value="2">女</option></select></li>
+            <!--
             <li style="height: 38px"><label class="l" style="line-height: 38px">地区：</label><div class="l"  data-toggle="distpicker">
                 <div class="form-group">
                     <select class="form-control select" id="province1"></select>
@@ -43,11 +44,14 @@ art.dialog({
                 </div>
             </div>
             </li>
+            -->
             <li style="height: 90px"><label class="l">个人说明：</label><textarea class="l textarea" name="intro" value="{$data['intro']}"></textarea></li>
             <li><div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span><br></li>
         </ul>
 
         <input type="submit" name="submit" value="{lang(submit_on)}" class="person-btn" />
     </div>
-
+<script type="text/javascript">
+  $("#sex").val("{$data['sex']}");
+</script>
 {template 'footer_i.html'}

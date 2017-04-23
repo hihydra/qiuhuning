@@ -53,7 +53,6 @@ function stepNextOne() {
         var blockOn =  $('.block .dd-on');
         var selectItem = $('.select-item');
         $('.t-thm').text(blockOn.eq(0).text());
-        $('.t-thm').attr('value',blockOn.eq(0).attr('value'));
         if(selectItem.eq(0).text() == selectItem.eq(1).text()){
             var currentSelect = selectItem.eq(0).text();
         }
@@ -61,13 +60,14 @@ function stepNextOne() {
             var currentSelect = selectItem.eq(0).text()+'/'+selectItem.eq(1).text()
         }
         $('.t-address').text(removeStr(currentSelect+'/'+selectItem.eq(2).text()));
-        $('.t-address').attr('value',$('#city-picker3').val());
         $('.t-time').text(blockOn.eq(2).text());
-        $('.t-time').attr('value',blockOn.eq(2).text());
         $('.t-cdt').text(blockOn.eq(3).text());
-        $('.t-cdt').attr('value',blockOn.eq(3).attr('value'));
         $('.order-main').eq(1).addClass('block').siblings().removeClass('block');
         //给table表里的数据赋值
+        $('#propose').append('<input type="hidden" name="address"  value="'+ $('#city-picker3').val() +'"/>');
+        $('#propose').append('<input type="hidden" name="time"  value="'+ blockOn.eq(2).text() +'"/>');
+        $('#propose').append('<input type="hidden" name="scene_id"  value="'+ blockOn.eq(0).attr('value') +'"/>');
+        $('#propose').append('<input type="hidden" name="topic_id"  value="'+ blockOn.eq(3).attr('value')+'"/>');
     }
 }
 function removeStr(str)
@@ -103,17 +103,18 @@ function stepNextTwo() {
     else {
         var blockInput =  $('.block .input');
         $('.t-idea').text($('.block textarea').val());
-        $('.t-idea').attr('value',$('.block textarea').val());
         //$('.t-tx').text(blockInput.eq(0).val()+'/'+blockInput.eq(1).val());
         $('.t-qq').text(blockInput.eq(0).val());
-        $('.t-qq').attr('value',blockInput.eq(0).val());
         $('.t-weixin').text(blockInput.eq(1).val());
-        $('.t-weixin').attr('value',blockInput.eq(1).val());
         $('.t-name').text(blockInput.eq(2).val());
-        $('.t-name').attr('value',blockInput.eq(2).val());
         $('.t-tel').text(blockInput.eq(3).val());
-        $('.t-tel').attr('value',blockInput.eq(3).val());
-        $('.order-main').eq(2).addClass('block').siblings().removeClass('block')
+        $('.order-main').eq(2).addClass('block').siblings().removeClass('block');
+        $('#propose').append('<input type="hidden" name="idea"  value="'+ $('.t-idea').text() +'"/>');
+        $('#propose').append('<input type="hidden" name="qq"  value="'+ blockInput.eq(0).val() +'"/>');
+        $('#propose').append('<input type="hidden" name="weixin"  value="'+ blockInput.eq(1).val() +'"/>');
+        $('#propose').append('<input type="hidden" name="pname"  value="'+ blockInput.eq(2).val() +'"/>');
+        $('#propose').append('<input type="hidden" name="telphone"  value="'+ blockInput.eq(3).val() +'"/>');
+
     }
 }
 
@@ -136,25 +137,25 @@ $('.input').change(function () {
         $(this).parent().parent().find('dd.tips').text('请输入'+tipsText)
     }
 });
-
+function stepPrevThree() {
+    $('.order-main').eq(1).addClass('block').siblings().removeClass('block');
+    $('#propose input[type^="hidden"]').remove();
+}
+/*
 //第三步
 function stepNextThree() {
     $.ajax({
          type: "POST",
          url: "/index.php?case=propose&act=propose",
-         data: {submit:'on',pname:$(".t-name").attr('value'), telphone:$(".t-tel").attr('value'),qq:$(".t-qq").attr('value'),weixin:$(".t-weixin").attr('value'), telphone:$(".t-tel").attr('value'),
-                topic_id:$(".t-thm").attr('value'), scene_id:$(".t-cdt").attr('value'),address:$(".t-address").attr('value'), idea:$(".t-idea").attr('value')},
+         data: {submit:'on',pname:$(".t-name").attr('value'), telphone:$(".t-tel").attr('value'),qq:$(".t-qq").attr('value'),weixin:$(".t-weixin").attr('value'),
+                topic_id:$(".t-thm").attr('value'), scene_id:$(".t-cdt").attr('value'),address:$(".t-address").attr('value'), idea:$(".t-idea").attr('value'),time:$(".t-time").attr('value')},
          dataType: "text",
          async:'false',
          success: function(data){
                   }
     });
-    $('.order-main').eq(3).addClass('block').siblings().removeClass('block')
+    //$('.order-main').eq(3).addClass('block').siblings().removeClass('block')
 }
-function stepPrevThree() {
-    $('.order-main').eq(1).addClass('block').siblings().removeClass('block')
-}
-
 //第四步
 function stepNextFour() {
     $('.order-main').eq(4).addClass('block').siblings().removeClass('block')
@@ -164,3 +165,4 @@ function stepNextFour() {
 function stepNextFive() {
     $('.order-main').eq(5).addClass('block').siblings().removeClass('block')
 }
+*/

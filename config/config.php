@@ -552,7 +552,7 @@
 //}
 
 //enlarge-网站客服信息{
-'ifonserver'=>'0',
+'ifonserver'=>'1',
 
 //开启前台客服[<span class="hotspot" onmouseover="tooltip.show('设置是否在网站中显示悬浮客服侧栏！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>1/开启/0/关闭
 
@@ -616,11 +616,11 @@
 
 //QQ号码[<span class="hotspot" onmouseover="tooltip.show('填写联系QQ号码！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 
-'qq5name'=>'',
+'qq5name'=>'订单咨询下单',
 
 //客服职务[<span class="hotspot" onmouseover="tooltip.show('填写联系人职务！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 
-'qq5'=>'',
+'qq5'=>'2774332212',
 
 //QQ号码[<span class="hotspot" onmouseover="tooltip.show('填写联系QQ号码！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 

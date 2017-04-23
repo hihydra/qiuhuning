@@ -24,6 +24,19 @@
 <tr class="s_out">
 
 <td align="center" ><input onclick="c_chang(this)" type="checkbox" value="{$d.$primary_key}" name="select[]" class="checkbox" /> </td>
+<?php
+		switch($d['status']){
+			case 1:
+			$d['status']='未支付';
+			break;
+			case 2:
+			$d['status']='已支付';
+			break;
+			default:
+			$d['status']='已关闭';
+			break;
+		}
+?>
 <td align="center">{$d['id']}</td>
 <td align="center">{$d['oid']}</td>
 <td align="center">{$d['price']}</td>

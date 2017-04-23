@@ -8,6 +8,19 @@
 <th colspan="3">编辑订单</th>
 </tr>
 </thead>
+<?php
+    switch($d['status']){
+      case 1:
+      $d['status']='未支付';
+      break;
+      case 2:
+      $d['status']='已支付';
+      break;
+      default:
+      $d['status']='已关闭';
+      break;
+    }
+?>
 <tbody>
 	  <tr>
       	<td width="20%" align="right">订单号：</td>
@@ -61,9 +74,39 @@
         <td align="right">流程：</td>
         <td>{form::getform('process',$form,$field,$data)}</td>
       </tr>
+      <tr>
+        <td align="right">状态：</td>
+        <td>
+          <select id=status name=status >
+            <option value="0">关闭</option>
+            <option value="1" >未支付</option>
+            <option value="2" >已支付</option>
+          </select>
+        </td>
+      </tr>
 </tbody>
 </table>
 </div>
 <div class="blank20"></div>
 <input type="submit" name="submit" value="提交" class="btn_a"/>
 </form>
+<script>
+    $(document).ready(function(){
+        $("#topic option").each(function(){
+            if($(this).val()=={$data['topic_id']}){
+                $(this).attr("selected","selected");
+            }
+        });
+        $("#process option").each(function(){
+            if($(this).val()=={$data['process_id']}){
+                $(this).attr("selected","selected");
+            }
+        });
+        $("#status option").each(function(){
+            if($(this).val()=={$data['status']}){
+                $(this).attr("selected","selected");
+            }
+        });
+        //alert(defaultId);
+    });
+</script>

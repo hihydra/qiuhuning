@@ -25,15 +25,15 @@
 <tbody>
 
 <tr>
-<td width="149" align="right">公告标题</td>
+<td width="149" align="right">FAQ标题</td>
 <td width="1%">&nbsp;</td>
 <td>
-{form::getform('title',$form,$field,$data)} 
+{form::getform('title',$form,$field,$data)}
 </td>
 </tr>
 
 <tr>
-<td width="149" align="right">公告内容</td>
+<td width="149" align="right">FAQ内容</td>
 <td width="1%">&nbsp;</td>
 <td>
 {form::getform('content',$form,$field,$data)}

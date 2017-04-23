@@ -2,7 +2,14 @@
 
 class propose extends table {
     public $name='propose';
-
+    static $me;
+    public static function getInstance() {
+        if (!self::$me) {
+            $class=new propose();
+            self::$me=$class;
+        }
+        return self::$me;
+    }
 	function get_form() {
         return array(
         	    'topic'=>array(

@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{$skin_path}/styles/lib/laydate.css">
 <div class="wrap">
     <div class="crumbs">
-        <a class="crumbs-lk" href="index.html"><i class="icon-home crumbs-icon"></i>求婚总动员</a>><a class="crumbs-lk" href="">套餐详情</a>
+        <a class="crumbs-lk" href="/"><i class="icon-home crumbs-icon"></i>求婚总动员</a>><a class="crumbs-lk" href="?case=propose">我要求婚</a>
     </div>
     <div class="service-flow">
         <h3 class="tit">服务流程</h3>
@@ -23,17 +23,20 @@
         <dl class="order-item topic">
             <dt >活动主题：</dt>
             {loop $propose['topic']  $topic}
-            <dd class="dd" value='{$topic["id"]}'>{$topic['name']}</dd>
+            <dd class="dd {if !empty($topic['next'])}video-make{/if}" value='{$topic["id"]}'>{$topic['name']}</dd>
+                {if !empty($topic['next'])}
+                <dl class="order-item video-select-hidden none">
+                    <?php foreach($topic['next'] as $t) {?>
+                    <dd>{$t['name']}</dd>
+                    <?php } ?>
+                </dl>
+                {/if}
             {/loop}
-        </dl>
-        <dl class="order-item video-select-hidden none">
-            <dd>沙画</dd>
-            <dd>求婚视频</dd>
-            <dd>MV</dd>
         </dl>
         <dl class="order-item">
             <dt>举行地区：</dt>
-            <dd class="dd" style="">			<div id="distpicker">
+            <dd class="dd" style="">
+            <div id="distpicker">
                 <div class="form-group">
                     <div style="position: relative;">
                         <input id="city-picker3" style="width: 300px" class="form-control" readonly type="text" value="" data-toggle="city-picker">
@@ -71,7 +74,7 @@
         </dl>
         <dl class="order-item">
             <dt>我的微信：</dt>
-            <dd value="微信"><input onKeyUp="value=value.replace(/[^\d|chun]/g,'')" type="text" class="input" placeholder="请输入微信"></dd>
+            <dd value="微信"><input  type="text" class="input" placeholder="请输入微信"></dd>
             <dd class="tips"></dd>
         </dl>
         <dl class="order-item">
@@ -107,99 +110,9 @@
             </table>
         </div>
         <button class="order-cancel-btn" style="margin-left: 670px" onclick="stepPrevThree()">修改信息</button>
-        <button class="order-btn" onclick="stepNextThree()">确认提交</button>
-
-    </div>
-    <!--第4步-->
-    <div class="order-main">
-        <h3 class="tit">信息确认</h3>
-        <div class="order-box">
-            <div class="l order-nav">
-                <p>基本信息</p>
-                <p class="order-nav-on">支付定金</p>
-                <p>活动进程</p>
-            </div>
-            <div class="order-contact">
-                <div class="" style="float: right; margin: 130px 10px 0 0">
-                    <h4 class="h4">友情提示 :</h4>
-                    <p class="text">抱歉，未找到您的订单，请先联系客服</p>
-                    <button class="order-cancel-btn" onclick="stepNextFour()">支付定金</button>
-                    <button class="order-btn">联系客服</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--第5步-->
-    <div class="order-main">
-        <h3 class="tit">确认支付</h3>
-        <div class="order-box" style="margin-bottom: 160px">
-            <div class="l order-nav">
-                <p>基本信息</p>
-                <p class="order-nav-on">支付定金</p>
-                <p>活动进程</p>
-            </div>
-            <div class="order-pay">
-                <h3>订单号：53215321531323</h3>
-                <div class="order-goods">
-                    <img src="images/tc4.jpg">
-                    <div class="order-goods-info">
-                        <h4>主题打算尽快的撒娇</h4>
-                        <time>时间：2017-03-29</time>
-                        <p>地点：打算结婚的卡死较好的卡设计大师</p>
-                        <p>场景：图为日和科技无可忍斯大林交换机粉红色</p>
-                    </div>
-                    <div class="order-goods-buy">
-                        <button onclick="stepNextFive()">确认订单</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--第6步-->
-    <div class="order-main">
-        <h3 class="tit">确认支付</h3>
-        <div class="order-box">
-            <div class="l order-nav">
-                <p>基本信息</p>
-                <p>支付定金</p>
-                <p class="order-nav-on">活动进程</p>
-            </div>
-            <div class="order-status">
-                <div class="" style="width: 1000px;height: 180px; border: 1px solid #ddd;  margin-bottom: 40px">
-                    <h3 class="status-tit">交易状态</h3>
-                    <div class="progress-bar">
-                        <div class="progress"></div>
-                        <span class="doc doc1"></span>
-                        <span class="doc doc2"></span>
-                        <span class="doc doc3"></span>
-                        <span class="doc doc4"></span>
-                        <span class="doc doc5"></span>
-                        <span class="doc doc6"></span>
-                        <span class="doc doc7"></span>
-                        <span class="doc doc8"></span>
-                        <p class="text text1">基本信息</p>
-                        <p class="text text2">支付定金</p>
-                        <p class="text text3">填写浪漫档案表</p>
-                        <p class="text text4">出方案</p>
-                        <p class="text text5">确认方案支付预付款</p>
-                        <p class="text text6">统筹协调</p>
-                        <p class="text text7">彩排收尾款</p>
-                        <p class="text text8">享受浪漫</p>
-                    </div>
-                </div>
-
-                <div class="info">
-                    <h3 class="status-tit" style="margin-bottom: 0">订单详情</h3>
-                    <table class="order-table">
-                        <tr><td style="width: 100px"><b>订单号：</b></td><td>2313221313212</td><td style="width: 100px"><b>姓名：</b></td><td class="t-name"></td></tr>
-                        <tr><td><b>联系电话：</b></td><td class="t-tel"></td><td><b>QQ/微信：</b></td><td class="t-tx"></td></tr>
-                        <tr><td><b>主题：</b></td><td class="t-thm"></td><td><b>场景：</b></td><td class="t-cdt"></td></tr>
-                        <tr><td><b>时间：</b></td><td class="t-time"></td><td><b>地点：</b></td><td class="t-address"></td></tr>
-                        <tr><td><b>具体想法：</b></td><td class="t-idea" colspan="3"></td></tr>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <form id="propose" action="/index.php?case=propose&act=propose" method="post" style="float: right;padding-right: 304px;">
+            <input type="submit" name="submit" value="{lang(submit_on)}" class="order-btn" />
+        </form>
     </div>
 </div>
 <script src="{$skin_path}/scripts/lib/city-picker.data.js"></script>
