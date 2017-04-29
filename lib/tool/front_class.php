@@ -2133,6 +2133,9 @@ class url
 
     static function getvar($_url)
     {
+        if(front::get('city')){
+                $_url .= '/city/'.front::get('city');
+        }
         $var = explode('/', ltrim($_url, '/'));
         if (!isset($var[1]))
             $var[1] = 'index';

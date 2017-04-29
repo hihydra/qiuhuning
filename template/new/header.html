@@ -15,42 +15,46 @@
 <script src="scripts/lib/html5shiv.min.js"></script>
 <![endif]-->
 <body>
-<header class="header">
-    <div class="wrap">
-        <div class="l">
-            <span>你好，欢迎来访求婚总动员官方网站！</span>
-            <span style="margin-left: 25px">{if config::get('site_login')=='1'}{login_js()}{/if}</span>
-        </div>
-        <div class="r relative">
-            {loop categories(43) $key $t1}
-            <?php if($key>4) break; ?>
-            <a href="{$t1[url]}">{$t1[catname]}</a>
-            {/loop}
 
-            <a id="weixin_btn" href="">微信公众号</a>
-            <img class="weixin-top" src="{$skin_path}/images/weixin.jpg"/>
+    <header class="header">
+        <div class="wrap">
+            <div class="l">
+                <span>你好，欢迎来访求婚总动员官方网站！</span>
+                <span style="margin-left: 25px">{if config::get('site_login')=='1'}{login_js()}{/if}</span>
+            </div>
+            <div class="r relative">
+                {loop categories(43) $key $t1}
+                <?php if($key>4) break; ?>
+                <a href="{$t1[url]}">{$t1[catname]}</a>
+                {/loop}
+
+                <a id="weixin_btn" href="">微信公众号</a>
+                <img class="weixin-top" src="{$skin_path}/images/weixin.jpg"/>
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+        <h1 class="logo"><a class="logo-text" href="">求婚总动员</a> </h1>
+        <div class="switch-btn l">
+            <h2 style="text-align: center;">{area::name($_GET['city'])}</h2>
+            <a  href="<?php echo url('area/city');?>">[切换城市]</a>
+        </div>
+        <div class="search">
+            <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+                <input class="search-text" type="text" name="keyword"/>
+                <input name='submit' type="submit" value="搜索" align="middle" class="search-btn" />
+            </form>
+        </div>
+        <div class="contact-top r">
+            <p style="font-size: 15px; margin-bottom: 5px">求婚总动员客服热线</p>
+            <p style="font-size: 25px">{get('tel')}</p>
         </div>
     </div>
-</header>
-<div class="wrap">
-    <h1 class="logo"><a class="logo-text" href="">求婚总动员</a> </h1>
-    <a class="switch-btn l" href="city.html">[切换城市]</a>
-    <div class="search">
-        <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
-            <input class="search-text" type="text" name="keyword"/>
-            <input name='submit' type="submit" value="搜索" align="middle" class="search-btn" />
-        </form>
-    </div>
-    <div class="contact-top r">
-        <p style="font-size: 15px; margin-bottom: 5px">求婚总动员客服热线</p>
-        <p style="font-size: 25px">{get('tel')}</p>
-    </div>
-</div>
-<nav class="nav">
-    <div class="wrap">
-        <a href="{$base_url}/" class="nav-lk{if $topid==0} nav-on{/if}">{lang(homepage)}</a>
-        {loop categories_nav() $t}
+    <nav class="nav">
+        <div class="wrap">
+            <a href="<?php if($_GET['city']){echo '?city='.$_GET['city'];}else{ echo '/';} ?>" class="nav-lk{if $topid==0} nav-on{/if}">{lang(homepage)}</a>
+            {loop categories_nav() $t}
             <a href="{$t[url]}" class="nav-lk{if $catid==$t[catid]} nav-on{/if}">{$t[catname]}</a>
-        {/loop}
-    </div>
-</nav>
+            {/loop}
+        </div>
+    </nav>

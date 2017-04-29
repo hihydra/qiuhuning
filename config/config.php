@@ -278,7 +278,7 @@
 
 //生成手机TAG[<span class="hotspot" onmouseover="tooltip.show('设置是否生成手机TAG！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/不生成/1/生成
 
-'area_html'=>'1',
+'area_html'=>'0',
 
 //生成地区[<span class="hotspot" onmouseover="tooltip.show('设置是否生成地区！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/不生成/1/生成
 

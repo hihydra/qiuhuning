@@ -193,7 +193,7 @@ class archive extends table {
     }
     static function url($info,$page=null,$relative=false) {
         if ($info['linkto']) return $info['linkto'];
-        
+
         if(front::$ismobile == true){
         	if (config::get('wap_html_prefix')){
         		$html_prefix='/'.trim(config::get('wap_html_prefix'),'/');
@@ -209,7 +209,7 @@ class archive extends table {
         	if($info['iswaphtml'] == 2){
         		return url::create('archive/show/t/wap/aid/'.$info['aid'],false);
         	}
-        	
+
         	if (!category::getarciswaphtml($info)){
         		if ($page){
         			return url::create('archive/show/t/wap/aid/'.$info['aid'].'/page/'.$page,false);
@@ -240,7 +240,7 @@ class archive extends table {
         		return config::get('base_url').$html_prefix.'/'.$rule;
         	}
         }
-        
+
         if (config::get('html_prefix')) $html_prefix='/'.trim(config::get('html_prefix'),'/');
         $type=category::getInstance();
         if($info['ishtml'] == 2){

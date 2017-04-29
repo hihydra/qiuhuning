@@ -44,6 +44,15 @@ class area_act extends act {
 
         $this->render();
     }
+    function city_action(){
+        $area=new area();
+        $areas = $area->getrows('parentid = 0','','id  asc');
+        foreach ($areas as $key => &$value) {
+            $value['city'] = $area->getrows('parentid = '.$value['id'],'','id  asc');
+        }
+        $this->view->areas = $areas;
+        $this->render();
+    }
 
     function out($tpl) {
     	if (front::$debug) return;

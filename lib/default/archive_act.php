@@ -137,6 +137,13 @@ class archive_act extends act
 
     function list_action()
     {
+        //add
+        if(front::get('city')){
+            $where = 'city_id ='.front::get('city').' and ';
+        }else{
+            $where = '';
+        }
+        //end-add
         front::check_type(front::get('catid'));
         $this->view->categorys = category::getpositionlink2(front::get('catid'));
         $topid = category::gettopparent(front::get('catid'));
@@ -156,10 +163,11 @@ class archive_act extends act
         $order = "listorder=0,`listorder` asc,`adddate` DESC";
         $tops = $this->archive->getrows("checked=1 AND state=1 AND toppost!=0", 0, 'toppost DESC,listorder=0,listorder ASC,aid DESC');
         if (@$this->category->category[front::get('catid')]['includecatarchives']) {
-            $articles = $this->archive->getrows('catid in (' . implode(',', $categories) . ') and checked=1', $limit, $order);
+            $articles = $this->archive->getrows($where.'catid in (' . implode(',', $categories) . ') and checked=1', $limit, $order);
         } else {
-            $articles = $this->archive->getrows('catid=' . front::get('catid') . ' and checked=1', $limit, $order);
+            $articles = $this->archive->getrows($where.'catid=' . front::get('catid') . ' and checked=1', $limit, $order);
         }
+
         if (!is_array($articles)) {
             $this->out('message/error.html');
         }
@@ -208,12 +216,11 @@ class archive_act extends act
             }
         }
         $this->view->archives = $articles;
-        $this->view->articles = $articles;
 
         if (@$this->category->category[front::get('catid')]['includecatarchives'])
-            $this->view->record_count = $this->archive->rec_count('catid in(' . implode(',', $categories) . ') AND state=1 AND checked=1');
+            $this->view->record_count = $this->archive->rec_count($where.'catid in(' . implode(',', $categories) . ') AND state=1 AND checked=1');
         else
-            $this->view->record_count = $this->archive->rec_count('catid=' . front::get('catid') . ' AND state=1 AND checked=1');
+            $this->view->record_count = $this->archive->rec_count($where.'catid=' . front::get('catid') . ' AND state=1 AND checked=1');
         front::$record_count = $this->view->record_count;
         $this->view->catid = front::get('catid');
         $this->view->ifson = category::hasson($articles[0]['catid'] ? $articles[0]['catid'] : $this->view->catid);

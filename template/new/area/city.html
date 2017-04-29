@@ -1,0 +1,60 @@
+{template 'header.html'}
+<link rel="stylesheet" href="{$skin_path}/styles/city.css">
+
+<div class="maincitybox">
+	<div class="newdonghua">
+		<div class="feiji">
+			<img src="{$skin_path}/images/feiji.gif" width="217" height="70" alt="飞机" />
+		</div>
+		<div class="yun1">
+			<img src="{$skin_path}/images/yun1.png" width="46" height="28" alt="yun1" />
+		</div>
+		<div class="yun2">
+			<img src="{$skin_path}/images/yun2.png" width="46" height="24" alt="yun2" />
+		</div>
+		<div class="gongjiao">
+			<img src="{$skin_path}/images/gongjiao.png" width="50" height="28" alt="公交" />
+		</div>
+		<div class="chedui">
+			<img src="{$skin_path}/images/chedui.png" width="241" height="48" alt="车队" />
+		</div>
+        <!--[if lte IE 8]>
+        <script>
+            $('.newdonghua > div').hide();
+        </script>
+        <![endif]-->
+    </div>
+    <div class="cityinbox">
+    	<div class="cityinsubox">
+    		<ul class="citycontTop clearfix">
+    			<li>
+    				<a href="/">全国</a>
+    			</li>
+    		</ul>
+    </div>
+    <!--字母-->
+    <div class="citycontZm clearfix">
+    	<span>城市列表</span>
+
+    </div>
+    <!--字母结束-->
+    <div class="cityfloor">
+    	<!--一个地区-->
+    	{loop $areas  $area}
+    	<div class="choosecitymenu clearfix" id="g-A">
+    		<span class="fbtit">{$area['name']}</span>
+    		<ul class="choosecityinner">
+    			{loop $area['city'] $city}
+    			<li>
+    				<a class="citya citya_0 " href="{$base_url}?city={$city['id']}" data-name="anqing" >
+    					{$city['name']}
+    				</a>
+    				</li>
+    			{/loop}
+    			</ul>
+    		</div>
+    		{/loop}
+    	</div>
+    </div>
+</div>
+{template 'footer.html'}

@@ -436,4 +436,30 @@
       'submit' => '提交',
     ),
   ),
+  33 => 
+  array (
+    'id' => '33',
+    'name' => '内页右侧内容列表3',
+    'tagfrom' => 'content',
+    'tagcontent' => 'null',
+    'setting' => 
+    array (
+      'onlymodify' => '',
+      'catid' => '27',
+      'son' => '0',
+      'typeid' => '0',
+      'spid' => '0',
+      'province_id' => '0',
+      'city_id' => '0',
+      'section_id' => '0',
+      'length' => '12',
+      'introduce_length' => '',
+      'ordertype' => 'view-desc',
+      'istop' => '0',
+      'limit' => '5',
+      'attr1' => '0',
+      'tagtemplate' => 'tag_content_pic_text.html',
+      'submit' => '提交',
+    ),
+  ),
 );

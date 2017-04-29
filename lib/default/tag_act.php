@@ -2,6 +2,13 @@
 
 class tag_act extends act {
     function show_action() {
+        //add
+        if(front::get('city')){
+            $where = 'city_id ='.front::get('city').' and ';
+        }else{
+            $where = '';
+        }
+        //end-add
         $tagname=urldecode(front::get('tag'));
         if(preg_match('/union/i',$tagname) || preg_match('/"/i',$tagname) ||preg_match('/\'/i',$tagname)){
         	exit(lang('illegal_parameter'));
@@ -27,7 +34,7 @@ class tag_act extends act {
                 $arcids[]=$arctag['aid'];
             }
             $archive=new archive();
-            $archives=$archive->getrows('aid in ('.implode(',',$arcids).')',null,'aid desc');
+            $archives=$archive->getrows($where .'aid in ('.implode(',',$arcids).')',null,'aid desc');
             foreach($archives as $order=>$arc) {
                 $archives[$order]['url']=archive::url($arc);
                 $archives[$order]['catname']=category::name($arc['catid']);

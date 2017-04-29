@@ -1,14 +1,17 @@
 <div class="part-wiki">
     <h2 class="index_h2"><img src="{$skin_path}/images/h2_bk.png"/></h2>
     <ul class="wiki-list">
-    {loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+        {loop archive($_catid,$_typeid,$_spid,'0,'.$_GET['city'].',0',$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+        <?php if($_GET['city']){$archive[url] .= '&city='.$_GET['city'];} ?>
         <li>
-            <div class="img-box">
-                <img jh-img="an" src="{$archive['thumb']}" onerror='this.src="/images/nopic.gif"'/>
-            </div>
-            <h3 class="h3">{$archive[title]}</h3>
-            <span class="text">{cut(strip_tags($archive['intro']),50)}...</span>
+            <a href="{$archive[url]}">
+                <div class="img-box">
+                    <img jh-img="an" src="{$archive['thumb']}" onerror='this.src="/images/nopic.gif"'/>
+                </div>
+                <h3 class="h3">{$archive[title]}</h3>
+                <span class="text">{cut(strip_tags($archive['intro']),50)}...</span>
+            </a>
         </li>
-    {/loop}
+        {/loop}
     </ul>
 </div>
