@@ -3,7 +3,6 @@
     display: block;
     clear: both;
 }
-
 .discount-list>li{
     width: 373px;
     padding: 1%;
@@ -685,4 +684,17 @@
     width: 69px;
     text-align: center !important;
     margin:0 auto;
+}
+.order-item .person-code-btn {
+    float: left;
+    border-radius: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    min-height: 19px;
+    margin: 0 0 0 15px;
+    padding: 7px 10px;
+    background: #fff;
+    border: 1px solid #ff6280;
+    color: #ff6280;
+    width: 88px;
 }

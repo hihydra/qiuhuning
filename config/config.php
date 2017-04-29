@@ -278,7 +278,7 @@
 
 //生成手机TAG[<span class="hotspot" onmouseover="tooltip.show('设置是否生成手机TAG！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/不生成/1/生成
 
-'area_html'=>'0',
+'area_html'=>'1',
 
 //生成地区[<span class="hotspot" onmouseover="tooltip.show('设置是否生成地区！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/不生成/1/生成
 
@@ -616,7 +616,7 @@
 
 //QQ号码[<span class="hotspot" onmouseover="tooltip.show('填写联系QQ号码！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 
-'qq5name'=>'订单咨询下单',
+'qq5name'=>'订单咨询',
 
 //客服职务[<span class="hotspot" onmouseover="tooltip.show('填写联系人职务！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 
@@ -1233,7 +1233,7 @@
 
 //密码[<span class="hotspot" onmouseover="tooltip.show('请输入短信平台注册时填写的密码！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 
-'sms_on'=>'0',
+'sms_on'=>'1',
 
 //短信开关[<span class="hotspot" onmouseover="tooltip.show('设置是否开启短信通知功能！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>1/开启/0/关闭
 

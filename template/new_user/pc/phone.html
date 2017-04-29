@@ -1,18 +1,4 @@
 {template 'head_i.html'}
-<script LANGUAGE="javascript">
-    <!--
-    function CheckForm()
-    {
-        var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-        if(!myreg.test(document.form1.tel.value))
-        {
-            alert('请输入有效的手机号码！');
-            document.form1.tel.focus()
-            return false;
-        }
-    }
-    //-->
-</script>
 <?php
 if(hasflash()){
     $showmessage = showflash();
@@ -42,8 +28,9 @@ art.dialog({
         <h3 class="tit">手机修改</h3>
         <ul class="person-box">
             <li><label>原手机：</label>{$data['tel']}</li>
-            <li><label>新手机：</label><input type="text" placeholder="请输入手机号" name="tel" class="input"></li>
-            <li><label>验证码：</label><input type="text" placeholder="请输入验证码" style="width: 120px"  class="input"><button class="person-code-btn">发送验证码</button></li>
+            <li><label>新手机：</label><input type="text" placeholder="请输入手机号" name="tel" id='tel' class="input"></li>
+            <li><label>验证码：</label><input type="text" placeholder="请输入验证码" style="width: 120px"  class="input">
+            <input type="button" class="person-code-btn" onclick="getCode(this)" value="获取验证码" />
             <li><div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span><br></li>
         </ul>
         <input type="submit" name="submit" value="{lang(submit_on)}" class="person-btn" />

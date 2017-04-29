@@ -86,8 +86,7 @@
             <dt>手机号：</dt>
             <dd value="手机号"><input id="tel" onblur="isnum(this)" type="text" class="input" placeholder="请输入手机号"></dd><dd class="tips"></dd>
             <dd class="clear" style="margin: 20px 0 0 100px"><input class="w80" type="text" placeholder="请输入验证码"></dd>
-            <dd style="margin-top: 20px; line-height: 24px" class="main">获取验证码</dd>
-
+            <input type="button" style="margin-top: 20px; line-height: 24px" class="person-code-btn" onclick="getCode(this)" value="获取验证码" />
         </dl>
         <button class="order-cancel-btn" onclick="stepPrevTwo()">上一步</button>
         <button class="order-btn" onclick="stepNextTwo()">提交需求</button>

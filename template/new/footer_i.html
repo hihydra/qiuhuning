@@ -10,6 +10,7 @@
         <?php } ?>
     </dl>
 </div>
+
 <footer class="footer">
     <p class="copyright"><?php echo get(site_right);?> <a title="<?php echo get('sitename');?>" href="<?php echo $base_url;?>/" style="color: #fff;"><?php echo get('sitename');?></a> <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank" style="color: #fff;"><?php echo get('site_icp');?></a></p>
 </footer>
@@ -22,6 +23,7 @@ $('#weixin_btn').hover(function() {
     $('.weixin-top').stop().fadeOut();
 })
 </script>
+{template 'system/servers.html'}
 </body>
 
 </html>
