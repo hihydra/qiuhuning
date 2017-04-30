@@ -65,6 +65,27 @@ class tool_act extends act {
         }
     }
 
+    public function smsMessage_action(){
+        $mobile = front::$post['mobile'];
+        if(!$mobile){
+            $username = front::$post['username'];
+            $user_obj = new user();
+            $user = $user_obj->getrow(array('username'=>$username));
+            $mobile = $user['tel'];
+        }
+        if(!preg_match('/^1([0-9]+){5,}$/is',$mobile)){
+            exit(lang('phone_number_format_is_wrong'));
+        }
+        $func = 'chkcode';
+        $smsCode = new SmsCode();
+        $code = $smsCode->getCode();
+        if($rs = smsMessage($mobile,$code) == 0) {
+            exit(lang('successfully_sent_please_check'));
+        }else{
+            exit(lang('sms_send_failure'));
+        }
+    }
+
     function qrcode_action(){
         require_once(ROOT.'/lib/plugins/phpqrcode/qrlib.php');
         $url = $_GET['data'];
@@ -228,7 +249,7 @@ class tool_act extends act {
                     continue;
                 $uploads[$name]=$upload->run($file);
                 $res[$name]['name']=$uploads[$name];
-                $_name=str_replace('_upload','',$name); 
+                $_name=str_replace('_upload','',$name);
                 /*
                 $res[$name]['code']="
                 document.form1.$_name.value=data[key].name;
@@ -242,7 +263,7 @@ class tool_act extends act {
                 $('#$_name').val(data[key].name);
                 image_preview('$_name',data[key].name);
                 ";
-                
+
             }
         }
         echo json::encode($res);

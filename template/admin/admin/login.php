@@ -62,7 +62,7 @@ border-radius: 5px;}
 <script src="{$base_url}/js/mobilechk.js"></script>
 <input placeholder="{lang(tel)}" type='text' id="tel"  name="tel" value="" tabindex="3" class="input" />
 <div class="blank20"></div>
-<input id="btm_sendMobileCode" onclick="sendMobileCode('{url('tool/smscode')}',$('#tel'));" type="button" value="{lang(send_cell_phone_verification_code)}" />
+<input id="btm_sendMobileCode" onclick="sendMobileCode('{url('tool/smscode')}',$('#tel'),obj);" type="button" value="{lang(send_cell_phone_verification_code)}" />
 <input type='text' placeholder="{lang(please_enter_the_phone_verification_code)}" id="mobilenum" name="mobilenum" />
 <div class="blank20"></div>
 {/if}

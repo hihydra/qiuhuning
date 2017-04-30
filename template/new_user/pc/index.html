@@ -1,36 +1,12 @@
 {template 'head_i.html'}
-
-<?php
-if(hasflash()){
-    $showmessage = showflash();
-    if(strlen($showmessage)>200){
-?>
-<div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span>
-<span style="color:blue;float:right"><a href="#" onClick="javascript:turnoff('#message');">(×)</a></span></div><div class="blank20"></div>
-<?php
-    }else{
-?>
-<script type="text/javascript">
-art.dialog({
-        id:'messagebox',
-        content:'<?php echo $showmessage; ?>',
-        title:'{lang(prompted)}',
-        time: 2,
-        lock:true
-    });
-</script>
-<?php
-    }
-}
-?>
-
-    <div class="person-main">
-        <h3 class="tit">{lang(edituserinfo)}</h3>
-        <ul class="person-box">
+<div class="person-main">
+    <h3 class="tit">{lang(edituserinfo)}</h3>
+    <ul class="person-box">
         <form method="post" name="form1" action="<?php echo modify("/act/edit/userid/".$data['userid']);?>">
             <li class="clear"><label>{lang(nickname)}：</label><input type="text" placeholder="请输入{lang(nickname)}" name="nickname" class="input" value="{$data['nickname']}"></li>
             <li class="clear"><label>{lang(e_mail)}：</label><input type="text" placeholder="请输入{lang(e_mail)}" name="e_mail" class="input" value="{$data['e_mail']}"></li>
-            <li><label>性别：</label><select class="select" style="width: 80px"><option>男</option><option>女</option></select></li>
+            <li><label>性别：</label><select class="select" name='sex' id='sex' style="width: 80px"><option value="0">未知</option><option value="1">男</option><option value="2">女</option></select></li>
+            <!--
             <li style="height: 38px"><label class="l" style="line-height: 38px">地区：</label><div class="l"  data-toggle="distpicker">
                 <div class="form-group">
                     <select class="form-control select" id="province1"></select>
@@ -43,11 +19,14 @@ art.dialog({
                 </div>
             </div>
             </li>
-            <li style="height: 90px"><label class="l">个人说明：</label><textarea class="l textarea" name="intro" value="{$data['intro']}"></textarea></li>
-            <div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span></div>
-        </ul>
+        -->
+        <li style="height: 90px"><label class="l">个人说明：</label><textarea class="l textarea" name="intro" value="{$data['intro']}"></textarea></li>
+        <li><div id='message'><span style="color:red;padding-left:80px;">{message()}</span><br></li>
+    </ul>
 
-        <button class="person-btn">提交修改</button>
-    </div>
-
+    <input type="submit" name="submit" value="{lang(submit_on)}" class="person-btn" />
+</div>
+<script type="text/javascript">
+  $("#sex").val("{$data['sex']}");
+</script>
 {template 'footer_i.html'}

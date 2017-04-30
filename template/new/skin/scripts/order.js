@@ -99,6 +99,8 @@ function stepNextTwo() {
     }
     else if(!isnum(jsTel)){
         currentInput.eq(3).parent().parent().find('dd.tips').text('手机号格式错误')
+    }else if(currentInput.eq(4).val() == ''){
+        currentInput.eq(4).parent().parent().find('dd.tips').text('验证码不能为空')
     }
     else {
         var blockInput =  $('.block .input');
@@ -114,6 +116,7 @@ function stepNextTwo() {
         $('#propose').append('<input type="hidden" name="weixin"  value="'+ blockInput.eq(1).val() +'"/>');
         $('#propose').append('<input type="hidden" name="pname"  value="'+ blockInput.eq(2).val() +'"/>');
         $('#propose').append('<input type="hidden" name="telphone"  value="'+ blockInput.eq(3).val() +'"/>');
+        $('#propose').append('<input type="hidden" name="mobilenum"  value="'+ $('#mobilenum').val() +'"/>');
 
     }
 }

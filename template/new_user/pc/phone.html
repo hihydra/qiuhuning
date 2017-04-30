@@ -1,37 +1,13 @@
 {template 'head_i.html'}
-<?php
-if(hasflash()){
-    $showmessage = showflash();
-    if(strlen($showmessage)>200){
-?>
-<div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span>
-<span style="color:blue;float:right"><a href="#" onClick="javascript:turnoff('#message');">(×)</a></span></div><div class="blank20"></div>
-<?php
-    }else{
-?>
-<script type="text/javascript">
-art.dialog({
-        id:'messagebox',
-        content:'<?php echo $showmessage; ?>',
-        title:'{lang(prompted)}',
-        time: 2,
-        lock:true
-    });
-</script>
-<?php
-    }
-}
-?>
-
     <div class="person-main">
-    <form method="post" name="form1" action="<?php echo modify("/act/phone/userid/".$data['userid']);?>" onsubmit="return CheckForm();">
+    <form method="post" name="form1" action="<?php echo modify('/act/phone');?>" onsubmit="return CheckForm();">
         <h3 class="tit">手机修改</h3>
         <ul class="person-box">
             <li><label>原手机：</label>{$data['tel']}</li>
             <li><label>新手机：</label><input type="text" placeholder="请输入手机号" name="tel" id='tel' class="input"></li>
-            <li><label>验证码：</label><input type="text" placeholder="请输入验证码" style="width: 120px"  class="input">
-            <input type="button" class="person-code-btn" onclick="getCode(this)" value="获取验证码" />
-            <li><div id='message'><span style="color:red;float:left"><?php echo $showmessage; ?></span><br></li>
+            <li><label>验证码：</label><input type="text" name="mobilenum" placeholder="请输入验证码" style="width: 120px"  class="input">
+            <input type="button" class="person-code-btn" onclick="getCode('{url('tool/smsMessage')}',$('#tel'),this);" value="获取验证码"/>
+            <li><div id='message'><span style="color:red;padding-left:80px;">{message()}</span><br></li>
         </ul>
         <input type="submit" name="submit" value="{lang(submit_on)}" class="person-btn" />
     </form>

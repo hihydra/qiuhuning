@@ -1288,4 +1288,16 @@
 
 //不要修改！[<span class="hotspot" onmouseover="tooltip.show('自动生成,请牢记,每域名只赠送一个全景帐号！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 //}
+
+'aliyun-sms' => '1',
+
+'title'=>'求婚总动员',
+
+'endPoint'=>'http://1063546986439542.mns.cn-hangzhou.aliyuncs.com',
+'accessId'=>'LTAIHjoylcKpC9mj',
+'accessKey'=>'UXCIj11vtDVrEUdadgX0kSwubHEY84',
+'topicName'=>'sms.topic-cn-hangzhou',
+'SMSSignName'=>'求婚网',
+'SMSTemplateCode'=>'SMS_63905274',
+
 );

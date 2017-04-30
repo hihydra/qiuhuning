@@ -34,9 +34,11 @@ function tel(){
         return true;
     }
 }
-function getCode(obj){
+function getCode(url,mobile,obj){
     if(tel()){
-        settime(obj);
+        $.post(url,{'mobile':mobile.val()},function(data){
+            settime(obj);
+        },'text');
     }
 }
 var countdown=60;

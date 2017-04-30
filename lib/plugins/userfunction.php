@@ -23,7 +23,7 @@ function callGuestbook(){
 }
 
 function getCustSearch(){
-	
+
 }
 
 function getArchiveTitle($aid = 0){
@@ -674,6 +674,13 @@ function sendMsg($mobile, $content) {
         $num = $tmp[0] + 1;
         file_put_contents('config/sms.tmp.php', $num . '@' . date('Y-m-d'));
     }
+    return $rs;
+}
+
+function smsMessage($mobile, $code) {
+    include_once("aliyunMNS/SmsMessage.php");
+    $client = new SmsMessage();
+    $rs = $client->run($mobile, $code);
     return $rs;
 }
 

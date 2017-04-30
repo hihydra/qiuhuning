@@ -51,9 +51,17 @@ class propose_act extends act
     {
         if (front::post('submit')) {
             $this->propose = new propose();
-            if(!front::$post['telphone']){
-                echo '<script type="text/javascript">alert("手机号不能为空");</script>';
+            if(!preg_match('/^1([0-9]+){5,}$/is',front::$post['telphone'])){
+                echo '<script type="text/javascript">alert("'.lang('phone_number_format_is_wrong').'");window.location.href="' . url('propose'). '";</script>';
                 exit;
+            }
+            if (config::get('aliyun-sms')) {
+                $mobilenum = front::$post['mobilenum'];
+                $smsCode = new SmsCode();
+                if (!$smsCode->chkcode($mobilenum)) {
+                    echo '<script type="text/javascript">alert("'.lang('cell_phone_parity_error').'");window.location.href="' . url('propose'). '";</script>';
+                    return;
+                }
             }
             if(!$this->view->user['userid']){
                 if ($this->_user->getrow(array('tel' => front::$post['telphone']))) {
@@ -94,8 +102,9 @@ class propose_act extends act
             $insert = $this->propose->rec_insert(front::$post);
 
             if ($insert < 1) {
-                front::flash($this->tname . lang('add_failure'));
-            } else if($insert_user){
+                echo '<script type="text/javascript">alert("'.lang('add_failure').'");window.location.href="' . url('propose'). '";</script>';
+                return;
+            } else{
                 echo '<script type="text/javascript">alert("已自动为您注册用户，用户名为手机号，密码为手机号后6位");window.location.href="' . url('propose/paypropose/oid/' .front::$post['oid'], true). '";</script>';
             }
             exit;

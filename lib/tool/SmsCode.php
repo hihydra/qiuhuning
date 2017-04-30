@@ -7,6 +7,7 @@ class SmsCode {
     public function getCode(){
         $this->code = mt_rand(123456,987654);
         $_SESSION['smscode'] = $this->code;
+        return $this->code;
     }
 
     public function getTemplate($func,$argv=null){

@@ -88,6 +88,16 @@ class user_act extends act
     function phone_action()
     {
         if (front::post('submit')) {
+            if(!preg_match('/^1([0-9]+){5,}$/is',front::$post['tel'])){
+                alerterror(lang('phone_number_format_is_wrong'));
+            }
+            if (config::get('aliyun-sms')) {
+                $mobilenum = front::$post['mobilenum'];
+                $smsCode = new SmsCode();
+                if (!$smsCode->chkcode($mobilenum)) {
+                    alerterror(lang('cell_phone_parity_error'));
+                }
+            }
             $this->_user->rec_update(front::$post, "username='".session::get('username')."'");
             front::flash(lang('modify_data_successfully'));
             front::redirect(url::create('user/phone'));
@@ -384,6 +394,15 @@ class user_act extends act
           }
 
             if (config::get('mobilechk_enable') && config::get('mobilechk_reg')) {
+                $mobilenum = front::$post['mobilenum'];
+                $smsCode = new SmsCode();
+                if (!$smsCode->chkcode($mobilenum)) {
+                    front::flash(lang('cell_phone_parity_error'));
+                    return;
+                }
+            }
+
+            if (config::get('aliyun-sms')) {
                 $mobilenum = front::$post['mobilenum'];
                 $smsCode = new SmsCode();
                 if (!$smsCode->chkcode($mobilenum)) {
