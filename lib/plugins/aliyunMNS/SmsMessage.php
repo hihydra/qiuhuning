@@ -16,7 +16,7 @@ class SmsMessage
         /**
          * Step 1. 初始化Client
          */
-        $this->endPoint = "http://1063546986439542.mns.cn-hangzhou.aliyuncs.com"; // eg. http://1234567890123456.mns.cn-shenzhen.aliyuncs.com
+        $this->endPoint = "http://1063546986439542.mns.cn-hangzhou.aliyuncs.com/"; // eg. http://1234567890123456.mns.cn-shenzhen.aliyuncs.com
         $this->accessId = "LTAIHjoylcKpC9mj";
         $this->accessKey = "UXCIj11vtDVrEUdadgX0kSwubHEY84";
         $this->client = new Client($this->endPoint, $this->accessId, $this->accessKey);
@@ -31,7 +31,7 @@ class SmsMessage
         // 3.1 设置发送短信的签名（SMSSignName）和模板（SMSTemplateCode）
         $batchSmsAttributes = new BatchSmsAttributes("求婚网", "SMS_63905274");
         // 3.2 （如果在短信模板中定义了参数）指定短信模板中对应参数的值
-        $batchSmsAttributes->addReceiver($mobile, array("code" => $code));
+        $batchSmsAttributes->addReceiver($mobile, array("code" =>strval($code)));
 
         $messageAttributes = new MessageAttributes(array($batchSmsAttributes));
         /**
