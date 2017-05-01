@@ -115,7 +115,7 @@
 
 //网站整体颜色[<span class="hotspot" onmouseover="tooltip.show('只在PC模板支持换色时有效！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]=>0/无/1/红/2/橙/3/黄/4/绿/5/青/6/蓝/7/紫/8/黑/9/白
 
-'admin_dir'=>'admin',
+'admin_dir'=>'piere.html',
 
 //后台地址[<span class="hotspot" onmouseover="tooltip.show('强烈推荐安装后第一时间修改登录地址，加强网站后台安全性！');" onmouseout="tooltip.hide();"><img src="./images/admin/remind.gif" alt="" width="14" height="20" style="margin-left:10px; margin-right:5px;" /></span>]
 
@@ -1293,11 +1293,11 @@
 
 'title'=>'求婚总动员',
 
-'endPoint'=>'http://1063546986439542.mns.cn-hangzhou.aliyuncs.com',
-'accessId'=>'LTAIHjoylcKpC9mj',
-'accessKey'=>'UXCIj11vtDVrEUdadgX0kSwubHEY84',
+'endPoint'=>'http://1958775033696402.mns.cn-hangzhou.aliyuncs.com/',
+'accessId'=>'LTAIUXcfPGjazjWm',
+'accessKey'=>'SUBJ4GlNpu9F0fBT0JztB3NTBCFITn',
 'topicName'=>'sms.topic-cn-hangzhou',
-'SMSSignName'=>'求婚网',
-'SMSTemplateCode'=>'SMS_63905274',
+'SMSSignName'=>'求婚总动员',
+'SMSTemplateCode'=>'SMS_63745381',
 
 );
