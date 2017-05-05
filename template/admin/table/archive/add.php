@@ -38,14 +38,14 @@ echo modify("/act/".front::$act."/table/".$table.$id."/deletestate/".front::get(
     <script type="text/javascript" src="{$base_url}/common/js/ThumbAjaxFileUpload.js"></script>
 	<link rel="stylesheet" href="{$base_url}/common/js/jquery/ui/ui.datepicker.css" type="text/css" />
     <script language="javascript" src="{$base_url}/common/js/jquery/ui/ui.datepicker.js"></script>
-    <script type="text/javascript" src="{$base_url}/js/jquery.colorpicker.js"></script> 
-    
+    <script type="text/javascript" src="{$base_url}/js/jquery.colorpicker.js"></script>
+
     <?php $root = config::get('base_url').'/ueditor';?>
     <script type="text/javascript" charset="utf-8" src="{$root}/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="{$root}/ueditor.all.js"> </script>
     <script type="text/javascript" charset="utf-8" src="{$root}/lang/zh-cn/zh-cn.js"></script>
     <script type="text/javascript" charset="utf-8" src="{$root}/addCustomizeButton.js"></script>
-    
+
     <script>
         $(function(){
             $("#catid").change( function(){
@@ -54,9 +54,9 @@ echo modify("/act/".front::$act."/table/".$table.$id."/deletestate/".front::get(
 			$("#tag_option").change( function(){
 				if($("#tag_option").find('option:selected').val() != '0'){
 					if($("#tag").val() != ''){
-						var sp = ',';	
+						var sp = ',';
 					}else{
-						sp = '';	
+						sp = '';
 					}
 					$("#tag").val($("#tag").val()+sp+$("#tag_option").find('option:selected').text());
 					//$("#tagids").val($("#tagids").val()+sp+$("#tagid").find('option:selected').val());
@@ -73,7 +73,7 @@ echo modify("/act/".front::$act."/table/".$table.$id."/deletestate/".front::get(
 					$("#color").val("");
 				}
 			});
-			
+
         });
         function attachment_delect(id) {
             $.ajax({
@@ -237,6 +237,12 @@ success: function(data){
 		</td>
     </tr>
     <tr>
+        <td width="149" align="right">关注人数</td>
+        <td width="1%">&nbsp;</td>
+        <td>{form::getform('focus',$form,$field,$data)}<span class="hotspot" onmouseover="tooltip.show('注人数，可自定义，默认为0！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:5px; margin-right:5px;"></span>
+        </td>
+    </tr>
+    <tr>
         <td width="149" align="right">来源</td>
         <td width="1%">&nbsp;</td>
         <td>{form::getform('attr3',$form,$field,$data)}<span class="hotspot" onmouseover="tooltip.show('内容发布来源，可自定义，默认为本站网址！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:5px; margin-right:5px;"></span>
@@ -314,7 +320,7 @@ success: function(data){
             </div>
             <div id="con_one_3" style="display:none">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table3">
-	
+
     <tr>
         <td width="149" align="right">内容页模板</td>
         <td width="1%">&nbsp;</td>
@@ -325,7 +331,7 @@ success: function(data){
 			</span>
         </td>
     </tr>
-    
+
      <tr>
         <td width="149" align="right">手机内容页模板</td>
         <td width="1%">&nbsp;</td>
@@ -336,7 +342,7 @@ success: function(data){
 			</span>
         </td>
     </tr>
-    
+
     <tr>
 <td width="149" align="right">内容绑定表单</td>
 <td width="1%">&nbsp;</td>
@@ -348,7 +354,7 @@ success: function(data){
 </td>
 </tr>
 
-    
+
     <tr>
         <td width="149" align="right">内容推荐位</td>
         <td width="1%">&nbsp;</td>
@@ -421,9 +427,9 @@ success: function(data){
 			</span>
             </div>
         </td>
- 
+
     </tr>
-       
+
 </table>
             </div>
             <div id="con_one_4" style="display:none">
@@ -496,9 +502,9 @@ success: function(data){
 </table>
         </td>
     </tr>
-    
-    
-    
+
+
+
 </table>
             </div>
             <div id="con_one_5" style="display:none">

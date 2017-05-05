@@ -8,7 +8,7 @@
             {/loop}
             </ul>
             <div class="case-big">
-            {loop archive($_catid,$_typeid,$_spid,'0,'.$_GET['city'].',0',$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+            {loop archive($_catid,$_typeid,$_spid,'0,'.$_GET['city'].',0',$_length,$_ordertype,1,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
             <?php if($_GET['city']){$archive[url] .= '&city='.$_GET['city'];} ?>
                 <a href="{$archive['url']}">
                     <img jh-img="an" src="{$archive[thumb]}"/>

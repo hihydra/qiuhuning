@@ -45,7 +45,7 @@ echo modify("/act/".front::$act."/table/".$table.$id."/deletestate/".front::get(
     <script type="text/javascript" charset="utf-8" src="{$root}/ueditor.all.js"> </script>
     <script type="text/javascript" charset="utf-8" src="{$root}/lang/zh-cn/zh-cn.js"></script>
     <script type="text/javascript" charset="utf-8" src="{$root}/addCustomizeButton.js"></script>
-    
+
     <script>
         $(function(){
             $("#catid").change( function(){
@@ -54,9 +54,9 @@ echo modify("/act/".front::$act."/table/".$table.$id."/deletestate/".front::get(
 			$("#tag_option").change( function(){
 				if($("#tag_option").find('option:selected').val() != '0'){
 					if($("#tag").val() != ''){
-						var sp = ',';	
+						var sp = ',';
 					}else{
-						sp = '';	
+						sp = '';
 					}
 					$("#tag").val($("#tag").val()+sp+$("#tag_option").find('option:selected').text());
 					//$("#tagids").val($("#tagids").val()+sp+$("#tagid").find('option:selected').val());
@@ -193,7 +193,7 @@ success: function(data){
 					    <td width="149" align="right"></td>
         <td width="1%">&nbsp;</td>
         <td><input name="savehttppic" type="checkbox" value="1" />&nbsp;保存远程图片&nbsp;&nbsp;<input name="autothumb" type="checkbox" value="1" />&nbsp;第一张图片自动保存为缩略图</td>
-					</tr> 
+					</tr>
     <tr>
         <td width="149" align="right">内容简介</td>
         <td width="1%">&nbsp;</td>
@@ -243,6 +243,12 @@ success: function(data){
         <td width="1%">&nbsp;</td>
         <td><input type="text" name="author" id="author" value="<?php echo $data['author'] ?>"   class="skey" /><span class="hotspot" onmouseover="tooltip.show('内容发布作者名，可自定义！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;"></span>
 		</td>
+    </tr>
+    <tr>
+        <td width="149" align="right">关注人数</td>
+        <td width="1%">&nbsp;</td>
+        <td>{form::getform('focus',$form,$field,$data)}<span class="hotspot" onmouseover="tooltip.show('注人数，可自定义，默认为0！');" onmouseout="tooltip.hide();"><img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:5px; margin-right:5px;"></span>
+        </td>
     </tr>
     <tr>
         <td width="149" align="right">来源</td>
@@ -333,7 +339,7 @@ success: function(data){
 			</span>
         </td>
     </tr>
-    
+
     <tr>
         <td width="149" align="right">手机内容页模板</td>
         <td width="1%">&nbsp;</td>
@@ -344,7 +350,7 @@ success: function(data){
 			</span>
         </td>
     </tr>
-    
+
     <tr>
 <td width="149" align="right">内容绑定表单</td>
 <td width="1%">&nbsp;</td>
@@ -355,8 +361,8 @@ success: function(data){
 </span>
 </td>
 </tr>
-    
-   
+
+
     <tr>
         <td width="149" align="right">内容推荐位</td>
         <td width="1%">&nbsp;</td>
@@ -433,13 +439,13 @@ success: function(data){
 					<div id="pics{$ic}_up" style="clear:both;"><span id="pics{$ic}_preview"><img width="150" style="width:150px;" src="{$v[url]}" border="0" /></span><div class="blank10"></div><input id="pics{$ic}" value="{$v[url]}" class="input" name="pics[{$ic}][url]" style="float:left;" />
 <input style="float:left;" id="pics{$ic}_del" onclick="pics_delete('{$ic}','pics');" value="" type="button" name="delbutton" class="a_del" />
 <div class="blank10"></div>
-<input id="pics{$ic}alt" value="{$v[alt]}" class="input" name="pics[{$ic}][alt]" style="float:left;" /> 
+<input id="pics{$ic}alt" value="{$v[alt]}" class="input" name="pics[{$ic}][alt]" style="float:left;" />
 					<span class="hotspot" onmouseover="tooltip.show('内页多图图片文字说明！');" onmouseout="tooltip.hide();">
 		<img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;">
 		</span>
 		<div class="blank10"></div>
 					</div>
-				<?php 
+				<?php
 				}
 				}?></div><input type="hidden" name="ic" id="ic" value="{$ic}" />
     <div class="blank10"></div>
@@ -475,7 +481,7 @@ success: function(data){
 
             <input type="hidden" name="attachment_id"  id="attachment_id" value="{=archive_attachment(@$data['aid'],'id')}"  class="input" />
             附件名称：<input type="text" name="attachment_intro"  id="attachment_intro" value="{=archive_attachment(@$data['aid'],'intro')}" class="input" />
-			
+
 			<span class="hotspot" onmouseover="tooltip.show('填附件的下载提示名称！');" onmouseout="tooltip.hide();">
 <img src="{$skin_path}/images/remind.gif" alt="" width="14" height="20"  style="margin-left:10px; margin-right:5px;">
 </span>
@@ -488,7 +494,7 @@ success: function(data){
 
             上传：<input type="file" name="fileupload" id="fileupload" style="width:400px" />
             <div class="blank10"></div>
-			
+
 			<input type="button"  name="filebuttonUpload"  id="filebuttonUpload" onclick="return ajaxFileUpload('fileupload','{url("tool/uploadfile",false)}','#uploading');" value="上传" class="btn_d" />
                <img id="uploading" src="{$base_url}/common/js/loading.gif" style="display:none;">
         </td>
@@ -524,9 +530,9 @@ success: function(data){
 </table>
         </td>
     </tr>
-    
-   
-    
+
+
+
 </table>
             </div>
             <div id="con_one_5" style="display:none">
@@ -560,7 +566,7 @@ success: function(data){
         <td width="1%">&nbsp;</td>
         <td>
             <table>
-            
+
 {loop $field $f}
 <?php
 $name=$f['name'];
