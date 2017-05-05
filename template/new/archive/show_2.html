@@ -65,7 +65,7 @@
 {template 'archive/nav.html'}
     <div class="article-detail">
         <h1 class="article-tit">{$archive[title]}</h1>
-        <p class="article-info"><i class="icon-time icon"></i>{$archive[adddate]}<i class="icon-eye-open icon"></i>{$archive[view]}</p>
+        <p class="article-info"><i class="icon-time icon"></i>{$archive[adddate]}<i class="icon-eye-open icon"></i>{view_js($archive[aid])}</p>
         <article class="article-content">
             {$archive[content]}
         </article>
@@ -84,4 +84,5 @@
     </div>
 {template 'archive/sider.html'}
 </div>
+<div style="display: none;">
 {template 'footer.html'}
