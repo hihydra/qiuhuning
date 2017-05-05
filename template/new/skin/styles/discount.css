@@ -318,6 +318,9 @@
     cursor: pointer;
     margin: 40px 25px 30px 0;
 }
+.order-btn:hover{
+    color: #fff;
+}
 .order-cancel-btn{
     background: #bbb;
 }
@@ -688,11 +691,10 @@
 .order-item .person-code-btn {
     float: left;
     border-radius: 5px;
-    margin-left: 20px;
     cursor: pointer;
     min-height: 19px;
     margin: 0 0 0 15px;
-    padding: 7px 10px;
+    padding: 4px 10px;
     background: #fff;
     border: 1px solid #ff6280;
     color: #ff6280;

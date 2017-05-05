@@ -49,6 +49,12 @@ function stepNextOne() {
     if($('.block').find('dd.dd-on').length<4){
         return false
     }
+    else if($('.city-picker-span .title').html() == ''){
+        alert('请输入地址')
+    }
+    else if($('.block').find('dd.dd-on').eq(2).text() == '选择举行时间' || $('.block').find('dd.dd-on').eq(2).text() == ''){
+        alert('请选择举行时间')
+    }
     else {
         var blockOn =  $('.block .dd-on');
         var selectItem = $('.select-item');
@@ -121,6 +127,7 @@ function stepNextTwo() {
     }
 }
 
+
 //手机号验证
 function isnum(Tel){
     var re=new RegExp(/^((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)$/);
@@ -138,6 +145,9 @@ $('.input').change(function () {
     if($(this).val() == ''){
         var tipsText = $(this).parent().attr('value');
         $(this).parent().parent().find('dd.tips').text('请输入'+tipsText)
+    }
+    else {
+        $(this).parent().parent().find('dd.tips').text('');
     }
 });
 function stepPrevThree() {

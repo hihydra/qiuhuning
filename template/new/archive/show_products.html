@@ -81,18 +81,21 @@
 
         <div class="discount-comment part">
             <div class="comment-person">
-                <!--高速版-->
-                <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句"></div>
-                <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
-                <script type="text/javascript">
-                    window.changyan.api.config({
-                        appid: 'cysTl9vko',
-                        conf: 'prod_65a110cff7d27a3428ef6c5db87e8a39'
-                    });
-                </script>
+             <!--PC版-->
+             <div id="SOHUCS" sid="{$archive['aid']}"></div>
+              <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+              <script type="text/javascript">
+                window.changyan.api.config({
+                    appid: 'cysYPXxtC',
+                    conf: 'prod_9398db06e9a2da12d85a488470d788ae'
+                });
+              </script>
             </div>
         </div>
     </div>
       {template 'archive/sider.html'}
 </div>
 {template 'footer.html'}
+        
+        
+        

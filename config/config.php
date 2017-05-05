@@ -2,9 +2,9 @@
 
 'database'=>array(
 'hostname'=>'127.0.0.1',//MySQL服务器
-'user'=>'root',//用户名
-'password'=>'root',//密码
-'database'=>'html',//数据库名
+'user'=>'qiuhuning',//用户名
+'password'=>'qiuhuning',//密码
+'database'=>'qiuhuning',//数据库名
 'prefix'=>'',//表前缀
 'encoding'=>'utf8',//编码
 ),
@@ -1301,3 +1301,4 @@
 'SMSTemplateCode'=>'SMS_63745381',
 
 );
+        
