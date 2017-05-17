@@ -51,19 +51,19 @@ class propose_act extends act
     {
         if (front::post('submit')) {
             $this->propose = new propose();
-            if(!preg_match('/^1([0-9]+){5,}$/is',front::$post['telphone'])){
-                echo '<script type="text/javascript">alert("'.lang('phone_number_format_is_wrong').'");window.location.href="' . url('propose'). '";</script>';
-                exit;
-            }
-            if (config::get('aliyun-sms')) {
-                $mobilenum = front::$post['mobilenum'];
-                $smsCode = new SmsCode();
-                if (!$smsCode->chkcode($mobilenum)) {
-                    echo '<script type="text/javascript">alert("'.lang('cell_phone_parity_error').'");window.location.href="' . url('propose'). '";</script>';
-                    return;
-                }
-            }
             if(!$this->view->user['userid']){
+                if(!preg_match('/^1([0-9]+){5,}$/is',front::$post['telphone'])){
+                    echo '<script type="text/javascript">alert("'.lang('phone_number_format_is_wrong').'");window.location.href="' . url('propose'). '";</script>';
+                    exit;
+                }
+                if (config::get('aliyun-sms')) {
+                    $mobilenum = front::$post['mobilenum'];
+                    $smsCode = new SmsCode();
+                    if (!$smsCode->chkcode($mobilenum)) {
+                        echo '<script type="text/javascript">alert("'.lang('cell_phone_parity_error').'");window.location.href="' . url('propose'). '";</script>';
+                        return;
+                    }
+                }
                 if ($this->_user->getrow(array('tel' => front::$post['telphone']))) {
                     echo '<script type="text/javascript">alert("该手机号已注册请先登陆");window.location.href="' . url::create('user/login'). '";</script>';
                     exit;
@@ -78,7 +78,7 @@ class propose_act extends act
                     'groupid' => 101,
                     'userip' => front::ip()
                 );
-                $insert = $this->_user->rec_insert($data);
+                $insert_user = $this->_user->rec_insert($data);
                 if($insert_user){
                     cookie::set('login_username', $username);
                     cookie::set('login_password', front::cookie_encode($password));
@@ -105,7 +105,11 @@ class propose_act extends act
                 echo '<script type="text/javascript">alert("'.lang('add_failure').'");window.location.href="' . url('propose'). '";</script>';
                 return;
             } else{
-                echo '<script type="text/javascript">alert("已自动为您注册用户，用户名为手机号，密码为手机号后6位");window.location.href="' . url('propose/paypropose/oid/' .front::$post['oid'], true). '";</script>';
+                if(empty($insert_user)){
+                    echo '<script type="text/javascript">window.location.href="' . url('propose/paypropose/oid/' .front::$post['oid'], true). '";</script>';
+                }else{
+                    echo '<script type="text/javascript">alert("已自动为您注册用户，用户名为手机号，密码为手机号后6位");window.location.href="' . url('propose/paypropose/oid/' .front::$post['oid'], true). '";</script>';
+                }
             }
             exit;
          }

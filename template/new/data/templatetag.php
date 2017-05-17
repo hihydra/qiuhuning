@@ -110,7 +110,7 @@
   16 => 
   array (
     'id' => '16',
-    'name' => '内页右侧栏目名称',
+    'name' => '超值套餐',
     'tagfrom' => 'category',
     'tagcontent' => 'null',
     'setting' => 

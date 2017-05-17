@@ -9,6 +9,13 @@ class index_act extends act {
             $tag[$key]['url']=$this->_tag->url($value['tagname']);
         }
         $this->view->tags=$tag;
+        if(front::get('city')){
+            $area = new area();
+            $city = $area->getrow("slug = '".front::get('city')."'");
+            $this->view->city = '0,'.$city['id'].',0';
+        }else{
+            $this->view->city = '';
+        }
     	$this->check_pw();
     }
     function end() {

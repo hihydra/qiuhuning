@@ -139,8 +139,12 @@ class archive_act extends act
     {
         //add
         if(front::get('city')){
-            $where = 'city_id ='.front::get('city').' and ';
+            $area = new area();
+            $city = $area->getrow("slug = '".front::get('city')."'");
+            $this->view->city = '0,'.$city['id'].',0';
+            $where = 'city_id ='.$city['id'].' and ';
         }else{
+            $this->view->city = '';
             $where = '';
         }
         //end-add
@@ -458,6 +462,13 @@ class archive_act extends act
 
     function show_action()
     {
+        if(front::get('city')){
+            $area = new area();
+            $city = $area->getrow("slug = '".front::get('city')."'");
+            $this->view->city = '0,'.$city['id'].',0';
+        }else{
+            $this->view->city = '';
+        }
         $this->view->archive = $this->view->showarchive;
 
         $this->view->categorys = category::getpositionlink2($this->view->archive['catid']);

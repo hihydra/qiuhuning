@@ -245,15 +245,25 @@ class user_act extends act
                         return;
                     }
                 }
-                if (front::post('username') && front::post('password')) {
+
+                if (config::get('aliyun-sms')) {
+                    $mobilenum = front::$post['mobilenum'];
+                    $smsCode = new SmsCode();
+                    if (!$smsCode->chkcode($mobilenum)) {
+                        front::flash(lang('cell_phone_parity_error'));
+                        return;
+                    }
+                }
+
+                if (front::post('username') /*&& front::post('password')*/) {
                     $username = front::post('username');
-                    $password = md5(front::post('password'));
+                    //$password = md5(front::post('password'));
                     $data = array(
                         'username' => $username,
-                        'password' => $password,
+                    //    'password' => $password,
                     );
                     $user = new user();
-                    $user = $user->getrow(array('username' => $data['username'], 'password' => $data['password']));
+                    $user = $user->getrow(array('username' => $data['username']/*, 'password' => $data['password']*/));
                     if (!is_array($user)) {
                         //$this->login_false();
                         front::flash(lang('login_error'));
@@ -508,7 +518,7 @@ class user_act extends act
                 cookie::set('login_username', $user['username']);
                 cookie::set('login_password', front::cookie_encode($user['password']));
                 session::set('username', $user['username']);
-                front::redirect(url::create('user'));
+                front::redirect(url::create('propose'));
                 exit;
             } else {
                 front::flash(lang('registration_failure'));
