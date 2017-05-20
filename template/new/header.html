@@ -23,7 +23,7 @@
                 <span style="margin-left: 25px">{if config::get('site_login')=='1'}{login_js()}{/if}</span>
             </div>
             <div class="r relative">
-                {loop categories(43) $key $t1}
+                {loop categories(27) $key $t1}
                 <?php if($key>4) break; ?>
                 <a href="{$t1[url]}">{$t1[catname]}</a>
                 {/loop}

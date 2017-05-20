@@ -115,8 +115,18 @@ class propose_act extends act
          }
     }
     function paypropose_action(){
-        if (front::get('oid')) {
-            preg_match_all("/-(.*)-(.*)-(.*)/isu", front::get('oid'), $oidout);
+            if (!front::get('oid')) {
+                $propose = propose::getInstance()->getrow(['userid'=>$this->view->user['userid']]);
+                if (empty($propose)) {
+                    echo '<script type="text/javascript">alert("您还没有下过订单。");window.location.href="' . url('propose'). '";</script>';
+                    exit;
+                }
+                $oid = $propose['oid'];
+            }else{
+                $oid = front::get('oid');
+            }
+            //var_dump($oid);die;
+            preg_match_all("/-(.*)-(.*)-(.*)/isu", $oid, $oidout);
             $this->view->paytype = $oidout[3][0];
             if($this->view->user['userid'] != $oidout[2][0]){
                 echo '<script type="text/javascript">alert("您无法支付别人的订单。");window.location.href="' . url('propose'). '";</script>';
@@ -128,7 +138,7 @@ class propose_act extends act
             $payfilename = $where['pay_code'] = $this->view->paytype;
             $this->view->pay = pay::getInstance()->getrows($where);
             $where = array();
-            $where['oid'] = front::get('oid');
+            $where['oid'] = $oid;
             //var_dump(propose::getInstance()->getrow($where));die;
             $propose = propose::getInstance()->getrow($where);
             //var_dump($propose);exit;
@@ -144,7 +154,7 @@ class propose_act extends act
             $propose['scene']=$this->_scene->getrow("id=".$propose['scene_id']);
             $this->view->process=$this->_process->getrows('','','listorder asc');
             $this->view->propose=$propose;
-            $order['ordersn'] = front::get('oid');
+            $order['ordersn'] = $oid;
             $order['title'] = $this->view->propose['topic']['name'];
             $order['id'] =  $this->view->propose['id'];
             $order['orderamount'] = $this->view->propose['price'];
@@ -153,7 +163,7 @@ class propose_act extends act
             $payobj = new $payclassname();
 
             $this->view->gotopaygateway = $payobj->get_code($order, unserialize_config($this->view->pay[0]['pay_config']));
-        }
+
 
     }
 

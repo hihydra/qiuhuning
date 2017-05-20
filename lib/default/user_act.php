@@ -255,21 +255,22 @@ class user_act extends act
                     }
                 }
 
-                if (front::post('username') /*&& front::post('password')*/) {
-                    $username = front::post('username');
+                if (front::post('tel') /*&& front::post('password')*/) {
+                    $tel = front::post('tel');
                     //$password = md5(front::post('password'));
                     $data = array(
-                        'username' => $username,
+                        'tel' => $tel,
                     //    'password' => $password,
                     );
                     $user = new user();
-                    $user = $user->getrow(array('username' => $data['username']/*, 'password' => $data['password']*/));
+                    $user = $user->getrow(array('tel' => $data['tel']/*, 'password' => $data['password']*/));
                     if (!is_array($user)) {
                         //$this->login_false();
                         front::flash(lang('login_error'));
                         return;
                     }
-                    $user = $data;
+                    //$user = $data;
+
                     cookie::set('login_username', $user['username']);
                     cookie::set('login_password', front::cookie_encode($user['password']));
                     session::set('username', $user['username']);
@@ -420,12 +421,14 @@ class user_act extends act
                     return;
                 }
             }
+            /*
             if (front::post('username') != strip_tags(front::post('username'))
                 || front::post('username') != htmlspecialchars(front::post('username'))
             ) {
                 front::flash(lang('name_is_not_standardized'));
                 return;
             }
+
             if (strlen(front::post('username')) < 4) {
                 front::flash(lang('user_name_is_too_short'));
                 return;
@@ -438,18 +441,26 @@ class user_act extends act
                 front::flash(lang('please_fill_in_the_correct_mailbox_format'));
                 return;
             }
+            */
             if (strlen(front::post('tel')) < 1) {
                 front::flash(lang('please fill in your mobile phone number'));
                 return;
             }
 
-
+            /*
             if (front::post('username') && front::post('password')) {
                 $username = front::post('username');
                 $username = str_replace('\\', '', $username);
                 $password = md5(front::post('password'));
                 $e_mail = front::post('e_mail');
                 $tel = front::post('tel');
+            */
+            if (front::post('tel')) {
+                $tel = front::post('tel');
+                $username = $tel;
+                $username = str_replace('\\', '', $username);
+                $password = md5(substr($tel,-6));
+                $e_mail = $tel."@163.com";
                 $data = array(
                     'username' => $username,
                     'password' => $password,
@@ -471,7 +482,7 @@ class user_act extends act
                     $data[$name] = front::post($name);
                 }
                 if ($this->_user->getrow(array('username' => $username))) {
-                    front::flash(lang('user_name_already_registered'));
+                    front::flash(lang('手机号已被注册'));
                     return;
                 }
                 $insert = $this->_user->rec_insert($data);
@@ -518,6 +529,7 @@ class user_act extends act
                 cookie::set('login_username', $user['username']);
                 cookie::set('login_password', front::cookie_encode($user['password']));
                 session::set('username', $user['username']);
+                smsMessage($tel,'2121',1);
                 front::redirect(url::create('propose'));
                 exit;
             } else {

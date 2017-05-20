@@ -106,10 +106,12 @@
   <div class="regist-main">
     <form id="login_form"   name="login_form" method="post"  action="<?php echo url('user/register') ?>"  onsubmit="return check()">
       <ul class="login-box">
+      <!--
         <li><i class="icon-user icon"></i><input class="input" name="username" type="text" placeholder="{lang(username)}"/></li>
         <li><i class="icon-key icon"></i><input class="input" name="password" type="password" placeholder="{lang(password)}"/></li>
         <li><i class="icon-key icon"></i><input class="input" name="password2" type="password" placeholder="{lang(againpassword)}"/></li>
         <li><i class="icon-envelope icon"></i><input class="input" name="e_mail" type="text" placeholder="{lang(e_mail)}"/></li>
+      -->
         <li><i class="icon-mobile-phone icon"></i><input class="input"  name="tel" id='tel' type="text" placeholder="{lang(tel)}"/></li>
         <input class="code-input" type="text" name="mobilenum" placeholder="输入验证码">
         <input type="button" class="get-code" onclick="getCode('{url('tool/smsMessage')}',$('#tel'),this);" value="获取验证码" />
@@ -143,6 +145,7 @@
 
   function check()
   {
+    /*
    if(document.login_form.username.value.length<2){
     alert("{lang(user_name_is_too_short)}");
     document.login_form.username.focus();
@@ -160,7 +163,7 @@
     document.login_form.password2.focus();
     return false;
   }
-
+  */
   if(!checkEmail()){
     alert("{lang(mailbox_format_is_not)}");
     document.login_form.tel.focus();

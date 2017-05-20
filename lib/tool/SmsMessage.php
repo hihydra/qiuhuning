@@ -11,8 +11,17 @@ use AliyunMNS\Exception\MnsException;
 use AliyunMNS\Requests\PublishMessageRequest;
 class SmsMessage
 {
-    public function run($mobile,$code)
+    public function run($mobile,$code,$template = 0)
     {
+        switch ($template) {
+            case '1':
+                $SMSTemplateCode = 'SMS_63905274';
+                break;
+
+            default:
+                $SMSTemplateCode = 'SMS_63905274';
+                break;
+        }
         /**
          * Step 1. 初始化Client
          */
@@ -29,7 +38,7 @@ class SmsMessage
          * Step 3. 生成SMS消息属性
          */
         // 3.1 设置发送短信的签名（SMSSignName）和模板（SMSTemplateCode）
-        $batchSmsAttributes = new BatchSmsAttributes("求婚网", "SMS_63905274");
+        $batchSmsAttributes = new BatchSmsAttributes("求婚网", $SMSTemplateCode);
         // 3.2 （如果在短信模板中定义了参数）指定短信模板中对应参数的值
         $batchSmsAttributes->addReceiver($mobile, array("code" => $code));
 

@@ -41,7 +41,7 @@ var JPlaceHolder = {
 };
 //执行
 jQuery(function(){
-    JPlaceHolder.init();    
+    JPlaceHolder.init();
 });
 //-->
 </script>
@@ -49,7 +49,7 @@ jQuery(function(){
 
 
 .btn {
-float:left; 
+float:left;
 width:47%;
 line-height:28px;
 padding:5px 0px;
@@ -142,7 +142,7 @@ select {width:100%;}
                     return false;
                 }
 
-				
+
 
                 if(document.login_form.aquestion.value.length==0){
                     alert("{lang(set_security)}");
@@ -183,8 +183,8 @@ select {width:100%;}
 
 
 
-			return true; 
-} 
+			return true;
+}
 
 function checkEmail(e_mail)
 {
@@ -203,18 +203,18 @@ function isMobile(mobile){
         </script>
 
 
-    
+
 <form id="login_form"   name="login_form" method="post"  action="<?php echo url('user/register') ?>" onsubmit="return check()">
-              
+
 <strong style="font-size:14px;color:red;">{message()}</strong>
 
- {if config::get(reg_on)}                 
+ {if config::get(reg_on)}
 <input placeholder="{lang(username)}" name="username" type="text" id="username" value="{get('username')}" tabindex="1"  class="input" />
-<div class="blank10"></div>							
+<div class="blank10"></div>
 <input placeholder="{lang(password)}" name="password" type="password" id="password" value="<?php //echo $password;?>" tabindex="2" class="input" />
 <div class="blank10"></div>
 <input placeholder="{lang(againpassword)}" type='password' id="password2"  name="password2" value="<?php //echo $password;?>" tabindex="3" class="input" />
-<div class="blank10"></div>                  
+<div class="blank10"></div>
 {if config::get('invitation_registration')=='1'}
 <input placeholder="{lang(invitation-code)}" type='text' id="invite" name="invite" value="" tabindex="4"  class="input" />
 <div class="blank10"></div>
@@ -241,7 +241,7 @@ function isMobile(mobile){
 <div class="blank10"></div>
 <input placeholder="{lang(e_mail)}" type='text' id="e_mail"  name="e_mail" value="" tabindex="7" class="input" />
 <div class="blank10"></div>
-					
+
 <input placeholder="{lang(tel)}" type='text' id="tel"  name="tel" value="" tabindex="6"  class="input" />
 <div class="blank10"></div>
 <input placeholder="{lang(address)}" type='text' id="address"  name="address" value="" tabindex="7"  class="input" />
@@ -273,7 +273,7 @@ continue;
 <input type='text' id="verify"  tabindex="3"  name="verify" />{verify()}
 <div class="blank10"></div>
 {/if}
-{if config::get('verifycode')=='2'} 
+{if config::get('verifycode')=='2'}
 <div class="blank20"></div>
 <div id="verifycode_embed"></div>
 <script src="http://api.geetest.com/get.php"></script>
@@ -301,16 +301,16 @@ $.ajax({
 <div class="blank10"></div>
 {/if}
 
-                   
+
 
 <input type="submit" name="submit" value=" {lang(register)} "  class="register_btn"   />
 <div class="blank20"></div>
 <a href="{url('user/getpass')}" class="btn" style="margin-right:18px;">{lang(findpassword)}</a>
 <a href="<?php echo url('user/login');?>" class="btn">{lang(login)}</a>
-        
+
 {else}
 {lang(tips)}：<span style="color:red;">{lang(sitecloseregister)}</span>
-                                       
+
 {/if}
 
 </form>
