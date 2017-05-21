@@ -420,7 +420,7 @@
     array (
       'onlymodify' => '',
       'catid' => '27',
-      'son' => '0',
+      'son' => '1',
       'typeid' => '0',
       'spid' => '0',
       'province_id' => '0',

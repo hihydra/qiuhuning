@@ -677,10 +677,10 @@ function sendMsg($mobile, $content) {
     return $rs;
 }
 
-function smsMessage($mobile, $code) {
+function smsMessage($mobile, $code=0,$template=0) {
     include_once("aliyunMNS/SmsMessage.php");
     $client = new SmsMessage();
-    $rs = $client->run($mobile, $code);
+    $rs = $client->run($mobile, $code,$template);
     return $rs;
 }
 

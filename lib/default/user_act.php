@@ -488,6 +488,7 @@ class user_act extends act
                 $insert = $this->_user->rec_insert($data);
                 $_userid = $this->_user->insert_id();
                 if ($insert) {
+                    smsMessage($tel,'',1);
                     if (config::get('sms_on') && config::get('sms_reg_on')) {
                         $smsCode = new SmsCode();
                         $content = $smsCode->getTemplate('reg', array($username, front::post('password')));
@@ -502,6 +503,7 @@ class user_act extends act
                     front::flash(lang('registration_failure'));
                     return;
                 }
+                /*
                 if (union::getconfig('enabled')) {
                     $union_visitid = intval(cookie::get('union_visitid'));
                     $union_userid = intval(cookie::get('union_userid'));
@@ -525,11 +527,11 @@ class user_act extends act
                         }
                     }
                 }
+                */
                 $user = $data;
                 cookie::set('login_username', $user['username']);
                 cookie::set('login_password', front::cookie_encode($user['password']));
                 session::set('username', $user['username']);
-                smsMessage($tel,'2121',1);
                 front::redirect(url::create('propose'));
                 exit;
             } else {
