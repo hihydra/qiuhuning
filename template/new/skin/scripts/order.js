@@ -61,11 +61,15 @@ function stepNextOne() {
             var currentSelect = selectItem.eq(0).text()+'/'+selectItem.eq(1).text()
         }
         */
-        $('.t-address').text(blockOn.eq(1).text());
+        $('.t-address').text($('.address').val());
         $('.t-time').text(blockOn.eq(2).text());
         $('.t-cdt').text(blockOn.eq(3).text());
         $('.order-main').eq(1).addClass('block').siblings().removeClass('block');
         //给table表里的数据赋值
+        $('#propose').append('<input type="hidden" name="address"  value="'+ $('.address').val() +'"/>');
+        $('#propose').append('<input type="hidden" name="time"  value="'+ blockOn.eq(2).text() +'"/>');
+        $('#propose').append('<input type="hidden" name="scene_id"  value="'+ blockOn.eq(0).attr('value') +'"/>');
+        $('#propose').append('<input type="hidden" name="topic_id"  value="'+ blockOn.eq(3).attr('value')+'"/>');
     }
 }
 function removeStr(str)

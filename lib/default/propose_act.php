@@ -79,14 +79,17 @@ class propose_act extends act
                     'userip' => front::ip()
                 );
                 $insert_user = $this->_user->rec_insert($data);
+                front::$post['userid'] = $this->_user->insert_id();
                 if($insert_user){
                     cookie::set('login_username', $username);
                     cookie::set('login_password', front::cookie_encode($password));
                     session::set('username', $username);
                 }
+            }else{
+                front::$post['userid'] = $this->view->user['userid'];
+                front::$post['telphone'] = $this->view->user['tel'];
             }
 
-            front::$post['userid'] = $this->view->user['userid'];
 
             front::$post['time'] = front::$post['time']?front::$post['time']:'时间待定';
             front::$post['adddate'] = date("Y-m-d H:i:s",time());
