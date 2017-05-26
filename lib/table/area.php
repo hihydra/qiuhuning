@@ -64,7 +64,7 @@ class area extends table {
     	}
         return url('area/list/province_id/'.$province_id.($page ?'/page/'.$page : ''));*/
 		$province_id = intval($province_id);
-    	
+
     	if(!$page) $page = 1;
     	if(front::$get['t'] == 'wap'){
     		if(!config::get('wap_area_html')){
@@ -80,9 +80,9 @@ class area extends table {
     	}else{
     		return config::get('site_url').'area/province/'.$province_id.'_list_'.$page.'.html';
     	}
-    	
+
     }
-    static function city_url($city_id,$page=null) {       
+    static function city_url($city_id,$page=null) {
         if(!$page) $page = 1;
         if(front::$get['t'] == 'wap'){
         	if(!config::get('wap_area_html')){
@@ -118,7 +118,7 @@ class area extends table {
     }
     static function url($id,$page=null) {
     	/*if(front::$get['t'] == 'wap'){
-    		
+
     		return url('area/list/t/wap/id/'.$id.($page ?'/page/'.$page : ''));
     	}*/
         return url('area/list/id/'.$id.($page ?'/page/'.$page : ''));
@@ -126,6 +126,12 @@ class area extends table {
     static function name($id) {
         $area=new area();
         $area=$area->getrow('id='.$id);
+        if (isset($area['name'])) return $area['name'];
+    }
+    static function slug($slug) {
+
+        $area=new area();
+        $area=$area->getrow('slug="'.$slug.'"');
         if (isset($area['name'])) return $area['name'];
     }
     static function link($name,$url) {

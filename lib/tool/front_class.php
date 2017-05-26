@@ -2218,12 +2218,12 @@ class url
             return $string;
         } else {
             $strings = array();
-            foreach ($var as $key => $value) $strings[] = "$key=$value";
-            /*
             if (!empty($var['city'])) {
                 $base_url .= '/'.$var['city'];
+                unset($var['city']);
             }
-            */
+            foreach ($var as $key => $value) $strings[] = "$key=$value";
+
             $url = $base_url . '/index.php?' . implode('&', $strings);
             if ($new_open)
                 return "javascript:window.open('{$url}','','fullscreen=1');exit();";

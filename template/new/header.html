@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +36,11 @@
     <div class="wrap">
         <h1 class="logo"><a class="logo-text" href="/">求婚总动员</a> </h1>
         <div class="switch-btn l">
-            <h2 style="text-align: center;">{area::name($_GET['city'])}</h2>
+            {if area::slug($_GET['city']) }
+            <h2 style="text-align: center;">{area::slug($_GET['city'])}</h2>
+	    {else}
+	    <h2 style="text-align: center;">全国</h2>
+	    {/if}
             <a  href="<?php echo url('area/city');?>">[切换城市]</a>
         </div>
         <div class="search">

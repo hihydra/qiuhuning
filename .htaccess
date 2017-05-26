@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{QUERY_STRING} ^(.*)$
+    RewriteRule ^(\w+)/index.php$ index.php?city=$1&%1
+    RewriteRule ^(\w+)/$ index.php?city=$1 [L]
+</IfModule>
