@@ -1,0 +1,260 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50553
+Source Host           : localhost:3306
+Source Database       : html
+
+Target Server Type    : MYSQL
+Target Server Version : 50553
+File Encoding         : 65001
+
+Date: 2017-05-20 21:20:09
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for b_area
+-- ----------------------------
+DROP TABLE IF EXISTS `b_area`;
+CREATE TABLE `b_area` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `parentid` int(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `name` (`name`),
+  KEY `parentid` (`parentid`)
+) ENGINE=MyISAM AUTO_INCREMENT=3373 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of b_area
+-- ----------------------------
+INSERT INTO `b_area` VALUES ('1', '直辖市', 'zhixiashi', '0');
+INSERT INTO `b_area` VALUES ('2', '山东', 'shandong', '0');
+INSERT INTO `b_area` VALUES ('3', '江苏', 'jiangsu', '0');
+INSERT INTO `b_area` VALUES ('4', '浙江', 'zhejiang', '0');
+INSERT INTO `b_area` VALUES ('5', '安徽', 'anhui', '0');
+INSERT INTO `b_area` VALUES ('6', '广东', 'guangdong', '0');
+INSERT INTO `b_area` VALUES ('7', '福建', 'fujian', '0');
+INSERT INTO `b_area` VALUES ('8', '广西', 'guangxi', '0');
+INSERT INTO `b_area` VALUES ('9', '海南', 'hainan', '0');
+INSERT INTO `b_area` VALUES ('10', '河南', 'henan', '0');
+INSERT INTO `b_area` VALUES ('11', '湖北', 'hubei', '0');
+INSERT INTO `b_area` VALUES ('12', '湖南', 'hunan', '0');
+INSERT INTO `b_area` VALUES ('13', '江西', 'jiangxi', '0');
+INSERT INTO `b_area` VALUES ('14', '辽宁', 'liaoning', '0');
+INSERT INTO `b_area` VALUES ('15', '黑龙江', 'heilongjiang', '0');
+INSERT INTO `b_area` VALUES ('16', '吉林', 'jilin', '0');
+INSERT INTO `b_area` VALUES ('17', '四川', 'sichuan', '0');
+INSERT INTO `b_area` VALUES ('18', '云南', 'yunnan', '0');
+INSERT INTO `b_area` VALUES ('19', '贵州', 'guizhou', '0');
+INSERT INTO `b_area` VALUES ('20', '河北', 'hebei', '0');
+INSERT INTO `b_area` VALUES ('21', '山西', 'shanxi', '0');
+INSERT INTO `b_area` VALUES ('22', '陕西', 'shanxi', '0');
+INSERT INTO `b_area` VALUES ('23', '甘肃', 'gansu', '0');
+INSERT INTO `b_area` VALUES ('24', '宁夏', 'ningxia', '0');
+INSERT INTO `b_area` VALUES ('25', '青海', 'qinghai', '0');
+INSERT INTO `b_area` VALUES ('26', '北京', 'beijing', '1');
+INSERT INTO `b_area` VALUES ('27', '青岛', 'qingdao', '2');
+INSERT INTO `b_area` VALUES ('28', '南京', 'nanjing', '3');
+INSERT INTO `b_area` VALUES ('29', '杭州', 'hangzhou', '4');
+INSERT INTO `b_area` VALUES ('30', '合肥', 'hefei', '5');
+INSERT INTO `b_area` VALUES ('31', '佛山', 'foshan', '6');
+INSERT INTO `b_area` VALUES ('32', '厦门', 'xiamen', '7');
+INSERT INTO `b_area` VALUES ('33', '南宁', 'nanning', '8');
+INSERT INTO `b_area` VALUES ('34', '海口', 'haikou', '9');
+INSERT INTO `b_area` VALUES ('35', '郑州', 'zhengzhou', '10');
+INSERT INTO `b_area` VALUES ('36', '武汉', 'wuhan', '11');
+INSERT INTO `b_area` VALUES ('37', '长沙', 'changsha', '12');
+INSERT INTO `b_area` VALUES ('38', '南昌', 'nanchang', '13');
+INSERT INTO `b_area` VALUES ('39', '沈阳', 'shenyang', '14');
+INSERT INTO `b_area` VALUES ('40', '哈尔滨', 'haerbin', '15');
+INSERT INTO `b_area` VALUES ('41', '长春', 'changchun', '16');
+INSERT INTO `b_area` VALUES ('42', '成都', 'chengdou', '17');
+INSERT INTO `b_area` VALUES ('43', '昆明', 'kunming', '18');
+INSERT INTO `b_area` VALUES ('44', '贵阳', 'guiyang', '19');
+INSERT INTO `b_area` VALUES ('45', '保定', 'baoding', '20');
+INSERT INTO `b_area` VALUES ('46', '太原', 'taiyuan', '21');
+INSERT INTO `b_area` VALUES ('47', '西安', 'xian', '22');
+INSERT INTO `b_area` VALUES ('48', '兰州', 'lanzhou', '23');
+INSERT INTO `b_area` VALUES ('49', '银川', 'yinchuan', '24');
+INSERT INTO `b_area` VALUES ('50', '西宁', 'xining', '25');
+INSERT INTO `b_area` VALUES ('51', '上海', 'shanghai', '1');
+INSERT INTO `b_area` VALUES ('52', '济南', 'jinan', '2');
+INSERT INTO `b_area` VALUES ('53', '苏州', 'suzhou', '3');
+INSERT INTO `b_area` VALUES ('54', '宁波', 'ningbo', '4');
+INSERT INTO `b_area` VALUES ('55', '芜湖', 'wuhu', '5');
+INSERT INTO `b_area` VALUES ('56', '东莞', 'dongwan', '6');
+INSERT INTO `b_area` VALUES ('57', '福州', 'fuzhou', '7');
+INSERT INTO `b_area` VALUES ('58', '桂林', 'guilin', '8');
+INSERT INTO `b_area` VALUES ('59', '三亚', 'sanya', '9');
+INSERT INTO `b_area` VALUES ('60', '石家庄', 'shijiazhuang', '10');
+INSERT INTO `b_area` VALUES ('61', '荆州', 'jingzhou', '11');
+INSERT INTO `b_area` VALUES ('62', '宜昌', 'yichang', '12');
+INSERT INTO `b_area` VALUES ('63', '赣州', 'ganzhou', '13');
+INSERT INTO `b_area` VALUES ('64', '大连', 'dalian', '14');
+INSERT INTO `b_area` VALUES ('65', '大庆', 'daqing', '15');
+INSERT INTO `b_area` VALUES ('66', '吉林', 'jilin', '16');
+INSERT INTO `b_area` VALUES ('67', '绵阳', 'mianyang', '17');
+INSERT INTO `b_area` VALUES ('68', '丽江', 'lijiang', '18');
+INSERT INTO `b_area` VALUES ('69', '遵义', 'zunyi', '19');
+INSERT INTO `b_area` VALUES ('70', '邯郸', 'handan', '20');
+INSERT INTO `b_area` VALUES ('71', '运城', 'yuncheng', '21');
+INSERT INTO `b_area` VALUES ('72', '咸阳', 'xianyang', '22');
+INSERT INTO `b_area` VALUES ('73', '酒泉', 'jiuquan', '23');
+INSERT INTO `b_area` VALUES ('74', '天津', 'tianjin', '1');
+INSERT INTO `b_area` VALUES ('75', '烟台', 'yantai', '2');
+INSERT INTO `b_area` VALUES ('76', '无锡', 'wuxi', '3');
+INSERT INTO `b_area` VALUES ('77', '温州', 'wenzhou', '4');
+INSERT INTO `b_area` VALUES ('78', '蚌埠', 'bangbu', '5');
+INSERT INTO `b_area` VALUES ('79', '广州', 'guangzhou', '6');
+INSERT INTO `b_area` VALUES ('80', '泉州', 'quanzhou', '7');
+INSERT INTO `b_area` VALUES ('81', '柳州', 'liuzhou', '8');
+INSERT INTO `b_area` VALUES ('82', '洛阳', 'luoyang', '10');
+INSERT INTO `b_area` VALUES ('83', '孝感', 'xiaogan', '11');
+INSERT INTO `b_area` VALUES ('84', '衡阳', 'hengyang', '12');
+INSERT INTO `b_area` VALUES ('85', '上饶', 'shangrao', '13');
+INSERT INTO `b_area` VALUES ('86', '鞍山', 'anshan', '14');
+INSERT INTO `b_area` VALUES ('87', '齐齐哈尔', 'qiqihaer', '15');
+INSERT INTO `b_area` VALUES ('88', '四平', 'siping', '16');
+INSERT INTO `b_area` VALUES ('89', '南充', 'nanchong', '17');
+INSERT INTO `b_area` VALUES ('90', '曲靖', 'qujing', '18');
+INSERT INTO `b_area` VALUES ('91', '唐山', 'tangshan', '20');
+INSERT INTO `b_area` VALUES ('92', '临汾', 'linfen', '21');
+INSERT INTO `b_area` VALUES ('93', '宝鸡', 'baoji', '22');
+INSERT INTO `b_area` VALUES ('94', '重庆', 'zhongqing', '1');
+INSERT INTO `b_area` VALUES ('95', '潍坊', 'weifang', '2');
+INSERT INTO `b_area` VALUES ('96', '常州', 'changzhou', '3');
+INSERT INTO `b_area` VALUES ('97', '金华', 'jinhua', '4');
+INSERT INTO `b_area` VALUES ('98', '黄山', 'huangshan', '5');
+INSERT INTO `b_area` VALUES ('99', '深圳', 'shenzhen', '6');
+INSERT INTO `b_area` VALUES ('100', '漳州', 'zhangzhou', '7');
+INSERT INTO `b_area` VALUES ('101', '北海', 'beihai', '8');
+INSERT INTO `b_area` VALUES ('102', '张家口', 'zhangjiakou', '10');
+INSERT INTO `b_area` VALUES ('103', '襄阳', 'xiangyang', '11');
+INSERT INTO `b_area` VALUES ('104', '岳阳', 'yueyang', '12');
+INSERT INTO `b_area` VALUES ('105', '宜春', 'yichun', '13');
+INSERT INTO `b_area` VALUES ('106', '抚顺', 'fushun', '14');
+INSERT INTO `b_area` VALUES ('107', '牡丹江', 'mudanjiang', '15');
+INSERT INTO `b_area` VALUES ('108', '延边', 'yanbian', '16');
+INSERT INTO `b_area` VALUES ('109', '泸州', 'luzhou', '17');
+INSERT INTO `b_area` VALUES ('110', '大理', 'dali', '18');
+INSERT INTO `b_area` VALUES ('111', '廊坊', 'langfang', '20');
+INSERT INTO `b_area` VALUES ('112', '大同', 'datong', '21');
+INSERT INTO `b_area` VALUES ('113', '榆林', 'yulin', '22');
+INSERT INTO `b_area` VALUES ('114', '威海', 'weihai', '2');
+INSERT INTO `b_area` VALUES ('115', '徐州', 'xuzhou', '3');
+INSERT INTO `b_area` VALUES ('116', '嘉兴', 'jiaxing', '4');
+INSERT INTO `b_area` VALUES ('117', '马鞍山', 'maanshan', '5');
+INSERT INTO `b_area` VALUES ('118', '珠海', 'zhuhai', '6');
+INSERT INTO `b_area` VALUES ('119', '莆田', 'putian', '7');
+INSERT INTO `b_area` VALUES ('120', '梧州', 'wuzhou', '8');
+INSERT INTO `b_area` VALUES ('121', '安阳', 'anyang', '10');
+INSERT INTO `b_area` VALUES ('122', '十堰', 'shiyan', '11');
+INSERT INTO `b_area` VALUES ('123', '株洲', 'zhuzhou', '12');
+INSERT INTO `b_area` VALUES ('124', '九江', 'jiujiang', '13');
+INSERT INTO `b_area` VALUES ('125', '丹东', 'dandong', '14');
+INSERT INTO `b_area` VALUES ('126', '佳木斯', 'jiamusi', '15');
+INSERT INTO `b_area` VALUES ('127', '白山', 'baishan', '16');
+INSERT INTO `b_area` VALUES ('128', '德阳', 'deyang', '17');
+INSERT INTO `b_area` VALUES ('129', '玉溪', 'yuxi', '18');
+INSERT INTO `b_area` VALUES ('130', '秦皇岛', 'qinhuangdao', '20');
+INSERT INTO `b_area` VALUES ('131', '晋中', 'jinzhong', '21');
+INSERT INTO `b_area` VALUES ('132', '渭南', 'weinan', '22');
+INSERT INTO `b_area` VALUES ('133', '临沂', 'linyi', '2');
+INSERT INTO `b_area` VALUES ('134', '南通', 'nantong', '3');
+INSERT INTO `b_area` VALUES ('135', '绍兴', 'shaoxing', '4');
+INSERT INTO `b_area` VALUES ('136', '安庆', 'anqing', '5');
+INSERT INTO `b_area` VALUES ('137', '惠州', 'huizhou', '6');
+INSERT INTO `b_area` VALUES ('138', '龙岩', 'longyan', '7');
+INSERT INTO `b_area` VALUES ('139', '钦州', 'qinzhou', '8');
+INSERT INTO `b_area` VALUES ('140', '南阳', 'nanyang', '10');
+INSERT INTO `b_area` VALUES ('141', '黄冈', 'huanggang', '11');
+INSERT INTO `b_area` VALUES ('142', '郴州', 'chenzhou', '12');
+INSERT INTO `b_area` VALUES ('143', '萍乡', 'pingxiang', '13');
+INSERT INTO `b_area` VALUES ('144', '营口', 'yingkou', '14');
+INSERT INTO `b_area` VALUES ('145', '绥化', 'suihua', '15');
+INSERT INTO `b_area` VALUES ('146', '通化', 'tonghua', '16');
+INSERT INTO `b_area` VALUES ('147', '宜宾', 'yibin', '17');
+INSERT INTO `b_area` VALUES ('148', '邢台', 'xingtai', '20');
+INSERT INTO `b_area` VALUES ('149', '吕梁', 'lvliang', '21');
+INSERT INTO `b_area` VALUES ('150', '汉中', 'hanzhong', '22');
+INSERT INTO `b_area` VALUES ('151', '济宁', 'jining', '2');
+INSERT INTO `b_area` VALUES ('152', '扬州', 'yangzhou', '3');
+INSERT INTO `b_area` VALUES ('153', '湖州', 'huzhou', '4');
+INSERT INTO `b_area` VALUES ('154', '滁州', 'chuzhou', '5');
+INSERT INTO `b_area` VALUES ('155', '汕头', 'shantou', '6');
+INSERT INTO `b_area` VALUES ('156', '南平', 'nanping', '7');
+INSERT INTO `b_area` VALUES ('157', '新乡', 'xinxiang', '10');
+INSERT INTO `b_area` VALUES ('158', '咸宁', 'xianning', '11');
+INSERT INTO `b_area` VALUES ('159', '常德', 'changde', '12');
+INSERT INTO `b_area` VALUES ('160', '抚州', 'fuzhou', '13');
+INSERT INTO `b_area` VALUES ('161', '锦州', 'jinzhou', '14');
+INSERT INTO `b_area` VALUES ('162', '达州', 'dazhou', '17');
+INSERT INTO `b_area` VALUES ('163', '沧州', 'cangzhou', '20');
+INSERT INTO `b_area` VALUES ('164', '延安', 'yanan', '22');
+INSERT INTO `b_area` VALUES ('165', '淄博', 'zibo', '2');
+INSERT INTO `b_area` VALUES ('166', '泰州', 'taizhou', '3');
+INSERT INTO `b_area` VALUES ('167', '衢州', 'quzhou', '4');
+INSERT INTO `b_area` VALUES ('168', '淮南', 'huainan', '5');
+INSERT INTO `b_area` VALUES ('169', '中山', 'zhongshan', '6');
+INSERT INTO `b_area` VALUES ('170', '三明', 'sanming', '7');
+INSERT INTO `b_area` VALUES ('171', '开封', 'kaifeng', '10');
+INSERT INTO `b_area` VALUES ('172', '恩施', 'enshi', '11');
+INSERT INTO `b_area` VALUES ('173', '怀化', 'huaihua', '12');
+INSERT INTO `b_area` VALUES ('174', '盘锦', 'panjin', '14');
+INSERT INTO `b_area` VALUES ('175', '乐山', 'leshan', '17');
+INSERT INTO `b_area` VALUES ('176', '衡水', 'hengshui', '20');
+INSERT INTO `b_area` VALUES ('177', '德州', 'dezhou', '2');
+INSERT INTO `b_area` VALUES ('178', '台州', 'taizhou', '3');
+INSERT INTO `b_area` VALUES ('179', '舟山', 'zhoushan', '4');
+INSERT INTO `b_area` VALUES ('180', '六安', 'liuan', '5');
+INSERT INTO `b_area` VALUES ('181', '揭阳', 'jieyang', '6');
+INSERT INTO `b_area` VALUES ('182', '宁德', 'ningde', '7');
+INSERT INTO `b_area` VALUES ('183', '商丘', 'shangqiu', '10');
+INSERT INTO `b_area` VALUES ('184', '黄石', 'huangshi', '11');
+INSERT INTO `b_area` VALUES ('185', '娄底', 'loudi', '12');
+INSERT INTO `b_area` VALUES ('186', '葫芦岛', 'huludao', '14');
+INSERT INTO `b_area` VALUES ('187', '广元', 'guangyuan', '17');
+INSERT INTO `b_area` VALUES ('188', '承德', 'chengde', '20');
+INSERT INTO `b_area` VALUES ('189', '菏泽', 'heze', '2');
+INSERT INTO `b_area` VALUES ('190', '盐城', 'yancheng', '3');
+INSERT INTO `b_area` VALUES ('191', '丽水', 'lishui', '4');
+INSERT INTO `b_area` VALUES ('192', '阜阳', 'fuyang', '5');
+INSERT INTO `b_area` VALUES ('193', '湛江', 'zhanjiang', '6');
+INSERT INTO `b_area` VALUES ('194', '驻马店', 'zhumadian', '10');
+INSERT INTO `b_area` VALUES ('195', '永州', 'yongzhou', '12');
+INSERT INTO `b_area` VALUES ('196', '本溪', 'benxi', '14');
+INSERT INTO `b_area` VALUES ('197', '枣庄', 'zaozhuang', '2');
+INSERT INTO `b_area` VALUES ('198', '淮安', 'huaian', '3');
+INSERT INTO `b_area` VALUES ('199', '阜阳', 'fuyang', '5');
+INSERT INTO `b_area` VALUES ('200', '梅州', 'meizhou', '6');
+INSERT INTO `b_area` VALUES ('201', '许昌', 'xuchang', '10');
+INSERT INTO `b_area` VALUES ('202', '邵阳', 'shaoyang', '12');
+INSERT INTO `b_area` VALUES ('203', '铁岭', 'tieling', '14');
+INSERT INTO `b_area` VALUES ('204', '聊城', 'liaocheng', '2');
+INSERT INTO `b_area` VALUES ('205', '连云港', 'lianyungang', '3');
+INSERT INTO `b_area` VALUES ('206', '池州', 'chizhou', '5');
+INSERT INTO `b_area` VALUES ('207', '肇庆', 'zhaoqing', '6');
+INSERT INTO `b_area` VALUES ('208', '信阳', 'xinyang', '10');
+INSERT INTO `b_area` VALUES ('209', '湘潭', 'xiangtan', '12');
+INSERT INTO `b_area` VALUES ('210', '辽阳', 'liaoyang', '14');
+INSERT INTO `b_area` VALUES ('211', '泰安', 'taian', '2');
+INSERT INTO `b_area` VALUES ('212', '镇江', 'zhenjiang', '3');
+INSERT INTO `b_area` VALUES ('213', '江门', 'jiangmen', '6');
+INSERT INTO `b_area` VALUES ('214', '平顶山', 'pingdingshan', '10');
+INSERT INTO `b_area` VALUES ('215', '益阳', 'yiyang', '12');
+INSERT INTO `b_area` VALUES ('216', '朝阳', 'chaoyang', '14');
+INSERT INTO `b_area` VALUES ('217', '东营', 'dongying', '2');
+INSERT INTO `b_area` VALUES ('218', '宿迁', 'suqian', '3');
+INSERT INTO `b_area` VALUES ('219', '清远', 'qingyuan', '6');
+INSERT INTO `b_area` VALUES ('220', '日照', 'rizhao', '2');
+INSERT INTO `b_area` VALUES ('221', '韶关', 'shaoguan', '6');
+INSERT INTO `b_area` VALUES ('222', '茂名', 'maoming', '6');
+INSERT INTO `b_area` VALUES ('223', '潮州', 'chaozhou', '6');
+INSERT INTO `b_area` VALUES ('224', '河源', 'heyuan', '6');
+INSERT INTO `b_area` VALUES ('225', '阳江', 'yangjiang', '6');

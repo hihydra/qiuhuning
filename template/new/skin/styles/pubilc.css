@@ -169,13 +169,20 @@ a:hover{
 .footer{
     margin-top: 60px;
     min-width: 1280px;
+    padding: 25px 0 15px;
+    background: #424242;
+    text-align: center;
 }
 .copyright{
-    line-height: 40px;
-    background: #424242;
+    line-height: 32px;
     text-align: center;
     color: #ddd;
     font-size: 13px;
+}
+.footer >a{
+	display: inline-block;
+	color: #fff;
+	margin: 0 3px;
 }
 
 

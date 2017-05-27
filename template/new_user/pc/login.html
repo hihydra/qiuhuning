@@ -121,7 +121,7 @@
                 <input type='hidden' id="from"  name="from" value="<?php echo get('from')? get('from'):front::$from;?>"/>
                 <h3 class="tit">用户登录</h3>
                 <ul class="login-box">
-                    <li><i class="icon-mobile-phone icon"></i><input class="input"  name="tel" id='tel' type="text" placeholder="{lang(tel)}"/></li>
+                    <li><i class="icon-mobile-phone icon" style="font-size: 20px;"></i><input class="input"  name="tel" id='tel' type="text" placeholder="{lang(tel)}"/></li>
                     <input class="code-input" type="text" name="mobilenum" placeholder="输入验证码">
                     <input type="button" class="get-code" onclick="getCode('{url('tool/smsMessage')}',$('#tel'),this);" value="获取验证码" />
                     <a class="r lk" href="{url('user/register')}">立即免费注册</a>

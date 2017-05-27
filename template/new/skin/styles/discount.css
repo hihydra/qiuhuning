@@ -313,16 +313,17 @@
     border: none;
     background: #ff6280;
     border-radius: 5px;
-    padding: 8px 30px;
+    padding: 7px 25px;
     color: #fff;
     cursor: pointer;
-    margin: 40px 25px 30px 0;
+   margin: 30px 25px 30px 0;
 }
 .order-btn:hover{
     color: #fff;
 }
 .order-cancel-btn{
     background: #bbb;
+    margin: 30px 25px 30px 120px;
 }
 .order-item .main{
     color: #333;
@@ -357,10 +358,10 @@
 }
 .order-contact{
     background: url("../images/order_contact.png") center no-repeat;
-    width: 688px;
-    height: 326px;
-    float: left;
-    margin: 0 0 80px 100px;
+    width: 450px;
+    height: 115px;
+    margin: 0 auto 80px;
+    padding-top: 280px;
 }
 .order-contact .h4{
     font-size: 16px;

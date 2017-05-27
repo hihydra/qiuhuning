@@ -16,11 +16,9 @@
             {if $propose['status'] == 1}
                 {if empty($propose['price'])}
                 <div class="order-contact">
-                    <div class="" style="float: right; margin: 130px 10px 0 0">
-                        <h4 class="h4">友情提示 :</h4>
-                        <p class="text">抱歉，未找到您的订单，请先联系客服,<br>客服确认后刷新当前页面</p>
-                        <button class="order-cancel-btn">支付定金</button>
-                        <a class="order-btn" href="tencent://Message/?Uin={get('qq5')}&websiteName=http://www.qiuhuning.com/=&Menu=yes">联系客服</a>
+                    <div class="">
+                        <button class="order-cancel-btn" style="padding: 4px 17px;">支付定金</button>
+                        <a class="order-btn" style="padding: 4px 17px;"  href="tencent://Message/?Uin={get('qq5')}&websiteName=http://www.qiuhuning.com/=&Menu=yes">联系客服</a>
                     </div>
                 </div>
                 {else}
@@ -68,9 +66,7 @@
             </div>
             {else}
             <div class="order-contact">
-                <div class="" style="float: right; margin: 130px 10px 0 0">
-                    <h4 class="h4">友情提示 :</h4>
-                    <p class="text">抱歉，您的订单已关闭或者不存在，请重新下单</p>
+                <div class="">
                 </div>
             </div>
             {/if}

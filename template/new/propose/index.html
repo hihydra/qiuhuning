@@ -35,17 +35,17 @@
         </dl>
         <dl class="order-item">
             <dt>举行地区：</dt>
-            <dd class="dd">
+            <dd class="dd" style="">
                 <div class="form-group">
                     <div style="position: relative;">
-                        <input  style="width: 300px" class="form-control address" type="text" value="" >
+                        <input  style="width: 300px" class="form-control" type="text" value="" >
                     </div>
                 </div>
             </dd>
         </dl>
         <dl class="order-item activity-time">
             <dt>活动时间：</dt>
-            <dd class="time dd">选择举行时间</dd><dd class="dd">时间待定</dd>
+            <dd class="dd" id="time">选择举行时间</dd><dd class="time-undetermined dd">时间待定</dd>
         </dl>
 
         <dl class="order-item scene">
@@ -54,7 +54,7 @@
             <dd class="dd" value='{$scene["id"]}'>{$scene['name']}</dd>
             {/loop}
         </dl>
-        <button class="order-cancel-btn">取消</button>
+        <!--<button class="order-cancel-btn">取消</button>-->
         <button class="order-btn" onclick="stepNextOne()" id="step1-next">下一步</button>
 
     </div>
@@ -188,12 +188,6 @@
             $('.t-tel').text(blockInput.eq(3).val());
             <?php } ?>
             $('.order-main').eq(2).addClass('block').siblings().removeClass('block');
-            $('#propose').append('<input type="hidden" name="idea"  value="'+ $('.t-idea').text() +'"/>');
-            $('#propose').append('<input type="hidden" name="qq"  value="'+ blockInput.eq(0).val() +'"/>');
-            $('#propose').append('<input type="hidden" name="weixin"  value="'+ blockInput.eq(1).val() +'"/>');
-            $('#propose').append('<input type="hidden" name="pname"  value="'+ blockInput.eq(2).val() +'"/>');
-            $('#propose').append('<input type="hidden" name="telphone"  value="'+ blockInput.eq(3).val() +'"/>');
-            $('#propose').append('<input type="hidden" name="mobilenum"  value="'+ $('#mobilenum').val() +'"/>');
         }
     }
 </script>

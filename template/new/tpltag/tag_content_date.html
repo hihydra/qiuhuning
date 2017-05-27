@@ -1,16 +1,52 @@
 <div class="part-wiki">
     <h2 class="index_h2"><img src="{$skin_path}/images/h2_bk.png"/></h2>
-    <ul class="wiki-list">
-        {loop archive($_catid,$_typeid,$_spid,$city,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $archive}
+    <ul class="wiki-list" style="float: right; width: 968px;height:1166px;overflow: hidden;">
+        {loop categories(27) $t1}
         <li>
-            <a href="{$archive[url]}">
                 <div class="img-box">
-                    <img jh-img="an" src="{$archive['thumb']}" onerror='this.src="/images/nopic.gif"'/>
+                    <img jh-img="an" src="{$t1['image']}" onerror='this.src="/images/nopic.gif"'/>
                 </div>
-                <h3 class="h3">{$archive[title]}</h3>
-                <span class="text">{cut(strip_tags($archive['intro']),50)}...</span>
-            </a>
+                <h3 class="h3"><a href="{$t1[url]}">{$t1[catname]}</a></h3>
+                    {loop archive($t1[catid],$_typeid,$_spid,$city,12,$_ordertype,4,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $key $archive}
+                    <a href="{$archive[url]}" class="text">{$archive['title']}<span style="float:right;"><b style="color: red;">{$archive[view]}</b>人点赞</span></a>
+                    {/loop}
         </li>
         {/loop}
     </ul>
+    <ul class="wiki-list" style="width: 302px; float: left">
+        <li>
+            <a href="">
+                <div class="img-box">
+                    <img jh-img="an" src="" onerror='this.src="/images/nopic.gif"'/>
+                </div>
+                <h3 class="h3">网友158****1822 评论了 爱情烈焰</h3>
+                <span class="text">哇塞，太霸气了！这是我第一次为老婆准备这么大的惊喜，她被惊喜得一愣一愣的，妆都哭花了，哈哈</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="img-box">
+                    <img jh-img="an" src="" onerror='this.src="/images/nopic.gif"'/>
+                </div>
+                <h3 class="h3">网友158****1822 评论了 繁花似锦</h3>
+                <span class="text">和小燕策划师也是一次聚会认识的，刚好身边一哥们寻思着最近向交往5年的女友求婚，要我们帮忙想点子，就介绍你们，果然没有让哥们失望。</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="img-box">
+                    <img jh-img="an" src="" onerror='this.src="/images/nopic.gif"'/>
+                </div>
+                <h3 class="h3">网友158****1822 评论了 浪漫物语</h3>
+                <span class="text">时光枯萎了花朵；时光循环了春夏秋冬；时光消逝了青春；时光转换了容颜；时光淡化了记忆。感谢你们为我们策划了一份温馨而又终身浪漫的求婚！</span>
+            </a>
+        </li>
+    </ul>
 </div>
+        
+        
+        
+        
+        
+        
+        
