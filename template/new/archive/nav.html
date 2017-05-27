@@ -1,5 +1,5 @@
     <div class="crumbs">
-        <a class="crumbs-lk" href="<?php if($_GET['city']){echo '?city='.$_GET['city'];}else{ echo '/';} ?>"><i class="icon-home crumbs-icon"></i>求婚总动员</a>>
+        <a class="crumbs-lk" href="<?php if($_GET['city']){echo '/'.$_GET['city'].'/';}else{ echo '/';} ?>"><i class="icon-home crumbs-icon"></i>求婚总动员</a>>
         <?php  $t1=$category[$catid];?>
         {if $t1[parentid]!=0}
         <?php $t2=$category[$t1[parentid]];?>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,11 +36,8 @@
     <div class="wrap">
         <h1 class="logo"><a class="logo-text" href="/">求婚总动员</a> </h1>
         <div class="switch-btn l">
-            {if area::slug($_GET['city']) }
-            <h2 style="text-align: center;">{area::slug($_GET['city'])}</h2>
-	    {else}
-	    <h2 style="text-align: center;">全国</h2>
-	    {/if}
+            {if }
+            <h2 style="text-align: center;">area::slug($_GET['city'])?area::slug($_GET['city']):'全国'; ?></h2>
             <a  href="<?php echo url('area/city');?>">[切换城市]</a>
         </div>
         <div class="search">
@@ -56,7 +53,7 @@
     </div>
     <nav class="nav">
         <div class="wrap">
-            <a href="<?php if($_GET['city']){echo '?city='.$_GET['city'];}else{ echo '/';} ?>" class="nav-lk{if $topid==0} nav-on{/if}">{lang(homepage)}</a>
+            <a href="<?php if($_GET['city']){echo '/'.$_GET['city'].'/';}else{ echo '/';} ?>" class="nav-lk{if $topid==0} nav-on{/if}">{lang(homepage)}</a>
             {loop categories_nav() $t}
             <a href="{$t[url]}" class="nav-lk{if $catid==$t[catid]} nav-on{/if}">{$t[catname]}</a>
             {/loop}
