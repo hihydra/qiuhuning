@@ -53,37 +53,37 @@ $('.order-item').on('click', 'dd.dd', function() {
 });
 
 $('.video-select-hidden').on('click', 'dd', function() {
-	$('.video-make').text($(this).text()).addClass('dd-on').siblings().removeClass('dd-on');;
+	$('.video-make').text($(this).text()).addClass('dd-on').siblings().removeClass('dd-on');
 	$('.video-select-hidden').addClass('none');
 });
 
 //第一步操作
 function stepNextOne() {
-	if($('.block').find('dd.dd-on').length < 4) {
-		return false
-	} else {
-//		alert('1')
-		if($('.form-control').val().trim() == ''){
-			$('.form-control').focus();
-			return false
-		}
-		var blockOn = $('.block .dd-on');
-		var selectItem = $('.select-item');
-		$('.t-thm').text(blockOn.eq(0).text());
-		/*
-		if(selectItem.eq(0).text() == selectItem.eq(1).text()){
-		    var currentSelect = selectItem.eq(0).text();
-		}
-		else {
-		    var currentSelect = selectItem.eq(0).text()+'/'+selectItem.eq(1).text()
-		}
-		*/
-		$('.t-address').text(blockOn.eq(1).text());
-		$('.t-time').text(blockOn.eq(2).text());
-		$('.t-cdt').text(blockOn.eq(3).text());
-		$('.order-main').eq(1).addClass('block').siblings().removeClass('block');
-		//给table表里的数据赋值
-	}
+    if($('.block').find('dd.dd-on').length<4){
+        return false
+    }
+    else {
+        var blockOn =  $('.block .dd-on');
+        var selectItem = $('.select-item');
+        $('.t-thm').text(blockOn.eq(0).text());
+        /*
+        if(selectItem.eq(0).text() == selectItem.eq(1).text()){
+            var currentSelect = selectItem.eq(0).text();
+        }
+        else {
+            var currentSelect = selectItem.eq(0).text()+'/'+selectItem.eq(1).text()
+        }
+        */
+        $('.t-address').text($('.address').val());
+        $('.t-time').text(blockOn.eq(2).text());
+        $('.t-cdt').text(blockOn.eq(3).text());
+        $('.order-main').eq(1).addClass('block').siblings().removeClass('block');
+        //给table表里的数据赋值
+        $('#propose').append('<input type="hidden" name="address"  value="'+ $('.address').val() +'"/>');
+        $('#propose').append('<input type="hidden" name="time"  value="'+ blockOn.eq(2).text() +'"/>');
+        $('#propose').append('<input type="hidden" name="scene_id"  value="'+ blockOn.eq(0).attr('value') +'"/>');
+        $('#propose').append('<input type="hidden" name="topic_id"  value="'+ blockOn.eq(3).attr('value')+'"/>');
+    }
 }
 
 function removeStr(str) {
@@ -94,7 +94,7 @@ function removeStr(str) {
 }
 //第二步操作
 function stepPrevTwo() {
-	$('.order-main').eq(0).addClass('block').siblings().removeClass('block')
+	$('.order-main').eq(0).addClass('block').siblings().removeClass('block');
 }
 
 //手机号验证
@@ -113,25 +113,25 @@ function isnum(Tel) {
 $('.input').change(function() {
 	if($(this).val() == '') {
 		var tipsText = $(this).parent().attr('value');
-		$(this).parent().parent().find('dd.tips').text('请输入' + tipsText)
+		$(this).parent().parent().find('dd.tips').text('请输入' + tipsText);
 	}
 });
 
 //第三步
 function stepNextThree() {
-	$('.order-main').eq(3).addClass('block').siblings().removeClass('block')
+	$('.order-main').eq(3).addClass('block').siblings().removeClass('block');
 }
 
 function stepPrevThree() {
-	$('.order-main').eq(1).addClass('block').siblings().removeClass('block')
+	$('.order-main').eq(1).addClass('block').siblings().removeClass('block');
 }
 
 //第四步
 function stepNextFour() {
-	$('.order-main').eq(4).addClass('block').siblings().removeClass('block')
+	$('.order-main').eq(4).addClass('block').siblings().removeClass('block');
 }
 
 //第四步
 function stepNextFive() {
-	$('.order-main').eq(5).addClass('block').siblings().removeClass('block')
+	$('.order-main').eq(5).addClass('block').siblings().removeClass('block');
 }

@@ -38,7 +38,7 @@
             <dd class="dd" style="">
                 <div class="form-group">
                     <div style="position: relative;">
-                        <input  style="width: 300px" class="form-control" type="text" value="" >
+                        <input  style="width: 300px" class="form-control address" type="text" value="" >
                     </div>
                 </div>
             </dd>
@@ -126,7 +126,7 @@
 <script src="{$skin_path}/scripts/lib/laydate.js"></script>
 <script src="{$skin_path}/scripts/order.js"></script>
 
-<script>
+<script type="text/javascript">
 /*
     var cityPicker = new IIInsomniaCityPicker({
         data: cityData,
@@ -156,11 +156,29 @@
             $('.part').css('display','none');
             $('.discount-comment').css('display','block');
         }
-    })
+    });
 
     function stepNextTwo() {
         <?php if(!isset($user['userid'])) { ?>
-        var jsTel = document.getElementById('tel');
+            var jsTel = document.getElementById('tel');
+            var chk = false;
+            $.ajax({
+                type : "post",
+                url : "{url('tool/chkcode')}",
+                async:false,
+                dataType: "json",
+                data: {'mobilenum':$('#mobilenum').val()},
+                success : function(data) {
+                    if(data.code == 0){
+                        alert(data.message);
+                    }else{
+                        chk = true;
+                    }
+                }
+            });
+        if(!chk) {
+             return;
+        }
         <?php } ?>
         var currentInput = $('.block input');
         if(currentInput.eq(0).val() == ''){
@@ -188,6 +206,12 @@
             $('.t-tel').text(blockInput.eq(3).val());
             <?php } ?>
             $('.order-main').eq(2).addClass('block').siblings().removeClass('block');
+            $('#propose').append('<input type="hidden" name="idea"  value="'+ $('.t-idea').text() +'"/>');
+            $('#propose').append('<input type="hidden" name="qq"  value="'+ blockInput.eq(0).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="weixin"  value="'+ blockInput.eq(1).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="pname"  value="'+ blockInput.eq(2).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="telphone"  value="'+ blockInput.eq(3).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="mobilenum"  value="'+ $('#mobilenum').val() +'"/>');
         }
     }
 </script>

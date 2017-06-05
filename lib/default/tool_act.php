@@ -86,6 +86,18 @@ class tool_act extends act {
         }
     }
 
+    function chkcode_action(){
+         $mobilenum = front::$post['mobilenum'];
+         $smsCode = new SmsCode();
+         if (!$smsCode->chkcode($mobilenum)) {
+            $res['message'] =  lang('cell_phone_parity_error');
+            $res['code'] = 0;
+        }else{
+            $res['code'] = 1;
+        }
+        echo json::encode($res);
+    }
+
     function qrcode_action(){
         require_once(ROOT.'/lib/plugins/phpqrcode/qrlib.php');
         $url = $_GET['data'];
