@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {template 'header.html'}
     <link rel="stylesheet" href="{$skin_path}/styles/discount.css">
     <link rel="stylesheet" href="{$skin_path}/styles/lib/laydate.css">
@@ -201,3 +202,224 @@
 {template 'footer.html'}
         
         
+=======
+{template 'header.html'}
+    <link rel="stylesheet" href="{$skin_path}/styles/discount.css">
+    <link rel="stylesheet" href="{$skin_path}/styles/lib/laydate.css">
+<div class="wrap">
+    <div class="crumbs">
+        <a class="crumbs-lk" href="/"><i class="icon-home crumbs-icon"></i>求婚总动员</a>><a class="crumbs-lk" href="?case=propose">我要求婚</a>
+    </div>
+    <div class="service-flow">
+        <h3 class="tit">服务流程</h3>
+        <ul class="service-step">
+        	{loop $propose['process']  $process}
+            <li>
+                <h4>{$process['listorder']}</h4>
+                <p>{$process['name']}</p>
+            </li>
+            {/loop}
+        </ul>
+    </div>
+
+    <!--第1步-->
+    <div class="order-main block">
+        <h3 class="tit">提交需求</h3>
+        <dl class="order-item topic">
+            <dt >活动主题：</dt>
+            {loop $propose['topic']  $topic}
+            <dd class="dd {if !empty($topic['next'])}video-make{/if}" value='{$topic["id"]}'>{$topic['name']}</dd>
+                {if !empty($topic['next'])}
+                <dl class="order-item video-select-hidden none">
+                    <?php foreach($topic['next'] as $t) {?>
+                    <dd>{$t['name']}</dd>
+                    <?php } ?>
+                </dl>
+                {/if}
+            {/loop}
+        </dl>
+        <dl class="order-item">
+            <dt>举行地区：</dt>
+            <dd class="dd" style="">
+                <div class="form-group">
+                    <div style="position: relative;">
+                        <input  style="width: 300px" class="form-control address" type="text" value="" >
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <dl class="order-item activity-time">
+            <dt>活动时间：</dt>
+            <dd class="dd" id="time">选择举行时间</dd><dd class="time-undetermined dd">时间待定</dd>
+        </dl>
+
+        <dl class="order-item scene">
+            <dt>活动场景：</dt>
+            {loop $propose['scene']  $scene}
+            <dd class="dd" value='{$scene["id"]}'>{$scene['name']}</dd>
+            {/loop}
+        </dl>
+        <!--<button class="order-cancel-btn">取消</button>-->
+        <button class="order-btn" onclick="stepNextOne()" id="step1-next">下一步</button>
+
+    </div>
+    <!--第2步-->
+    <div class="order-main ">
+        <h3 class="tit">提交需求</h3>
+        <dl class="order-item">
+            <dt>具体想法：</dt>
+            <dd><textarea></textarea></dd>
+        </dl>
+        <dl class="order-item">
+            <dt>我的QQ：</dt>
+            <dd value="QQ"><input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" type="text" class="input" placeholder="请输入常用QQ"></dd>
+            <dd class="tips"></dd>
+        </dl>
+        <dl class="order-item">
+            <dt>我的微信：</dt>
+            <dd value="微信"><input  type="text" class="input" placeholder="请输入微信"></dd>
+            <dd class="tips"></dd>
+        </dl>
+        <dl class="order-item">
+            <dt>我的称呼：</dt>
+            <dd value="姓名"><input type="text" class="input" placeholder="请输入姓名"></dd>
+            <dd class="tips"></dd>
+        </dl>
+        <?php if(!isset($user['userid'])) { ?>
+        <dl class="order-item">
+            <dt>手机号：</dt>
+            <dd value="手机号"><input id="tel" onblur="isnum(this)" type="text" class="input" placeholder="请输入手机号"></dd><dd class="tips"></dd>
+        </dl>
+        <dl class="order-item">
+            <dt>验证码：</dt>
+            <dd value="验证码"><input class="w80" type="text" placeholder="请输入验证码" id="mobilenum"></dd><dd class="tips"></dd>
+            <input type="button" class="person-code-btn" onclick="getCode('{url('tool/smsMessage')}',$('#tel'),this);" value="获取验证码" />
+        </dl>
+        <?php } ?>
+        <button class="order-cancel-btn" onclick="stepPrevTwo()">上一步</button>
+        <button class="order-btn" onclick="stepNextTwo()">提交需求</button>
+    </div>
+    <!--第3步-->
+    <div class="order-main ">
+        <h3 class="tit">信息确认</h3>
+        <div class="order-box">
+            <div class="l order-nav">
+                <p class="order-nav-on">基本信息</p>
+                <p>支付定金</p>
+                <p>活动进程</p>
+            </div>
+            <table class="order-table">
+                <tr><td style="width: 100px"><b>姓名：</b></td><td class="t-name"></td><td style="width: 100px"><b>联系电话：</b></td><td class="t-tel">{$user['tel']}</td></tr>
+                <tr><td><b>QQ：</b></td><td class="t-qq"></td><td><b>微信：</b></td><td class="t-weixin"></td></tr>
+                <tr><td><b>主题：</b></td><td class="t-thm"></td><td><b>场景：</b></td><td class="t-cdt"></td></tr>
+                <tr><td><b>时间：</b></td><td class="t-time"></td><td><b>地点：</b></td><td class="t-address"></td></tr>
+                <tr><td><b>具体想法：</b></td><td class="t-idea" colspan="3"></td></tr>
+            </table>
+        </div>
+        <button class="order-cancel-btn" style="margin-left: 670px" onclick="stepPrevThree()">修改信息</button>
+        <form id="propose" action="/index.php?case=propose&act=propose" method="post" style="float: right;padding-right: 304px;">
+            <input type="submit" name="submit" value="{lang(submit_on)}" class="order-btn" />
+        </form>
+    </div>
+</div>
+<!--
+<script src="{$skin_path}/scripts/lib/city-picker.data.js"></script>
+<script src="{$skin_path}/scripts/lib/city-picker.js"></script>
+<script src="{$skin_path}/scripts/lib/main.js"></script>
+-->
+
+<script src="{$skin_path}/scripts/lib/laydate.js"></script>
+<script src="{$skin_path}/scripts/order.js"></script>
+
+<script type="text/javascript">
+/*
+    var cityPicker = new IIInsomniaCityPicker({
+        data: cityData,
+        target: '#cityChoice',
+        valType: 'k-v',
+        hideCityInput: '#city',
+        hideProvinceInput: '#province',
+        callback: function(city_id){
+            alert(city_id);
+        }
+    });
+
+    cityPicker.init();
+*/
+
+    $('.discount-tab').on('click','li',function () {
+        $(this).addClass('tab-on').siblings().removeClass('tab-on');
+        if($(this).index() == 0){
+            $('.part').css('display','none');
+            $('.discount-text').css('display','block');
+        }
+        else if($(this).index() == 1) {
+            $('.part').css('display','none');
+            $('.discount-faq').css('display','block');
+        }
+        else if($(this).index() == 2){
+            $('.part').css('display','none');
+            $('.discount-comment').css('display','block');
+        }
+    });
+
+    function stepNextTwo() {
+        <?php if(!isset($user['userid'])) { ?>
+            var jsTel = document.getElementById('tel');
+            var chk = false;
+            $.ajax({
+                type : "post",
+                url : "{url('tool/chkcode')}",
+                async:false,
+                dataType: "json",
+                data: {'mobilenum':$('#mobilenum').val()},
+                success : function(data) {
+                    if(data.code == 0){
+                        alert(data.message);
+                    }else{
+                        chk = true;
+                    }
+                }
+            });
+        if(!chk) {
+             return;
+        }
+        <?php } ?>
+        var currentInput = $('.block input');
+        if(currentInput.eq(0).val() == ''){
+            currentInput.eq(0).parent().parent().find('dd.tips').text('请输入QQ');
+        }
+        else if(currentInput.eq(1).val() == ''){
+            currentInput.eq(1).parent().parent().find('dd.tips').text('请输入微信');
+        }
+        else if(currentInput.eq(2).val() == ''){
+            currentInput.eq(2).parent().parent().find('dd.tips').text('请输入姓名');
+        }
+        <?php if(!isset($user['userid'])) { ?>
+        else if(currentInput.eq(3).val() == ''){
+            currentInput.eq(3).parent().parent().find('dd.tips').text('请输入手机号');
+        }
+        else if(!isnum(jsTel)){
+            currentInput.eq(3).parent().parent().find('dd.tips').text('手机号格式错误');
+        }<?php } ?>else {
+            var blockInput =  $('.block .input');
+            $('.t-idea').text($('.block textarea').val());
+            $('.t-qq').text(blockInput.eq(0).val());
+            $('.t-weixin').text(blockInput.eq(1).val());
+            $('.t-name').text(blockInput.eq(2).val());
+            <?php if(!isset($user['userid'])) { ?>
+            $('.t-tel').text(blockInput.eq(3).val());
+            <?php } ?>
+            $('.order-main').eq(2).addClass('block').siblings().removeClass('block');
+            $('#propose').append('<input type="hidden" name="idea"  value="'+ $('.t-idea').text() +'"/>');
+            $('#propose').append('<input type="hidden" name="qq"  value="'+ blockInput.eq(0).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="weixin"  value="'+ blockInput.eq(1).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="pname"  value="'+ blockInput.eq(2).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="telphone"  value="'+ blockInput.eq(3).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="mobilenum"  value="'+ $('#mobilenum').val() +'"/>');
+        }
+    }
+</script>
+<div style="display: none;">
+{template 'footer.html'}
+>>>>>>> 174ade06851c5aa9e64877d1a04343209af5d1e4
