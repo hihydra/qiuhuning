@@ -52,10 +52,12 @@ class propose_act extends act
         if (front::post('submit')) {
             $this->propose = new propose();
             if(!$this->view->user['userid']){
+/*
                 if(!preg_match('/^1([0-9]+){5,}$/is',front::$post['telphone'])){
                     echo '<script type="text/javascript">alert("'.lang('phone_number_format_is_wrong').'");window.location.href="' . url('propose'). '";</script>';
                     exit;
                 }
+*/
                 if (config::get('aliyun-sms')) {
                     $mobilenum = front::$post['mobilenum'];
                     $smsCode = new SmsCode();
@@ -228,3 +230,4 @@ class propose_act extends act
 
 
 }
+        
