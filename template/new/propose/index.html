@@ -38,7 +38,7 @@
             <dd class="dd" style="">
                 <div class="form-group">
                     <div style="position: relative;">
-                        <input  style="width: 300px" class="form-control" type="text" value="" >
+                        <input  style="width: 300px" class="form-control address" type="text" value="" >
                     </div>
                 </div>
             </dd>
@@ -188,8 +188,16 @@
             $('.t-tel').text(blockInput.eq(3).val());
             <?php } ?>
             $('.order-main').eq(2).addClass('block').siblings().removeClass('block');
+            $('#propose').append('<input type="hidden" name="idea"  value="'+ $('.t-idea').text() +'"/>');
+            $('#propose').append('<input type="hidden" name="qq"  value="'+ blockInput.eq(0).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="weixin"  value="'+ blockInput.eq(1).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="pname"  value="'+ blockInput.eq(2).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="telphone"  value="'+ blockInput.eq(3).val() +'"/>');
+            $('#propose').append('<input type="hidden" name="mobilenum"  value="'+ $('#mobilenum').val() +'"/>');
         }
     }
 </script>
 <div style="display: none;">
 {template 'footer.html'}
+        
+        
