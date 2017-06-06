@@ -13,7 +13,7 @@
                     <h3 class="tit">{$archive[title]}</h3>
                     <p class="desc">{cut(strip_tags($archive['introduce']),60)}… </p>
                     <p class="discount-price"><b class="price">￥{$archive['attr4']}</b><a rel="nofollow" target="_blank" href="?case=propose" "><span class="btn">预约有礼</span></a><br><em class="original">门店价：￥{$archive['attr2']}</em></p>
-                    <p class="bottom">已有<b class="b">{{$archive['focus']}}</b>对新人关注</p>
+                    <p class="bottom">已有<b class="b">{$archive['focus']}</b>对新人关注</p>
                 </div>
             </a>
         </li>
@@ -31,3 +31,5 @@
 {template 'footer.html'}
 
 
+
+        
