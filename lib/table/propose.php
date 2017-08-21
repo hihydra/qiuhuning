@@ -12,19 +12,20 @@ class propose extends table {
     }
 	function get_form() {
         return array(
-        	    'topic'=>array(
+        	    'topic_id'=>array(
                         'selecttype'=>'select',
                         'select'=>form::arraytoselect(topic::option()),
                         'default'=>get('topic'),
                 ),
-                'scene'=>array(
+                'scene_id'=>array(
                         'selecttype'=>'select',
                         'select'=>form::arraytoselect(scene::getScene()),
                 ),
-                'process'=>array(
+                'process_id'=>array(
                         'selecttype'=>'select',
                         'select'=>form::arraytoselect(process::getProcess()),
                 ),
         );
     }
 }
+        

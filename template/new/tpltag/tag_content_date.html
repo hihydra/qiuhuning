@@ -6,7 +6,7 @@
                 <div class="img-box">
                     <img jh-img="an" src="{$t1['image']}" onerror='this.src="/images/nopic.gif"'/>
                 </div>
-                <h3 class="h3"><a href="{$t1[url]}">{$t1[catname]}</a></h3>
+                <h3 class="h3"> <a href="{$t1[url]}">{if $_GET['city'] }{area::slug($_GET['city'])}{/if}{$t1[catname]}</a></h3>
                     {loop archive($t1[catid],$_typeid,$_spid,$city,12,$_ordertype,4,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $key $archive}
                     <a href="{$archive[url]}" class="text">{$archive['title']}<span style="float:right;"><b style="color: red;">{$archive[view]}</b>人点赞</span></a>
                     {/loop}
@@ -43,6 +43,17 @@
         </li>
     </ul>
 </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

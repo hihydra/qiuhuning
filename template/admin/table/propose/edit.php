@@ -36,11 +36,11 @@
       </tr>
       <tr>
         <td align="right">主题：</td>
-        <td>{form::getform('topic',$form,$field,$data)}</td>
+        <td>{form::getform('topic_id',$form,$field,$data)}</td>
       </tr>
       <tr>
         <td align="right">场景：</td>
-        <td>{form::getform('scene',$form,$field,$data)}</td>
+        <td>{form::getform('scene_id',$form,$field,$data)}</td>
       </tr>
       <tr>
         <td align="right">具体想法：</td>
@@ -72,7 +72,7 @@
       </tr>
       <tr>
         <td align="right">流程：</td>
-        <td>{form::getform('process',$form,$field,$data)}</td>
+        <td>{form::getform('process_id',$form,$field,$data)}</td>
       </tr>
       <tr>
         <td align="right">状态：</td>
@@ -110,3 +110,4 @@
         //alert(defaultId);
     });
 </script>
+        

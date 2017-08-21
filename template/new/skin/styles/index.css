@@ -29,6 +29,7 @@
 .side-nav>li{
     border-bottom: 1px dashed #666;
     position: relative;
+    height: 49px;
 }
 .side-nav>li:hover{
     background: #e23957;
@@ -145,6 +146,7 @@
     background: #fff;
     padding: 5px 20px;
     border-radius: 5px;
+    white-space:nowrap;
 }
 .case-big{
     width:440px;
@@ -187,7 +189,7 @@
 .wiki-list>li{
     float: left;
     width: 302px;
-    height: 342px;
+    height: 345px;
     margin: 15px 8px;
     border: 1px solid #ddd;
     padding-bottom: 15px;
@@ -200,8 +202,19 @@
 }
 .wiki-list .text{
     padding: 0 18px;
-    line-height: 25px;
-    display: block;
+    line-height: 22px;
+    clear: both;
+    display: inline-block;
+    height: 22px;
+}
+.wiki-list .text font{
+    float: left;
+    display: inline-block;
+    width: 180px;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
 }
 .img-box{
     width: 302px;

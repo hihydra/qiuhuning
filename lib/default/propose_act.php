@@ -18,7 +18,7 @@ class propose_act extends act
                 'intro' => 'Guest',
                 'point' => '',
                 'introducer' => '',
-            );
+                );
         }else {
             $username = cookie::get('login_username');
             $password = cookie::get('login_password');
@@ -66,10 +66,12 @@ class propose_act extends act
                         return;
                     }
                 }
+/*
                 if ($this->_user->getrow(array('tel' => front::$post['telphone']))) {
                     echo '<script type="text/javascript">alert("该手机号已注册请先登陆");window.location.href="' . url::create('user/login'). '";</script>';
                     exit;
                 }
+*/
                 $username = front::$post['telphone'];
                 $password = md5(substr(front::$post['telphone'],-6));
                 $tel = front::$post['telphone'];
@@ -79,13 +81,21 @@ class propose_act extends act
                     'tel' => $tel,
                     'groupid' => 101,
                     'userip' => front::ip()
-                );
-                $insert_user = $this->_user->rec_insert($data);
-                front::$post['userid'] = $this->_user->insert_id();
-                if($insert_user){
+                    );
+                $findUser = $this->_user->getrow(array('tel' => front::$post['telphone']));
+                if ($findUser) {
+                    front::$post['userid'] = $findUser['userid'];
                     cookie::set('login_username', $username);
                     cookie::set('login_password', front::cookie_encode($password));
                     session::set('username', $username);
+                }else{
+                    $insert_user = $this->_user->rec_insert($data);
+                    front::$post['userid'] = $this->_user->insert_id();
+                    if($insert_user){
+                        cookie::set('login_username', $username);
+                        cookie::set('login_password', front::cookie_encode($password));
+                        session::set('username', $username);
+                    }
                 }
             }else{
                 front::$post['userid'] = $this->view->user['userid'];
@@ -117,57 +127,57 @@ class propose_act extends act
                 }
             }
             exit;
-         }
+        }
     }
     function paypropose_action(){
-            if (!front::get('oid')) {
-                $propose = propose::getInstance()->getrow(['userid'=>$this->view->user['userid']]);
-                if (empty($propose)) {
-                    echo '<script type="text/javascript">alert("您还没有下过订单。");window.location.href="' . url('propose'). '";</script>';
-                    exit;
-                }
-                $oid = $propose['oid'];
-            }else{
-                $oid = front::get('oid');
+        if (!front::get('oid')) {
+            $propose = propose::getInstance()->getrow(['userid'=>$this->view->user['userid']]);
+            if (empty($propose)) {
+                echo '<script type="text/javascript">alert("您还没有下过订单。");window.location.href="' . url('propose'). '";</script>';
+                exit;
             }
+            $oid = $propose['oid'];
+        }else{
+            $oid = front::get('oid');
+        }
             //var_dump($oid);die;
-            preg_match_all("/-(.*)-(.*)-(.*)/isu", $oid, $oidout);
-            $this->view->paytype = $oidout[3][0];
-            if($this->view->user['userid'] != $oidout[2][0]){
-                echo '<script type="text/javascript">alert("您无法支付别人的订单。");window.location.href="' . url('propose'). '";</script>';
-                exit;
-            }
-            $this->view->user_id = $oidout[2][0];
-            $payfilename = $this->view->paytype;
-            $where = array();
-            $payfilename = $where['pay_code'] = $this->view->paytype;
-            $this->view->pay = pay::getInstance()->getrows($where);
-            $where = array();
-            $where['oid'] = $oid;
+        preg_match_all("/-(.*)-(.*)-(.*)/isu", $oid, $oidout);
+        $this->view->paytype = $oidout[3][0];
+        if($this->view->user['userid'] != $oidout[2][0]){
+            echo '<script type="text/javascript">alert("您无法支付别人的订单。");window.location.href="' . url('propose'). '";</script>';
+            exit;
+        }
+        $this->view->user_id = $oidout[2][0];
+        $payfilename = $this->view->paytype;
+        $where = array();
+        $payfilename = $where['pay_code'] = $this->view->paytype;
+        $this->view->pay = pay::getInstance()->getrows($where);
+        $where = array();
+        $where['oid'] = $oid;
             //var_dump(propose::getInstance()->getrow($where));die;
-            $propose = propose::getInstance()->getrow($where);
+        $propose = propose::getInstance()->getrow($where);
             //var_dump($propose);exit;
-            if($propose['status']==0 || empty($propose)){
-                echo '<script type="text/javascript">alert("该订单不存在或者已关闭");window.location.href="' . url('propose'). '";</script>';
-                exit;
-            }
-            $this->_process=new process;
-            $propose['proces']=$this->_process->getrow("id=".$propose['process_id']);
-            $this->_topic=new topic;
-            $propose['topic']=$this->_topic->getrow("id=".$propose['topic_id']);
-            $this->_scene=new scene;
-            $propose['scene']=$this->_scene->getrow("id=".$propose['scene_id']);
-            $this->view->process=$this->_process->getrows('','','listorder asc');
-            $this->view->propose=$propose;
-            $order['ordersn'] = $oid;
-            $order['title'] = $this->view->propose['topic']['name'];
-            $order['id'] =  $this->view->propose['id'];
-            $order['orderamount'] = $this->view->propose['price'];
-            include_once ROOT . '/lib/plugins/pay/' . $payfilename . '.php';
-            $payclassname = $payfilename;
-            $payobj = new $payclassname();
+        if($propose['status']==0 || empty($propose)){
+            echo '<script type="text/javascript">alert("该订单不存在或者已关闭");window.location.href="' . url('propose'). '";</script>';
+            exit;
+        }
+        $this->_process=new process;
+        $propose['proces']=$this->_process->getrow("id=".$propose['process_id']);
+        $this->_topic=new topic;
+        $propose['topic']=$this->_topic->getrow("id=".$propose['topic_id']);
+        $this->_scene=new scene;
+        $propose['scene']=$this->_scene->getrow("id=".$propose['scene_id']);
+        $this->view->process=$this->_process->getrows('','','listorder asc');
+        $this->view->propose=$propose;
+        $order['ordersn'] = $oid;
+        $order['title'] = $this->view->propose['topic']['name'];
+        $order['id'] =  $this->view->propose['id'];
+        $order['orderamount'] = $this->view->propose['price'];
+        include_once ROOT . '/lib/plugins/pay/' . $payfilename . '.php';
+        $payclassname = $payfilename;
+        $payobj = new $payclassname();
 
-            $this->view->gotopaygateway = $payobj->get_code($order, unserialize_config($this->view->pay[0]['pay_config']));
+        $this->view->gotopaygateway = $payobj->get_code($order, unserialize_config($this->view->pay[0]['pay_config']));
 
 
     }
@@ -230,4 +240,5 @@ class propose_act extends act
 
 
 }
-        
+
+

@@ -181,13 +181,7 @@
         }
         <?php } ?>
         var currentInput = $('.block input');
-        if(currentInput.eq(0).val() == ''){
-            currentInput.eq(0).parent().parent().find('dd.tips').text('请输入QQ');
-        }
-        else if(currentInput.eq(1).val() == ''){
-            currentInput.eq(1).parent().parent().find('dd.tips').text('请输入微信');
-        }
-        else if(currentInput.eq(2).val() == ''){
+        if(currentInput.eq(2).val() == ''){
             currentInput.eq(2).parent().parent().find('dd.tips').text('请输入姓名');
         }
         <?php if(!isset($user['userid'])) { ?>
@@ -217,3 +211,4 @@
 </script>
 <div style="display: none;">
 {template 'footer.html'}
+        

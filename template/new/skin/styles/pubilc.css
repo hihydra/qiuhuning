@@ -125,6 +125,7 @@ a:hover{
     height: 28px;
     border: none;
     padding:6px;
+    line-height: 28px;
 
 }
 .search-btn{
@@ -296,6 +297,7 @@ a:hover{
     margin-top: 15px;
     padding: 0 10px 15px;
     position: relative;
+    clear: both;
 }
 .item-pic{
     width: 120px;

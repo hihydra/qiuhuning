@@ -138,6 +138,7 @@ class archive_act extends act
     function list_action()
     {
         //add
+/*
         if(front::get('city')){
             $area = new area();
             $city = $area->getrow("slug = '".front::get('city')."'");
@@ -147,6 +148,7 @@ class archive_act extends act
             $this->view->city = '';
             $where = '';
         }
+*/
         //end-add
         front::check_type(front::get('catid'));
         $this->view->categorys = category::getpositionlink2(front::get('catid'));
@@ -1188,3 +1190,4 @@ class archive_act extends act
     }
 
 }
+        

@@ -9,10 +9,10 @@
     <link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{$skin_path}/styles/pubilc.css">
     <link rel="stylesheet" href="{$skin_path}/styles/lib/font-awesome.css">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{$skin_path}/scripts/lib/jquery-1.8.3.min.js"></script>
 </head>
 <!--[if lt IE 9]>
-<script src="scripts/lib/html5shiv.min.js"></script>
+<script src="{$skin_path}/scripts/lib/html5shiv.min.js"></script>
 <![endif]-->
 <body>
 
@@ -44,10 +44,10 @@
             <a  href="<?php echo url('area/city');?>">[切换城市]</a>
         </div>
         <div class="search">
-            <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+            <!--<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">-->
                 <input class="search-text" type="text" name="keyword"/>
-                <input name='submit' type="submit" value="搜索" align="middle" class="search-btn" />
-            </form>
+                <a href="/index.php?case=propose"> <input name='submit' type="button" value="搜索" align="middle" class="search-btn" /></a>
+            <!--</form>-->
         </div>
         <div class="contact-top r">
             <p style="font-size: 15px; margin-bottom: 5px">求婚总动员客服热线</p>
@@ -62,3 +62,10 @@
             {/loop}
         </div>
     </nav>
+        
+        
+        
+        
+        
+        
+        

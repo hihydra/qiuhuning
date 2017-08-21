@@ -5,12 +5,14 @@
         <?php $t2=$category[$t1[parentid]];?>
         {if $t2[parentid]!=0}
         <?php $t3=$category[$t2[parentid]];?>
-        <a class="crumbs-lk" href="<?php echo url('archive/list/catid/'.$t3[catid]); ?>">{$t3[catname]}</a>>
+        <a class="crumbs-lk" href="<?php echo '/index.php?case=archive&act=list&catid='.$t3[catid]; ?>">{$t3[catname]}</a>>
         {/if}
-        <a class="crumbs-lk" href="<?php echo url('archive/list/catid/'.$t2[catid]); ?>">{$t2[catname]}</a>>
+        <a class="crumbs-lk" href="<?php echo '/index.php?case=archive&act=list&catid='.$t2[catid]; ?>">{$t2[catname]}</a>>
         {/if}
-        <span>{$t1[catname]}</span>
+        <a class="crumbs-lk" href="<?php echo '/index.php?case=archive&act=list&catid='.$t1[catid]; ?>">{$t1[catname]}</a>
         {if $archive[title]}
         ><a class="crumbs-lk" href="">{cut($archive[title],20)}</a>
         {/if}
     </div>
+        
+        

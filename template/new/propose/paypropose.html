@@ -40,11 +40,36 @@
                 </div>
                 {/if}
             {elseif $propose['status'] == 2}
+            <?php
+                switch($propose['proces']['id']){
+                      case 3:
+                      $length = 29;
+                      break;
+                      case 4:
+                      $length = 43;
+                      break;
+                      case 5:
+                      $length = 57;
+                      break;
+                      case 6:
+                      $length = 71;
+                      break;
+                      case 7:
+                      $length = 85;
+                      break;
+                      case 8:
+                      $length = 99;
+                      break;
+                      default:
+                      $length = 15;
+                      break;
+                }
+            ?>
             <div class="order-status">
                 <div class="" style="width: 1000px;height: 180px; border: 1px solid #ddd;  margin-bottom: 40px">
                     <h3 class="status-tit">交易状态</h3>
                     <div class="progress-bar">
-                        <div class="progress"></div>
+                        <div class="progress" style="width:{$length}%;"></div>
                         {loop $process  $key $p}
                         <span class="doc doc{$key}" {if ($key+1)<=$propose['proces']['id']}style="background: rgb(255, 98, 128);"{/if}></span>
                         <p class="text text{$key}">{$p['name']}</p>
@@ -79,3 +104,5 @@
 </script>
 <div style="display: none;">
 {template 'footer.html'}
+        
+        
