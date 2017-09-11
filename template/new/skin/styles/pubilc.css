@@ -9,6 +9,13 @@ form,fieldset,input,textarea,p,blockquote,th,td,dl,dd,dt {
     padding: 0;
     margin: 0
 }
+input[type="button"], input[type="submit"], input[type="reset"] {
+
+    -webkit-appearance: none;
+
+}
+
+textarea {  -webkit-appearance: none;}
 dl,dd,dt{
     display: block;
 }
@@ -171,18 +178,19 @@ a:hover{
     margin-top: 60px;
     min-width: 1280px;
     padding: 25px 0 15px;
-    background: #424242;
+    background: #F2F2F2;
     text-align: center;
 }
 .copyright{
     line-height: 32px;
     text-align: center;
-    color: #ddd;
+    color: #999;
     font-size: 13px;
 }
 .footer >a{
 	display: inline-block;
-	color: #fff;
+	color: #999;
+    font-size: 14px;
 	margin: 0 3px;
 }
 
@@ -212,18 +220,26 @@ a:hover{
 }
 .hot-tag,.friendly-links{
     padding: 5px 10px;
-    margin: 15px 0 25px;
+    margin: 8px 0 6px;
 }
 .hot-tag dd,.friendly-links dd{
     float: left;
     margin: 0 20px;
 }
 .hot-tag dt,.friendly-links dt{
-    float: left;
-    font-weight: bold;
+    display: inline-block;
     margin-right: 15px;
+    color: #999;
+}
+.friendly-links>a{
+    display: inline-block;
+    margin-right: 5px;
+    color: #999;
 }
 .friendly-links .lk,.hot-tag .lk{
+    color: #999;
+}
+.copyright a{
     color: #999;
 }
 

@@ -452,7 +452,7 @@
       'province_id' => '0',
       'city_id' => '0',
       'section_id' => '0',
-      'length' => '12',
+      'length' => '20',
       'introduce_length' => '',
       'ordertype' => 'view-desc',
       'istop' => '0',

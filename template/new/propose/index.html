@@ -88,7 +88,7 @@
         <dl class="order-item">
             <dt>验证码：</dt>
             <dd value="验证码"><input class="w80" type="text" placeholder="请输入验证码" id="mobilenum"></dd><dd class="tips"></dd>
-            <input type="button" class="person-code-btn" onclick="getCode('{url('tool/smsMessage')}',$('#tel'),this);" value="获取验证码" />
+            <input type="button" class="person-code-btn" onclick="getCode('{url('tool/smsMessage')}',$('#tel'),this);" value="获取验证码" style="height:33px;"/>
         </dl>
         <?php } ?>
         <button class="order-cancel-btn" onclick="stepPrevTwo()">上一步</button>
@@ -211,4 +211,5 @@
 </script>
 <div style="display: none;">
 {template 'footer.html'}
+        
         

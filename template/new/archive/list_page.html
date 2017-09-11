@@ -53,7 +53,7 @@
     <ul class="about-sidenav">
         <li style="background: #eee; font-size: 16px; line-height: 55px; font-weight: bold">求婚总动员 </li>
         {loop categories(25) $i $t}
-        <li><a href="{$t[url]}" {if $catid==$t[catid]}class="sidenav-on"{/if}>{$t[catname]}</a> </li>
+        <li><a href="<?php if($_GET['city']){echo '/'.$_GET['city'].'/';}else{ echo '/';} ?>list_{$t[catid]}/" {if $catid==$t[catid]}class="sidenav-on"{/if}>{$t[catname]}</a> </li>
         {/loop}
     </ul>
     <div class="content">
@@ -92,3 +92,4 @@
 <!-- 限定图片宽度 -->
 <div style="display: none;">
 {template 'footer.html'}
+        

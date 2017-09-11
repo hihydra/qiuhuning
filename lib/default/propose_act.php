@@ -54,7 +54,7 @@ class propose_act extends act
             if(!$this->view->user['userid']){
 /*
                 if(!preg_match('/^1([0-9]+){5,}$/is',front::$post['telphone'])){
-                    echo '<script type="text/javascript">alert("'.lang('phone_number_format_is_wrong').'");window.location.href="' . url('propose'). '";</script>';
+                    echo '<script type="text/javascript">alert("'.lang('phone_number_format_is_wrong').'");window.location.href="?case=propose";</script>';
                     exit;
                 }
 */
@@ -62,7 +62,7 @@ class propose_act extends act
                     $mobilenum = front::$post['mobilenum'];
                     $smsCode = new SmsCode();
                     if (!$smsCode->chkcode($mobilenum)) {
-                        echo '<script type="text/javascript">alert("'.lang('cell_phone_parity_error').'");window.location.href="' . url('propose'). '";</script>';
+                        echo '<script type="text/javascript">alert("'.lang('cell_phone_parity_error').'");window.location.href="?case=propose";</script>';
                         return;
                     }
                 }
@@ -117,7 +117,7 @@ class propose_act extends act
             $insert = $this->propose->rec_insert(front::$post);
 
             if ($insert < 1) {
-                echo '<script type="text/javascript">alert("'.lang('add_failure').'");window.location.href="' . url('propose'). '";</script>';
+                echo '<script type="text/javascript">alert("'.lang('add_failure').'");window.location.href="?case=propose";</script>';
                 return;
             } else{
                 if(empty($insert_user)){
@@ -133,7 +133,7 @@ class propose_act extends act
         if (!front::get('oid')) {
             $propose = propose::getInstance()->getrow(['userid'=>$this->view->user['userid']]);
             if (empty($propose)) {
-                echo '<script type="text/javascript">alert("您还没有下过订单。");window.location.href="' . url('propose'). '";</script>';
+                echo '<script type="text/javascript">alert("您还没有下过订单。");window.location.href="?case=propose";</script>';
                 exit;
             }
             $oid = $propose['oid'];
@@ -144,7 +144,7 @@ class propose_act extends act
         preg_match_all("/-(.*)-(.*)-(.*)/isu", $oid, $oidout);
         $this->view->paytype = $oidout[3][0];
         if($this->view->user['userid'] != $oidout[2][0]){
-            echo '<script type="text/javascript">alert("您无法支付别人的订单。");window.location.href="' . url('propose'). '";</script>';
+            echo '<script type="text/javascript">alert("您无法支付别人的订单。");window.location.href="?case=propose";</script>';
             exit;
         }
         $this->view->user_id = $oidout[2][0];
@@ -158,7 +158,7 @@ class propose_act extends act
         $propose = propose::getInstance()->getrow($where);
             //var_dump($propose);exit;
         if($propose['status']==0 || empty($propose)){
-            echo '<script type="text/javascript">alert("该订单不存在或者已关闭");window.location.href="' . url('propose'). '";</script>';
+            echo '<script type="text/javascript">alert("该订单不存在或者已关闭");window.location.href="?case=propose";</script>';
             exit;
         }
         $this->_process=new process;
@@ -242,3 +242,6 @@ class propose_act extends act
 }
 
 
+
+        
+        
