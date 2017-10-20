@@ -136,7 +136,12 @@ class table_admin extends admin {
                 $where .=' and spid='.$sectionid;
             }
         }
-
+        if ($this->table == 'propose') {
+            if (get('pname')) {
+                $pname=get('pname');
+                $where ="pname like '%$pname%'";
+            }
+        }
         if ($this->table == 'templatetag') {
             if (front::get('tagfrom')) {
                 $where="tagfrom='".front::get('tagfrom')."'";
@@ -923,3 +928,4 @@ class table_admin extends admin {
         }
     }
 }
+        

@@ -184,7 +184,9 @@ class propose_act extends act
 
     function respond_action()
     {
+        $out_trade_no = $_GET['subject'] ? $_GET['subject'] : $_POST['subject'];
         $code = explode('-', $out_trade_no);
+   
         $payclassname = $code[3];
         $flist = array('alipay', 'nopay', 'paypal', 'paypal_ec', 'tenpay', 'malipay','wxpay');
         if (!in_array($payclassname, $flist)) {
@@ -195,7 +197,7 @@ class propose_act extends act
         if (!front::$get['oid'] && !$out_trade_no) {
             exit(lang('illegal_parameter'));
         }
-        $status = $payobj->respond();
+        //$status = $payobj->respond();
         if ($_POST['out_trade_no']) {
             if ($status) {
                 exit('success');
@@ -203,16 +205,16 @@ class propose_act extends act
                 exit('fail');
             }
         }
-        if ($status) {
+        if($_GET['trade_status'] == "WAIT_SELLER_SEND_GOODS"||$_GET['trade_status'] == "TRADE_FINISHED" || $_GET['trade_status'] == "TRADE_SUCCESS") {
             $where = $row = array();
             $row['status'] = 2 ;
             $row['process_id'] = 3 ;
-            $where['oid'] = front::get('oid');
+            $where['oid'] = front::get('subject');
             $propose = propose::getInstance()->rec_update($row,$where);
-            front::refresh(url('propose/paypropose/oid/' .front::get('oid'), true));
+            front::refresh(url('propose/paypropose/oid/' .front::get('subject'), true));
         } else {
             echo '<script type="text/javascript">alert("' . lang('go_order') . '")</script>';
-            front::refresh(url('propose/paypropose/oid/' .front::get('oid'), true));
+            front::refresh(url('propose/paypropose/oid/' .front::get('subject'), true));
         }
     }
     function out($tpl)
@@ -243,5 +245,18 @@ class propose_act extends act
 
 
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         

@@ -2,9 +2,11 @@
     <div class="wrap relative">
         <ul class="side-nav">
             {loop categories(27) $t1}
-            <li><a href="{$t1[url]}">{$t1[catname]}</a><i class="icon-angle-right icon"></i></li>
+            <li><a href="<?php if($_GET['city']){echo '/'.$_GET['city'].'/';}else{ echo '/';} ?>list_{$t1[catid]}/">{$t1[catname]}</a><i class="icon-angle-right icon"></i></li>
             {/loop}
         </ul>
         <a href="/index.php?case=propose" style="width: 480px; height: 300px;  position: absolute; left: 505px;top: 85px"></a>
     </div>
 </div>
+        
+        
